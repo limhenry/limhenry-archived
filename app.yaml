@@ -8,6 +8,7 @@
   - url: /
     static_files: public/index.html
     upload: public/index.html
+    secure: always
 
   - url: /index.html
     static_files: public/index.html
