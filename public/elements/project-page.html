@@ -4,6 +4,7 @@
         :host {
             display: block;
             visibility: hidden;
+            --paper-card-header-padding: 28px 36px;
         }
         
         #projectPage {
@@ -26,7 +27,7 @@
             min-width: 300px;
             color: black;
             --paper-card-header: {
-                padding: 28px 36px;
+                padding: var(--paper-card-header-padding);
             }
         }
         
@@ -69,6 +70,7 @@
             margin: 0;
             line-height: 24px;
             font-weight: 400;
+            font-style: italic;
         }
         
         #speaker-desc {
@@ -117,23 +119,31 @@
             }
         }
         
-        @media screen and (max-width: 643px) {
+        @media screen and (max-width: 658px) {
+            #projectPage {
+                padding-top: 0;
+            }
             #speaker-card {
                 max-width: none;
                 padding: 0;
             }
             paper-card {
+                min-width: 100%;
                 max-width: 100%;
                 width: 100%;
                 margin: 2px 0;
+                --paper-card-header: {
+                    padding: var(--paper-card-header-padding);
+                }
             }
             #speaker-post {
+                font-style: normal;
                 display: inline-block;
             }
         }
         </style>
         <div id="projectPage">
-            <iron-media-query query="min-width: 643px" query-matches="{{largeScreen}}"></iron-media-query>
+            <iron-media-query query="min-width: 658px" query-matches="{{largeScreen}}" on-query-matches-changed="_onQueryChanged"></iron-media-query>
             <iron-ajax auto url="/data/project.json" handle-as="json" last-response="{{projectsData}}"></iron-ajax>
             <div id="speakerPage">
                 <div id=speaker-container>
@@ -158,6 +168,7 @@
                                 <template is="dom-if" if="{{largeScreen}}">
                                     <div class="card-content">
                                         <h3 id="speaker-name">[[item.title]]</h3>
+                                        <h3 id="speaker-post">[[item.category]]</h3>
                                         <p id="speaker-desc">[[item.description]]</p>
                                     </div>
                                     <div class="card-actions">
@@ -224,6 +235,28 @@
             var div = Polymer.dom(event).rootTarget;
             div.toggleClass('active');
             div.parentElement.parentElement.querySelector('iron-collapse').toggle();
+        },
+        _onQueryChanged: function() {
+            if (this.largeScreen == true) {
+                console.log("smallScreen")
+                this.customStyle['--paper-card-header-padding'] = '36px 30% 12px 30%';
+                this.updateStyles();
+            }
+            else if (this.largeScreen == false) {
+                console.log("largeScreen")
+                this.customStyle['--paper-card-header-padding'] = '28px 36px';
+                this.updateStyles();
+            }
+        },
+        ready: function() {
+            if (this.largeScreen == false) {
+                this.customStyle['--paper-card-header-padding'] = '36px 30% 12px 30%';
+                this.updateStyles();
+            }
+            else if (this.largeScreen == true) {
+                this.customStyle['--paper-card-header-padding'] = '28px 36px';
+                this.updateStyles();
+            }
         }
     });
     </script>
