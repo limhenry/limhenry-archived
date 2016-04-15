@@ -3,6 +3,7 @@
         <style>
         :host {
             display: block;
+            visibility: hidden;
         }
         
         #projectPage {
@@ -18,11 +19,25 @@
             margin: 12px 6px;
             line-height: 24px;
             background: rgba(255, 255, 255, 1);
+            flex-direction: column;
+            display: flex;
+            flex: 1;
+            max-width: 300px;
+            min-width: 300px;
             color: black;
+            --paper-card-header: {
+                padding: 28px 36px;
+            }
         }
         
-        paper-card.card-content {
+        .card-content {
             padding: 16px 22px;
+            flex: 1;
+            margin-bottom: auto;
+        }
+        
+        paper-card.card-actions {
+            margin-top: auto;
         }
         
         #speaker-card {
@@ -50,9 +65,10 @@
         }
         
         #speaker-post {
+            font-size: 1em;
             margin: 0;
             line-height: 24px;
-            font-weight: 300;
+            font-weight: 400;
         }
         
         #speaker-desc {
@@ -64,8 +80,8 @@
             height: 40px;
             position: absolute;
             right: 0;
-            bottom: -8px;
-            color: #0D47A1;
+            bottom: -6px;
+            color: var(--secondary-background-color);
             cursor: pointer;
             -webkit-transition-duration: 0.5s;
             -moz-transition-duration: 0.5s;
@@ -106,12 +122,10 @@
                 max-width: none;
                 padding: 0;
             }
-            #speaker-post {
-                padding-right: 40px;
-            }
             paper-card {
+                max-width: 100%;
                 width: 100%;
-                margin: 0;
+                margin: 2px 0;
             }
             #speaker-post {
                 display: inline-block;
@@ -130,19 +144,24 @@
                                     <div class="card-content">
                                         <div id="speaker-short">
                                             <h3 id="speaker-name">[[item.title]]</h3>
-                                            <h3 id="speaker-post"><i>[[item.post]]</i></h3>
+                                            <h3 id="speaker-post">[[item.category]]</h3>
                                             <iron-icon icon="icons:arrow-drop-down" on-click="toggleCollapse"></iron-icon>
                                         </div>
                                         <iron-collapse id="collapse">
                                             <p id="speaker-desc">[[item.description]]</p>
+                                            <div class="card-actions">
+                                                <paper-button>Project Link</paper-button>
+                                            </div>
                                         </iron-collapse>
                                     </div>
                                 </template>
                                 <template is="dom-if" if="{{largeScreen}}">
                                     <div class="card-content">
                                         <h3 id="speaker-name">[[item.title]]</h3>
-                                        <h3 id="speaker-post"><i>[[item.post]]</i></h3>
                                         <p id="speaker-desc">[[item.description]]</p>
+                                    </div>
+                                    <div class="card-actions">
+                                        <paper-button>Project Link</paper-button>
                                     </div>
                                 </template>
                             </paper-card>
@@ -156,8 +175,50 @@
     Polymer({
         is: 'project-page',
 
-        _onDomChange: function() {
 
+        behaviors: [
+            Polymer.NeonAnimatableBehavior,
+            Polymer.NeonSharedElementAnimatableBehavior,
+            Polymer.NeonAnimationRunnerBehavior
+        ],
+
+        properties: {
+            animationConfig: {
+                value: function() {
+                    return {
+                        'entry': [{
+                            name: 'cascaded-animation',
+                            animation: 'transform-animation',
+                            transformFrom: 'translateY(100%)',
+                            transformTo: 'none'
+                        }],
+                        'exit': [{
+                            name: 'fade-out-animation',
+                            node: this,
+                            timing: {
+                                delay: 100,
+                                duration: 500
+                            }
+                        }, {
+                            name: 'transform-animation',
+                            node: this.$.projectPage,
+                            transformOrigin: '100%',
+                            transformFrom: 'translateY(0%)',
+                            transformTo: 'translateY(30%)',
+                            timing: {
+                                delay: 100,
+                                duration: 800
+                            }
+                        }],
+                    }
+                }
+            },
+
+        },
+        _onDomChange: function() {
+            this.style.visibility = "visible";
+            var nodeList = Polymer.dom(this.root).querySelectorAll('.animatedCard');
+            this.animationConfig['entry'][0].nodes = Array.prototype.slice.call(nodeList);
         },
         toggleCollapse: function(event) {
             var div = Polymer.dom(event).rootTarget;

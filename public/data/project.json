@@ -1,104 +1,121 @@
-[
-  {
+[{
+    "title": "Project Cerium",
+    "image": "img/gdg.png",
+    "description": "Event Site Template for GDG Event. Built with Polymer.",
+    "link": "https://github.com/limhenry/cerium/",
+    "category": "Web, Polymer"
+}, {
     "title": "GitHub Issues Voter",
     "image": "img/git_issues_voter.png",
     "description": "Best Progressive Web App at the Google's Firebase Static Showdown 2016 Global Hackathon. GitHub Issues Voter is a progressive web app that allow you to upvote or downvote to any GitHub issues you interested.",
-    "link": "https://ss16-git-issue-voter.firebaseapp.com/"
-  },  
-  {
+    "link": "https://ss16-git-issue-voter.firebaseapp.com/",
+    "category": "Web, Polymer"
+}, {
+    "title": "GitHub Issues Voter",
+    "image": "img/git_issues_voter.png",
+    "description": "Best Progressive Web App at the Google's Firebase Static Showdown 2016 Global Hackathon. GitHub Issues Voter is a progressive web app that allow you to upvote or downvote to any GitHub issues you interested.",
+    "link": "https://ss16-git-issue-voter.firebaseapp.com/",
+    "category": "Web, Polymer"
+}, {
+    "title": "GitHub Issues Voter",
+    "image": "img/git_issues_voter.png",
+    "description": "Best Progressive Web App at the Google's Firebase Static Showdown 2016 Global Hackathon. GitHub Issues Voter is a progressive web app that allow you to upvote or downvote to any GitHub issues you interested.",
+    "link": "https://ss16-git-issue-voter.firebaseapp.com/",
+    "category": "Web, Polymer"
+}, {
     "title": "Remote for Google Slides",
     "image": "img/google_slides_remote.png",
     "description": "Remote for Google Slides is a Chrome Extension + Webapp that allows you to control Google Slides on any device, remotely.",
-    "link": "https://limhenry.xyz/slide/"
-  },
-  {
+    "link": "https://limhenry.xyz/slide/",
+    "category": "Web, Mobile, Chrome"
+}, {
     "title": "Alphabet Music Info",
     "image": "https://i.imgur.com/seyTD7E.png",
     "description": "The definitive list of songs used in Google and other Google-related YouTube Channel, in commercials, keynote addresses, presentations, and other marketing materials.  Built with Polymer.",
-    "link": "https://alphabetmusicinfo.appspot.com/"
-  },    
-  {
+    "link": "https://alphabetmusicinfo.appspot.com/",
+    "category": "Web, Polymer"
+}, {
     "title": "MMU Bulletin",
     "image": "img/bulletin.png",
     "description": "MMU Bulletin is the bulletin board for MMU with material design. Say goodbye to the official ugly bulletin page.",
-    "link": "https://limhenry.xyz/bulletin/"
-  },  
-  {
+    "link": "https://limhenry.xyz/bulletin/",
+    "category": "Web, Materializecss"
+}, {
     "title": "MMU Bulletin Facebook",
     "image": "img/bulletin.png",
     "description": "MMU Bulletin is also available on Facebook! Never miss any important notice.",
-    "link": "https://facebook.com/mmubulletin"
-  },  
-  {
+    "link": "https://facebook.com/mmubulletin",
+    "category": "Facebook"
+}, {
     "title": "Auto WiFi MMU (Redesigned)",
     "image": "img/autowifimmu.png",
     "description": "Auto WiFi MMU is the easiest way to connect to MMU wifi for your Android phone.",
-    "link": "https://github.com/limhenry/Auto-WiFi-MMU/releases"
-  },
-  {
+    "link": "https://github.com/limhenry/Auto-WiFi-MMU/releases",
+    "category": "Android, Material Design"
+}, {
     "title": "GDG DevFest Kuala Lumpur 2015",
     "image": "img/gdg.png",
     "description": "An event page for GDG (Google Developer Group) DevFest Kuala Lumpur 2015",
-    "link": "https://devfestkl2015.appspot.com"
-  },
-  {
+    "link": "https://devfestkl2015.appspot.com",
+    "category": "Web, Polymer"
+}, {
     "title": "Rejected.us",
     "image": "img/empty_logo.png",
     "description": "Everyone’s been rejected - these are our stories. Rebuilt with Polymer. Forked from github.com/jkup/rejected.us",
-    "link": "https://limhenry.xyz/rejected/"
-  },   
-  {
+    "link": "https://limhenry.xyz/rejected/",
+    "category": "Web, Polymer"
+}, {
     "title": "Smart Converter",
     "image": "img/smartconverter.png",
     "description": "Smart Converter is the best and the smartest converter. Now available on Windows, Mac OS X and Linux.",
-    "link": "https://limhenry.xyz/converter/"
-  },    
-  {
+    "link": "https://limhenry.xyz/converter/",
+    "category": "Windows, Mac, Linux"
+}, {
     "title": "Smart Converter Web",
     "image": "img/smartconverter.png",
     "description": "Smart converter Web is the best and the smartest converter with Material Design.",
-    "link": "https://limhenry.xyz/converter/web/"
-  },    
-  {
+    "link": "https://limhenry.xyz/converter/web/",
+    "category": "Web, Materializecss"
+}, {
     "title": "Earth View Wallpaper Converter",
     "image": "img/earth.png",
     "description": "Now you can set your Desktop wallpaper (Image Source: earthview.withgoogle.com) just a single click.",
-    "link": "https://github.com/limhenry/earthview/releases/"
-  },
-  {
+    "link": "https://github.com/limhenry/earthview/releases/",
+    "category": "Linux"
+}, {
     "title": "Facebook Notification",
     "image": "img/fb.svg",
     "description": "A simple Chrome Extension that redirect to URL from Facebook Mobile to Facebook Desktop",
-    "link": "https://github.com/limhenry/facebook-notification/releases/"
-  },   
-  {
+    "link": "https://github.com/limhenry/facebook-notification/releases/",
+    "category": "Chrome, Facebook"
+}, {
     "title": "TM WiFi Bookmarlet",
     "image": "img/tm.png",
     "description": "Now you can login to TM WiFi with 2 simple clicks. (For MMU Student Only)",
-    "link": "https://limhenry.xyz/tmwifi/"
-  },
-  {
+    "link": "https://limhenry.xyz/tmwifi/",
+    "category": "Chrome, Web"
+}, {
     "title": "Hue Chat",
     "image": "img/h.png",
     "description": "A mockup chat app with Polymer",
-    "link": "https://limhenry.xyz/chat/"
-  },
-  {
+    "link": "https://limhenry.xyz/chat/",
+    "category": "Demo, Web, Polymer"
+}, {
     "title": "Chat with Me",
     "image": "img/c.png",
     "description": "A (functional) chat app with Firebase and Polymer",
-    "link": "https://chat-with-me-2183.firebaseapp.com/"
-  },  
-  {
+    "link": "https://chat-with-me-2183.firebaseapp.com/",
+    "category": "Demo, Web, Polymer"
+}, {
     "title": "Blog",
     "image": "img/b.png",
     "description": "Blog with Material Design. Articels written by me.",
-    "link": "https://limhenry.xyz/blog/"
-  },   
-  {
+    "link": "https://limhenry.xyz/blog/",
+    "category": "Web, Polymer"
+}, {
     "title": "GTA V PC Release Countdown (Archived)",
     "image": "img/gtav.png",
     "description": "Note: This is site no longer under maintance. A countdown page with slideshow and music for the GTA V PC Release",
-    "link": "https://limhenry.xyz/gtav/"
-  }             
-]
+    "link": "https://limhenry.xyz/gtav/",
+    "category": "Web"
+}]
