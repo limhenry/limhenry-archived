@@ -3,16 +3,18 @@
         <style>
         :host {
             display: block;
-            --primary-background-color: #0C3644;
-            --secondary-background-color: #011A21;
-            --primary-text-color: white;
-            --secondary-text-color: black;
+            --primary-background-color: #E91E63;
+            --secondary-background-color: #ECEFF1;
+            --highlight-background-color: #E64A19;
+            --primary-text-color: rgba(255,255,255,0.9);
+            --secondary-text-color: rgba(0,0,0,0.9);
+            --paper-tab-ink: #fff;
             color: var(--primary-text-color);
         }
         
         app-toolbar {
             background: var(--primary-background-color);
-            height: 256px;
+            height: 200px;
             /*-webkit-transition: width 300ms ease-in-out, height 300ms ease-in-out;
             -moz-transition: width 300ms ease-in-out, height 300ms ease-in-out;
             -o-transition: width 300ms ease-in-out, height 300ms ease-in-out;
@@ -28,6 +30,7 @@
         paper-tabs {
             margin-left: 16px;
             width: 450px;
+            --paper-tabs-selection-bar-color: #fff ;
         }
         
         paper-toolbar {
@@ -37,7 +40,6 @@
         paper-item {
             color: var(--secondary-text-color);
         }
-        
         @media screen and (max-width: 840px) {
             app-toolbar {
                 height: 64px;

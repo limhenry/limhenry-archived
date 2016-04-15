@@ -77,13 +77,13 @@
             font-size: 16px;
         }
         
-        iron-icon {
-            width: 40px;
-            height: 40px;
+        .collapseIcon {
+            width: 32px;
+            height: 32px;
             position: absolute;
-            right: 0;
-            bottom: -6px;
-            color: var(--secondary-background-color);
+            right: 20px;
+            bottom: 14px;
+            color: var(--primary-background-color);
             cursor: pointer;
             -webkit-transition-duration: 0.5s;
             -moz-transition-duration: 0.5s;
@@ -95,7 +95,7 @@
             transition-property: transform;
         }
         
-        iron-icon.active {
+        .collapseIcon.active {
             -webkit-transform: rotate(180deg);
             -moz-transform: rotate(180deg);
             -ms-transform: rotate(180deg);
@@ -105,6 +105,22 @@
         
         #speaker-short {
             position: relative;
+        }
+        
+        paper-button {
+            --paper-button-ink-color: var(--primary-background-color);
+        }
+        
+        paper-button span {
+            vertical-align: middle;
+            margin-left: 4px;
+            font-weight: 400;
+        }
+        
+        .card-actions a {
+            text-decoration: none;
+            color: var(--secondary-text-color);
+            width: 100%;
         }
         
         @media screen and (max-width: 1299px) {
@@ -136,6 +152,16 @@
                     padding: var(--paper-card-header-padding);
                 }
             }
+            .card-content {
+                padding: 0;
+            }
+            #speaker-short {
+                padding: 16px 22px 18px 16px;
+            }
+            #speaker-desc {
+                padding: 0px 22px 12px 22px;
+                margin-top: -4px;
+            }
             #speaker-post {
                 font-style: normal;
                 display: inline-block;
@@ -155,12 +181,17 @@
                                         <div id="speaker-short">
                                             <h3 id="speaker-name">[[item.title]]</h3>
                                             <h3 id="speaker-post">[[item.category]]</h3>
-                                            <iron-icon icon="icons:arrow-drop-down" on-click="toggleCollapse"></iron-icon>
+                                            <iron-icon icon="icons:arrow-drop-down" on-click="toggleCollapse" class="collapseIcon"></iron-icon>
                                         </div>
                                         <iron-collapse id="collapse">
                                             <p id="speaker-desc">[[item.description]]</p>
                                             <div class="card-actions">
-                                                <paper-button>Project Links</paper-button>
+                                                <a href="[[item.link]]" target="_blank">
+                                                    <paper-button>
+                                                        <iron-icon icon="open-in-new"></iron-icon>
+                                                        <span>Open Project</span>
+                                                    </paper-button>
+                                                </a>
                                             </div>
                                         </iron-collapse>
                                     </div>
@@ -172,7 +203,12 @@
                                         <p id="speaker-desc">[[item.description]]</p>
                                     </div>
                                     <div class="card-actions">
-                                        <a href="[[item.link]]"><paper-button>Project Link</paper-button></a>
+                                        <a href="[[item.link]]" target="_blank">
+                                            <paper-button>
+                                                <iron-icon icon="open-in-new"></iron-icon>
+                                                <span>Open Project</span>
+                                            </paper-button>
+                                        </a>
                                     </div>
                                 </template>
                             </paper-card>
@@ -201,13 +237,17 @@
                             name: 'cascaded-animation',
                             animation: 'transform-animation',
                             transformFrom: 'translateY(100%)',
-                            transformTo: 'none'
+                            transformTo: 'none',
+                            nodeDelay: 90,
+                            timing: {
+                                delay: 200,
+                            }
                         }],
                         'exit': [{
                             name: 'fade-out-animation',
                             node: this,
                             timing: {
-                                delay: 100,
+                                delay: 500,
                                 duration: 500
                             }
                         }, {
@@ -240,10 +280,9 @@
         _onQueryChanged: function() {
             if (this.largeScreen == true) {
                 console.log("smallScreen")
-                this.customStyle['--paper-card-header-padding'] = '36px 30% 12px 30%';
+                this.customStyle['--paper-card-header-padding'] = '20px 30% 0px 30%';
                 this.updateStyles();
-            }
-            else if (this.largeScreen == false) {
+            } else if (this.largeScreen == false) {
                 console.log("largeScreen")
                 this.customStyle['--paper-card-header-padding'] = '28px 36px';
                 this.updateStyles();
@@ -251,10 +290,9 @@
         },
         ready: function() {
             if (this.largeScreen == false) {
-                this.customStyle['--paper-card-header-padding'] = '36px 30% 12px 30%';
+                this.customStyle['--paper-card-header-padding'] = '20px 30% 0px 30%';
                 this.updateStyles();
-            }
-            else if (this.largeScreen == true) {
+            } else if (this.largeScreen == true) {
                 this.customStyle['--paper-card-header-padding'] = '28px 36px';
                 this.updateStyles();
             }

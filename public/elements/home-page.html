@@ -1,21 +1,146 @@
 <dom-module id="home-page">
-	<template>
-		<style>
-			:host {
-				display: block;
-			}
-			#homePage{
-			
-			}
-		</style>
-		<div id="homePage">
-			home
-		</div>
-		
-	</template>
-	<script>
-		Polymer({
-			is: 'home-page'
-		});
-	</script>
+    <template>
+        <style>
+        :host {
+            display: block;
+        }
+        
+        #homePage {}
+        
+        paper-card {
+            background: white;
+            color: var(--secondary-text-color);
+            max-width: 400px;
+            margin: 96px auto 0 auto;
+            display: block;
+            text-align: center;
+            position: relative;
+            line-height: 24px;
+        }
+        
+        h1 {
+            margin-top: 78px;
+            font-weight: 400;
+            margin-bottom: 28px;
+            font-size: 1.8em;
+        }
+        
+        paper-card p {
+            text-align: center;
+            padding: 4px 24px;
+        }
+        
+        #avatar {
+            border-radius: 50%;
+            height: 128px;
+            width: 128px;
+            top: calc(-128px / 2);
+            position: absolute;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background-color: var(--primary-background-color);
+        }
+        
+        .card-content {}
+        
+        @media screen and (max-width: 840px) {
+            paper-card {
+                margin-top: 64px;
+            }
+            paper-card p {
+                padding: 4px 12px;
+            }
+            h1 {
+                margin-top: 56px;
+                margin-bottom: 16px;
+            }
+            #avatar {
+                height: 96px;
+                width: 96px;
+                top: calc(-96px / 2);
+            }
+        }
+        </style>
+        <div id="homePage">
+            <paper-card elevation="1">
+                <iron-image id="avatar" src="/img/profile.png" preload sizing="cover"></iron-image>
+                <div class="card-content">
+                    <h1>Henry Lim</h1>
+                    <p>I am a front-end web developer. Passionate about Polymer, Firebase and Google. Student at Multimedia University, Malaysia. Google Developer Group Kuala Lumpur.</p>
+                </div>
+            </paper-card>
+            <paper-card elevation="1">
+                <iron-image id="avatar" src="/img/profile.png" preload sizing="cover"></iron-image>
+                <div class="card-content">
+                    <h1>Henry Lim</h1>
+                    <p>I am a front-end web developer.Love Polymer, Firebase and Google. Student at Multimedia University, Malaysia. Google Developer Group Kuala Lumpur.</p>
+                </div>
+            </paper-card>
+            <paper-card elevation="1">
+                <iron-image id="avatar" src="/img/profile.png" preload sizing="cover"></iron-image>
+                <div class="card-content">
+                    <h1>Henry Lim</h1>
+                    <p>I am a front-end web developer.Love Polymer, Firebase and Google. Student at Multimedia University, Malaysia. Google Developer Group Kuala Lumpur.</p>
+                </div>
+            </paper-card>                        
+        </div>
+    </template>
+    <script>
+    Polymer({
+        is: 'home-page',
+
+        behaviors: [
+            Polymer.NeonAnimatableBehavior,
+            Polymer.NeonSharedElementAnimatableBehavior,
+            Polymer.NeonAnimationRunnerBehavior
+        ],
+
+        properties: {
+            animationConfig: {
+                value: function() {
+                    return {
+                        'entry': [{
+                            name: 'fade-in-animation',
+                            node: this,
+                            timing: {
+                                delay: 200,
+                                duration: 500
+                            }
+                        }, {
+                            name: 'transform-animation',
+                            node: this.$.homePage,
+                            transformOrigin: '100%',
+                            transformFrom: 'translateY(50%)',
+                            transformTo: 'translateY(0%)',
+                            timing: {
+                                delay: 400,
+                                duration: 800
+                            }
+                        }],
+                        'exit': [{
+                            name: 'fade-out-animation',
+                            node: this,
+                            timing: {
+                                delay: 200,
+                                duration: 500
+                            }
+                        }, {
+                            name: 'transform-animation',
+                            node: this.$.homePage,
+                            transformOrigin: '100%',
+                            transformFrom: 'translateY(0%)',
+                            transformTo: 'translateY(50%)',
+                            timing: {
+                                delay: 100,
+                                duration: 800
+                            }
+                        }],
+                    }
+                }
+            },
+
+        },        
+    });
+    </script>
 </dom-module>

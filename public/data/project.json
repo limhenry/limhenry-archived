@@ -5,16 +5,16 @@
     "link": "https://github.com/limhenry/cerium/",
     "category": "Web, Polymer"
 }, {
-    "title": "GitHub Issues Voter",
-    "image": "img/git_issues_voter.png",
-    "description": "Best Progressive Web App at the Google's Firebase Static Showdown 2016 Global Hackathon. GitHub Issues Voter is a progressive web app that allow you to upvote or downvote to any GitHub issues you interested.",
-    "link": "https://ss16-git-issue-voter.firebaseapp.com/",
+    "title": "GCP Next Extended 2016 Kuala Lumpur",
+    "image": "img/gdg.png",
+    "description": "Event page for Google Cloud Platform Next Extended 2016 Kuala Lumpur by Google Developer Group Kuala Lumpur. Based on Project Cerium. Built with Polymer.",
+    "link": "https://gcpnextkl2016.appspot.com/",
     "category": "Web, Polymer"
 }, {
-    "title": "GitHub Issues Voter",
-    "image": "img/git_issues_voter.png",
-    "description": "Best Progressive Web App at the Google's Firebase Static Showdown 2016 Global Hackathon. GitHub Issues Voter is a progressive web app that allow you to upvote or downvote to any GitHub issues you interested.",
-    "link": "https://ss16-git-issue-voter.firebaseapp.com/",
+    "title": "Google I/O Extended 2016 MMU Cyberjaya",
+    "image": "img/gdg.png",
+    "description": "Event page for Google I/O Extended 2016 Multimedia University Cyberjaya by Google Developer Group Kuala Lumpur. Based on Project Cerium. Built with Polymer.",
+    "link": "https://io16mmu.appspot.com/",
     "category": "Web, Polymer"
 }, {
     "title": "GitHub Issues Voter",
