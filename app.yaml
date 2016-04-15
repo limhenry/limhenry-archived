@@ -8,46 +8,57 @@
   - url: /
     static_files: public/index.html
     upload: public/index.html
+    secure: always
 
   - url: /index.html
     static_files: public/index.html
     upload: public/index.html
+    secure: always
 
   - url: /project.*
     static_files: public/index.html
     upload: public/index.html
+    secure: always
 
   - url: /contact.*
     static_files: public/index.html
     upload: public/index.html
+    secure: always
 
   - url: /resources.*
     static_files: public/index.html
     upload: public/index.html        
+    secure: always
 
   - url: /bower_components/(.+)
     static_files: public/bower_components/\1
     upload: public/bower_components/(.*)    
+    secure: always
 
   - url: /elements/(.+)
     static_files: public/elements/\1
     upload: public/elements/(.*)
+    secure: always
 
   - url: /data/(.+)
     static_files: public/data/\1
     upload: public/data/(.*)
+    secure: always
 
   - url: /img/(.+)
     static_files: public/img/\1
     upload: public/img/(.*) 
+    secure: always
 
   - url: /elements.html
     static_files: public/elements.html
     upload: public/elements.html       
+    secure: always
     
   - url: /sw-import.js
     static_files: public/sw-import.js
     upload: public/sw-import.js  
+    secure: always
 
   skip_files:
   - ^(.*/)?app\.yaml
