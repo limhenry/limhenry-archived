@@ -160,7 +160,7 @@
                                         <iron-collapse id="collapse">
                                             <p id="speaker-desc">[[item.description]]</p>
                                             <div class="card-actions">
-                                                <paper-button>Project Link</paper-button>
+                                                <paper-button>Project Links</paper-button>
                                             </div>
                                         </iron-collapse>
                                     </div>
@@ -172,7 +172,7 @@
                                         <p id="speaker-desc">[[item.description]]</p>
                                     </div>
                                     <div class="card-actions">
-                                        <paper-button>Project Link</paper-button>
+                                        <a href="[[item.link]]"><paper-button>Project Link</paper-button></a>
                                     </div>
                                 </template>
                             </paper-card>
@@ -230,6 +230,7 @@
             this.style.visibility = "visible";
             var nodeList = Polymer.dom(this.root).querySelectorAll('.animatedCard');
             this.animationConfig['entry'][0].nodes = Array.prototype.slice.call(nodeList);
+            this.playAnimation('entry');
         },
         toggleCollapse: function(event) {
             var div = Polymer.dom(event).rootTarget;
