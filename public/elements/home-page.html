@@ -2,69 +2,20 @@
 	<template>
 		<style>
 			:host {
-			display: block;
+				display: block;
 			}
-			.homePage{
-				padding: 0 24px;			
+			#homePage{
+			
 			}
 		</style>
-<div class="homePage" id="homePage">
-    <br>
-    <h1>Hi, my name is Henry Lim <br>and I am a student and web developer.</h1>
-    <br>
-    <h2>I am currently focusing on (and researching):</h2>
-    <div id="cardDiv">
-        <paper-card elevation="2" image="img/polymer.svg">
-            <div class="card-content">
-                <h2>Polymer</h2>
-                <p>The Polymer library is designed to make it easier and faster for developers to createElement great, reusable components for the modern web. This site is using Polymer too.</p>
-            </div>
-        </paper-card>
-        <paper-card elevation="2" image="img/materialdesign-new.svg">
-            <div class="card-content">
-                <h2>Material Design</h2>
-                <p>Material Design is a design language developed by Google. Material Design makes more liberal use of grid-based layouts, responsive animations and transitions, padding, and depth effects such as lighting and shadows.</p>
-            </div>
-        </paper-card>
-        <paper-card elevation="2" image="img/webdev.png">
-            <div class="card-content">
-                <h2>Web Development</h2>
-                <p>Web or Native?</p>
-            </div>
-        </paper-card>
-    </div>
-    </div>
-
-<footer-page></footer-page>
+		<div id="homePage">
+			home
+		</div>
+		
 	</template>
 	<script>
-    Polymer({
-      is: 'home-page',
-      behaviors: [Polymer.NeonAnimatableBehavior],
-      properties: {
-        animationConfig: {
-          value: function() {
-            return {
-              'entry': {
-                name: 'transform-animation',
-                node: this.$.homePage,
-				transformOrigin: '100%',
-				transformFrom: 'translateY(50%)',
-				transformTo: 'translateY(0%)',
-				timing: {
-					delay: 280,
-					duration: 500	
-	  			}                    
-              },
-              'exit': {
-                name: 'fade-out-animation',
-                node: this
-              }
-            }
-          }
-        }
-      }
-    });
-  </script>
+		Polymer({
+			is: 'home-page'
+		});
 	</script>
 </dom-module>

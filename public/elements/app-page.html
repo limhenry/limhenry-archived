@@ -1,0 +1,128 @@
+<dom-module id="app-page">
+    <template>
+        <style>
+        :host {
+            display: block;
+            --primary-background-color: #0C3644;
+            --secondary-background-color: #011A21;
+            --primary-text-color: white;
+            --secondary-text-color: black;
+            color: var(--primary-text-color);
+        }
+        
+        app-toolbar {
+            background: var(--primary-background-color);
+            height: 256px;
+            /*-webkit-transition: width 300ms ease-in-out, height 300ms ease-in-out;
+            -moz-transition: width 300ms ease-in-out, height 300ms ease-in-out;
+            -o-transition: width 300ms ease-in-out, height 300ms ease-in-out;
+            transition: width 300ms ease-in-out, height 300ms ease-in-out;*/
+        }
+        
+        app-toolbar [title] {
+            font-size: 1.8em;
+            font-weight: 300;
+            margin-left: 24px;
+        }
+        
+        paper-tabs {
+            margin-left: 16px;
+            width: 450px;
+        }
+        
+        paper-toolbar {
+            background: var(--primary-background-color);
+        }
+        
+        paper-item {
+            color: var(--secondary-text-color);
+        }
+        
+        @media screen and (max-width: 840px) {
+            app-toolbar {
+                height: 64px;
+            }
+            app-toolbar [title] {
+                font-size: 20px;
+                font-weight: 300;
+                margin-left: 12px;
+            }
+        }
+        </style>
+        <iron-media-query query="(min-width: 840px)" query-matches="{{wide}}"></iron-media-query>
+        <app-drawer-layout force-narrow>
+            <template is="dom-if" if="{{!wide}}">
+                <app-drawer id="drawer" swipe-open>
+                    <paper-toolbar class="tall">
+                        <div class="bottom drawer-text">
+                            <div>Henry Lim</div>
+                            <div>limhenry.xyz</div>
+                        </div>
+                    </paper-toolbar>
+                    <iron-selector attr-for-selected="id" selected="{{data.page}}">
+                        <paper-item id="" drawer-toggle>Home</paper-item>
+                        <paper-item id="project" drawer-toggle>Project</paper-item>
+                        <paper-item id="contact" drawer-toggle>Contact</paper-item>
+                        <paper-item id="resources" drawer-toggle>Resources</paper-item>
+                    </iron-selector>
+                </app-drawer>
+            </template>
+            <template is="dom-if" if="{{wide}}">
+                <app-drawer id="drawer"></app-drawer>
+            </template>
+            <app-header-layout>
+                <app-header reveals effects="waterfall fade-background">
+                    <app-toolbar wide-layout$="{{wide}}">
+                        <template is="dom-if" if="{{!wide}}">
+                            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+                            <div title>limhenry.xyz</div>
+                        </template>
+                        <template is="dom-if" if="{{wide}}">
+                            <div title>limhenry.xyz</div>
+                            <paper-tabs attr-for-selected="id" selected="{{data.page}}" bottom-item>
+                                <paper-tab id="">HOME</paper-tab>
+                                <paper-tab id="project">PROJECT</paper-tab>
+                                <paper-tab id="contact">CONTACT</paper-tab>
+                                <paper-tab id="resources">RESOURCES</paper-tab>
+                            </paper-tabs>
+                        </template>
+                    </app-toolbar>
+                </app-header>
+                <div>
+                    <carbon-location route="{{route}}"></carbon-location>
+                    <carbon-route route="{{route}}" pattern="/:page" data="{{data}}"></carbon-route>
+                    <neon-animated-pages class="flex" attr-for-selected="id" selected="{{data.page}}">
+                        <home-page id=""></home-page>
+                        <project-page id="project"></project-page>
+                        <contact-page id="contact"></contact-page>
+                        <resources-page id="resources"></resources-page>
+                    </neon-animated-pages>
+                </div>
+            </app-header-layout>
+        </app-drawer-layout>
+    </template>
+    <script>
+    Polymer({
+        is: 'app-page',
+        properties: {
+            route: {
+                type: Object,
+                notify: true
+            },
+            data: {
+                type: Object,
+                value: {
+                    page: '/home/'
+                },
+            },
+        },
+        ready: function() {
+            this.async(function() {
+                if (!this.route.path && this.route.path == "/") {
+                    this.set('route.path', '/');
+                }
+            }, 1);
+        },        
+    });
+    </script>
+</dom-module>

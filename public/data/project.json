@@ -1,10 +1,28 @@
 [
   {
+    "title": "GitHub Issues Voter",
+    "image": "img/git_issues_voter.png",
+    "description": "Best Progressive Web App at the Google's Firebase Static Showdown 2016 Global Hackathon. GitHub Issues Voter is a progressive web app that allow you to upvote or downvote to any GitHub issues you interested.",
+    "link": "https://ss16-git-issue-voter.firebaseapp.com/"
+  },  
+  {
+    "title": "Remote for Google Slides",
+    "image": "img/google_slides_remote.png",
+    "description": "Remote for Google Slides is a Chrome Extension + Webapp that allows you to control Google Slides on any device, remotely.",
+    "link": "https://limhenry.xyz/slide/"
+  },
+  {
+    "title": "Alphabet Music Info",
+    "image": "https://i.imgur.com/seyTD7E.png",
+    "description": "The definitive list of songs used in Google and other Google-related YouTube Channel, in commercials, keynote addresses, presentations, and other marketing materials.  Built with Polymer.",
+    "link": "https://alphabetmusicinfo.appspot.com/"
+  },    
+  {
     "title": "MMU Bulletin",
     "image": "img/bulletin.png",
     "description": "MMU Bulletin is the bulletin board for MMU with material design. Say goodbye to the official ugly bulletin page.",
     "link": "https://limhenry.xyz/bulletin/"
-  },
+  },  
   {
     "title": "MMU Bulletin Facebook",
     "image": "img/bulletin.png",
