@@ -1,0 +1,56 @@
+<dom-module id="contact-page">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+			a{
+				line-height: 42px;
+				text-decoration: none;
+				color: white;
+			}
+	      .contactPage{
+	        padding: 0 24px;
+	      }			
+		</style>
+		<div class="contactPage" id="contactPage">
+			<br><h1>Contact</h1>
+			<br><h3>Find me on:</h3>
+			<a href="https://plus.google.com/+HenryLim96"><paper-button>Google+</paper-button></a><br>
+			<a href="https://twitter.com/henrylim96"><paper-button>Twitter</paper-button></a><br>
+			<a href="https://github.com/limhenry"><paper-button>GitHub</paper-button></a><br>
+			<a href="https://youtube.com/c/HenryLim96"><paper-button>YouTube</paper-button></a><br>
+			<a><paper-button>henry (at) limhenry.xyz</paper-button><br></a>
+		</div>
+		<footer-page></footer-page>
+	</template>
+	<script>
+    Polymer({
+      is: 'contact-page',
+      behaviors: [Polymer.NeonAnimatableBehavior],
+      properties: {
+        animationConfig: {
+          value: function() {
+            return {
+              'entry': {
+                name: 'transform-animation',
+                node: this.$.contactPage,
+				transformOrigin: '100%',
+				transformFrom: 'translateY(50%)',
+				transformTo: 'translateY(0%)',
+				timing: {
+					delay: 280,
+					duration: 500	
+	  			}                    
+              },
+              'exit': {
+                name: 'fade-out-animation',
+                node: this
+              }
+            }
+          }
+        }
+      }
+    });
+	</script>
+</dom-module>

@@ -1,9 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-	<title>Henry Lim</title>
-</head>
-<body>
-	Hello World!!!!!!
-</body>
+	<head>
+		<title>Henry Lim</title>
+        <meta name="description" content="Web Developer. HTML, JS, CSS, Polymer, Firebase, Python. Computer Science Student at Multimedia University, Malaysia." />
+        <meta property="og:image" content="https://limhenry.xyz/img/screenshot.png" />
+        <meta property="og:title" content="Henry Lim" />
+        <meta property="og:description" content="Web Developer. HTML, JS, CSS, Polymer, Firebase, Python. Computer Science Student at Multimedia University, Malaysia." />        
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#0C3644">
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js" async></script>
+		<link rel="import" id="bundle" href="elements.html">
+        <link rel="import" href="home-page.html">
+        <link rel="import" href="project-page.html">
+        <link rel="import" href="contact-page.html">
+        <link rel="import" href="about-page.html">
+        <link rel="import" href="more-page.html">
+        <link rel="import" href="footer-page.html">
+        <link rel="import" href="barcamp-page.html">
+        <link rel="import" href="bower_components/platinum-sw/platinum-sw-cache.html">
+        <link rel="import" href="bower_components/platinum-sw/platinum-sw-register.html">
+        <meta name="google-site-verification" content="_gmppZUCX5fXvO2S_bm-yvEWUEHedF45peMgiarQhdg" />
+		<style>
+			.temp-domain-notice{
+				height: 74px !important;
+				background:#4CAF50 !important;
+			}
+			.temp-domain-notice #topBar{
+				height: 74px;
+			}
+		</style>
+		<style>
+        body{font-family:Roboto;margin:0;background-color:#011A21;color:#fff}.paper-tab-0 paper-ripple.paper-tab{color:#9CF1EE}paper-card *,paper-item{color:#000}.paper-tabs-0 #selectionBar.paper-tabs{background-color:#7AC3C1}.toolbar-tools.paper-toolbar>.title{margin-left:24px}iron-pages div,neon-animated-pages{text-align:center}.aboutPage h1,.contactPage h1,.homePage h1,.morePage h1,.projectPage h1,h2,h3,paper-toolbar h2{font-weight:300}#cardDiv{justify-content:center;margin:0 auto;width:90%;display:flex;flex-flow:row wrap}.card-content{flex:1;margin-bottom:auto}.card-actions{margin-top:auto}.homePage paper-card,.projectPage paper-card{flex:1;margin:12px}paper-card{max-width:400px;min-width:300px;display:flex;flex-direction:column}paper-card h2{font-weight:400}.footer{background-color:#0C3644;padding:24px;margin-top:86px;font-weight:300}.footer div{display:block;margin:0 auto;max-width:860px}.iron-image-0 #img.iron-image{width:80%;margin:24px auto 0}#profilePic{max-width:250px;width:18%;margin-bottom:6px}@media screen and (max-width:860px){paper-card{min-width:250px}#profilePic{width:25%}}@media screen and (max-width:480px){#cardDiv{flex-direction:column;width:95%}paper-card{min-width:0}#profilePic{width:50%}}
+		</style>
+		<style is="custom-style">
+			.self-end{@apply(--layout-self-end);}paper-toolbar{--paper-toolbar-background: #0C3644;}
+		</style>
+	</head>
+	<body unresolved class="fullbleed layout vertical">
+		<template is="dom-bind" id="app">
+    <paper-toast id="errorToast"></paper-toast>
+    <iron-media-query query="(min-width: 600px)" query-matches="{{wide}}"></iron-media-query>
+    <div class="item" wide-layout$="{{wide}}">
+        <template is="dom-if" if="{{!wide}}">
+            <paper-drawer-panel id="PaperDrawerPanel">
+                <paper-header-panel drawer>               
+                    <paper-toolbar>
+                        <div>limhenry.xyz</div>
+                    </paper-toolbar>
+                    <div>
+                        <paper-menu selected="{{selected}}">
+                            <paper-item on-click="abu">Home</paper-item>
+                            <paper-item on-click="abu">Project</paper-item>
+                            <paper-item on-click="abu">About</paper-item>
+                            <paper-item on-click="abu">Contact</paper-item>
+                            <paper-item on-click="abu">More</paper-item>
+                            <paper-item on-click="abu">BarCamp</paper-item>
+                        </paper-menu>
+                    </div>
+                </paper-header-panel>
+                <paper-header-panel main>
+					<paper-toolbar class="temp-domain-notice" id="temp-domain-notice">
+						<div class="title" style="font-size:1em; white-space:inherit">
+							Notice: We have moved to the new domain: <b>limhenry.xyz</b>
+						</div>
+						<paper-icon-button icon="close" onClick="removedomainnoticemobile()"></paper-icon-button>
+					</paper-toolbar>                 
+                    <paper-toolbar>
+                        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+                        <div>limhenry.xyz</div>
+                    </paper-toolbar>
+                    <neon-animated-pages selected="{{selected}}">
+                        <home-page></home-page>
+                        <project-page></project-page>
+                        <about-page></about-page>
+                        <contact-page></contact-page>
+                        <more-page></more-page>
+                        <barcamp-page></barcamp-page>
+                    </neon-animated-pages>
+                </paper-header-panel>
+            </paper-drawer-panel>
+        </template>
+        <template is="dom-if" if="{{wide}}">
+        	<paper-toolbar style="background:#4CAF50" id="temp-domain-notice-full">
+        		<div class="title" style="font-size:1em">
+        			Notice: We have moved to the new domain: <b>limhenry.xyz</b>
+        		</div>
+        		<paper-icon-button icon="close" onClick="removedomainnotice()"></paper-icon-button>
+        	</paper-toolbar>
+            <paper-toolbar class="tall">
+                <div class="title middle">
+                    <h2>limhenry.xyz</h2></div>
+                <paper-tabs selected="{{selected}}" class="bottom self-end" style="width:580px">
+                    <paper-tab>HOME</paper-tab>
+                    <paper-tab>PROJECT</paper-tab>
+                    <paper-tab>ABOUT</paper-tab>
+                    <paper-tab>CONTACT</paper-tab>
+                    <paper-tab>MORE</paper-tab>
+                    <paper-tab>BARCAMP</paper-tab>
+                </paper-tabs>
+                <div class="bottom flex"></div>
+            </paper-toolbar>
+            <neon-animated-pages selected="{{selected}}">
+                <home-page></home-page>
+                <project-page></project-page>
+                <about-page></about-page>
+                <contact-page></contact-page>
+                <more-page></more-page>
+                <barcamp-page></barcamp-page>
+            </neon-animated-pages>
+        </template>
+    </div>
+    <platinum-sw-register auto-register clients-claim skip-waitingz>
+        <platinum-sw-cache default-cache-strategy="fastest"></platinum-sw-cache>
+    </platinum-sw-register>
+</template>
+		<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			  ga('create', 'UA-57741199-1', 'auto');
+			  ga('send', 'pageview');
+		</script>
+		<script>
+			document.addEventListener('WebComponentsReady', function () {
+            console && console.log("%cWelcome to limhenry.xyz!\n%cPolymer Polymer Polymer!\n%cThe Future is here!",
+                       "font-size:1.8em;color:#0C3644;", "color:#d61a7f;font-size:1.2em;", "color:#d61a7f;font-size:1em;");                
+			  var template = document.querySelector('template[is="dom-bind"]');
+			  template.selected = 0; // selected is an index by default
+			  template.abu = function(){
+			  	var drawer = document.getElementById("PaperDrawerPanel");
+			  	var main = document.getElementById("mainContainer");
+			  	drawer.togglePanel();
+			  	main.scrollTop = 0;
+			  }
+			});
+
+			//domain moved to limhenry.xyz
+			function removedomainnoticemobile(){
+				document.getElementById("temp-domain-notice").remove();
+			}
+			function removedomainnotice(){
+				document.getElementById("temp-domain-notice-full").remove();
+			}			
+		</script>
+
+
+	</body>
 </html>

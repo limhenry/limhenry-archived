@@ -1,0 +1,52 @@
+<dom-module id="more-page">
+	<template>
+		<style>
+			:host {
+				display: block;
+        height: 100%;
+			}
+      .morePage{
+        padding: 0 24px;
+      }
+		</style>
+    <div class="morePage" id="morePage">
+      <br><h1>About This Site</h1>
+          <br>
+      <p>This site is hosted on GitHub Pages for FREE !!!</p>
+      <p>The whole site is built with Polymer.</p>
+      <p>This page is encrypted with HTTPS thanks to Cloudflare (yes, it's free!)</p>
+      <p>and it's using the latest HTTP/2 (h2) protocol.</p>
+      <br><p><em>Did you know this site works offline too?</em></p>
+    </div>
+    <footer-page></footer-page>		
+	</template>
+	<script>
+    Polymer({
+      is: 'more-page',
+      behaviors: [Polymer.NeonAnimatableBehavior],
+      properties: {
+        animationConfig: {
+          value: function() {
+            return {
+              'entry': {
+                name: 'transform-animation',
+                node: this.$.morePage,
+				transformOrigin: '100%',
+				transformFrom: 'translateY(50%)',
+				transformTo: 'translateY(0%)',
+				timing: {
+					delay: 280,
+					duration: 500	
+	  			}                    
+              },
+              'exit': {
+                name: 'fade-out-animation',
+                node: this
+              }
+            }
+          }
+        }
+      }
+    });
+	</script>
+</dom-module>
