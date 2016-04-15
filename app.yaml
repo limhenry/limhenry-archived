@@ -8,27 +8,22 @@
   - url: /
     static_files: public/index.html
     upload: public/index.html
-    secure: always
 
   - url: /index.html
     static_files: public/index.html
     upload: public/index.html
-    secure: always
 
   - url: /project.*
     static_files: public/index.html
     upload: public/index.html
-    secure: always
 
   - url: /contact.*
     static_files: public/index.html
     upload: public/index.html
-    secure: always
 
   - url: /resources.*
     static_files: public/index.html
     upload: public/index.html        
-    secure: always
 
   - url: /bower_components/(.+)
     static_files: public/bower_components/\1
