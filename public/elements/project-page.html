@@ -59,7 +59,8 @@
         }
         
         #speaker-name {
-            font-weight: 600;
+            color: rgba(0,0,0,0.8);
+            font-weight: 500;
             margin: 0;
             font-size: 22px;
             padding-bottom: 8px;
@@ -172,7 +173,7 @@
             <iron-media-query query="min-width: 658px" query-matches="{{largeScreen}}" on-query-matches-changed="_onQueryChanged"></iron-media-query>
             <iron-ajax auto url="/data/project.json" handle-as="json" last-response="{{projectsData}}"></iron-ajax>
             <div id="speakerPage">
-                <div id=speaker-container>
+                <div id="speaker-container">
                     <div id="speaker-card">
                         <template is="dom-repeat" items="{{projectsData}}" id="speaker_dom" on-dom-change="_onDomChange">
                             <paper-card image="{{item.image}}" class="animatedCard">
@@ -236,11 +237,11 @@
                         'entry': [{
                             name: 'cascaded-animation',
                             animation: 'transform-animation',
-                            transformFrom: 'translateY(100%)',
+                            transformFrom: 'translateY(300%)',
                             transformTo: 'none',
                             nodeDelay: 90,
                             timing: {
-                                delay: 200,
+                                delay: 300,
                             }
                         }],
                         'exit': [{

@@ -1,15 +1,262 @@
 <dom-module id="resources-page">
-	<template>
-		<style>
-			:host {
-				display: block;
-			}
-		</style>
-		resources
-	</template>
-	<script>
-		Polymer({
-			is: 'resources-page'
-		});
-	</script>
+    <template>
+        <style>
+        :host {
+            display: block;
+        }
+        
+        h1 {
+            margin-top: 64px;
+            font-weight: 400;
+            margin-bottom: 28px;
+            font-size: 1.8em;
+        }
+        
+        h2 {
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        
+        #avatar-card {
+            background: white;
+            color: var(--secondary-text-color);
+            max-width: 450px;
+            margin: 96px auto 0 auto;
+            display: block;
+            text-align: center;
+            position: relative;
+            line-height: 24px;
+        }
+        
+        #avatar {
+            line-height: 104px;
+            border-radius: 50%;
+            height: 104px;
+            width: 104px;
+            top: calc(-104px / 2);
+            position: absolute;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background-color: var(--primary-background-color);
+        }
+        
+        #avatar iron-icon {
+            color: white;
+            width: 56px;
+            height: 56px;
+        }
+        
+        #avatar-card p {
+            text-align: center;
+            padding: 4px 24px;
+        }
+        
+        .row {
+            max-width: 800px;
+            margin: 12px auto;
+            padding: 8px;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -ms-flex-direction: row;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-wrap: wrap;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            text-align: left;
+            justify-content: center;
+        }
+        
+        #row-card {
+            width: 350px;
+            margin: 12px 6px;
+            padding: 0 12px 6px 12px;
+            line-height: 24px;
+            flex-direction: column;
+            display: flex;
+            flex: 1;
+            max-width: 350px;
+            min-width: 350px;
+        }
+
+        paper-card{
+        	background-color: var(--tertiary-background-color);
+        }        
+        
+        paper-card a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        
+        ul {
+            list-style-type: square;
+            margin-left: -12px;
+        }
+        
+        li {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        @media screen and (max-width: 840px) {
+            h1 {
+                margin-top: 56px;
+                margin-bottom: 16px;
+            }
+            .row {
+                display: block;
+                margin: 0 auto;
+                padding: 0;
+            }
+            #row-card {
+                max-width: 450px;
+                width: 100%;
+                margin: 12px auto;
+            }
+            #avatar {
+                line-height: 96px;
+                height: 96px;
+                width: 96px;
+                top: calc(-96px / 2);
+            }
+            #avatar iron-icon {
+                width: 48px;
+                height: 48px;
+            }
+            #avatar-card {
+                margin-top: 64px;
+            }
+            #avatar-card p {
+                padding: 4px 12px;
+            }
+            ul {
+                margin-left: -12px;
+            }
+            li {
+                margin-bottom: 12px;
+            }
+        }
+        </style>
+        <div id="resourcesPage">
+            <paper-card elevation="1" id="avatar-card">
+                <div id="avatar">
+                    <iron-icon icon="folder-shared"></iron-icon>
+                </div>
+                <div class="card-content">
+                    <h1>Resources</h1>
+                    <p>Sharing is caring.
+                        <br>Here are some useful resources you might like it</p>
+                </div>
+            </paper-card>
+            <div class="row">
+            	<!-- TODO: Move this to a JSON file -->
+                <paper-card elevation="1" id="row-card">
+                    <div class="card-content">
+                        <h2>Slack/Chat Group</h2>
+                        <ul>
+                            <li><a href="http://polymer-slack.herokuapp.com/" target="_blank">Polymer Slack</a></li>
+                            <li><a href="https://chromiumdev-slack.herokuapp.com" target="_blank">Chromiumdev Slack</a></li>
+                            <li><a href="https://firebase-community.appspot.com/" target="_blank">Firebase Community Slack</a></li>
+                        </ul>
+                    </div>
+                </paper-card>
+                <paper-card elevation="1" id="row-card">
+                    <div class="card-content">
+                        <h2>Polymer</h2>
+                        <ul>
+                            <li><a href="https://www.polymer-project.org" target="_blank">Project Polymer</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLOU2XLYxmsII5c3Mgw6fNYCzaWrsM3sMN" target="_blank">Polycasts with Rob Dodson</a></li>
+                            <li><a href="https://codelabs.developers.google.com/polytechnic" target="_blank">Polytechnic Codelabs</a></li>
+                            <li><a href="https://github.com/Polymer/polymer/wiki/Who's-using-Polymer%3F" target="_blank">Who's using Polymer?</a></li>
+                        </ul>
+                    </div>
+                </paper-card>
+                <paper-card elevation="1" id="row-card">
+                    <div class="card-content">
+                        <h2>Design</h2>
+                        <ul>
+                            <li><a href="https://design.google.com/" target="_blank">Google Design</a></li>
+                            <li><a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">Material Design</a></li>
+                            <li><a href="https://www.google.com/design/spec/style/color.html#color-color-palette" target="_blank">Material Design Color Palette</a></li>
+                        </ul>
+                    </div>
+                </paper-card>
+                <paper-card elevation="1" id="row-card">
+                    <div class="card-content">
+                        <h2>Web Development</h2>
+                        <ul>
+                            <li><a href="https://developers.google.com/web/" target="_blank">Google Developers</a></li>
+                            <li><a href="https://developers.google.com/web/progressive-web-apps?hl=en" target="_blank">Progressive Web Apps</a></li>
+                            <li><a href="https://developers.google.com/web/fundamentals/?hl=en" target="_blank">Web Fundamentals</a></li>
+                            <li><a href="https://www.udacity.com/course/offline-web-applications--ud899" target="_blank">Offline Web Applications (Udacity)</a></li>
+                        </ul>
+                    </div>
+                </paper-card>
+                <paper-card elevation="1" id="row-card">
+                    <div class="card-content">
+                        <h2>Firebase</h2>
+                        <ul>
+                            <li><a href="firebase.com" target="_blank">Firebase</a></li>
+                            <li><a href="https://www.udacity.com/course/firebase-essentials-for-android--ud009" target="_blank">Firebase Essentials For Android (Udacity)</a></li>
+                        </ul>
+                    </div>
+                </paper-card>                
+            </div>
+        </div>
+    </template>
+    <script>
+    Polymer({
+        is: 'resources-page',
+
+        behaviors: [
+            Polymer.NeonAnimatableBehavior,
+            Polymer.NeonSharedElementAnimatableBehavior,
+            Polymer.NeonAnimationRunnerBehavior
+        ],
+
+        properties: {
+            animationConfig: {
+                value: function() {
+                    return {
+                        'entry': [{
+                            name: 'transform-animation',
+                            node: this.$.resourcesPage,
+                            transformOrigin: '100%',
+                            transformFrom: 'translateY(100%)',
+                            transformTo: 'translateY(0%)',
+                            timing: {
+                                delay: 400,
+                                duration: 800
+                            }
+                        }],
+                        'exit': [{
+                            name: 'fade-out-animation',
+                            node: this,
+                            timing: {
+                                delay: 100,
+                                duration: 500
+                            }
+                        }, {
+                            name: 'transform-animation',
+                            node: this.$.resourcesPage,
+                            transformOrigin: '100%',
+                            transformFrom: 'translateY(0%)',
+                            transformTo: 'translateY(100%)',
+                            timing: {
+                                delay: 0,
+                                duration: 800
+                            }
+                        }],
+                    }
+                }
+            },
+
+        },
+    });
+    </script>
 </dom-module>

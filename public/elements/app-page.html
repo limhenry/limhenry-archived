@@ -5,15 +5,24 @@
             display: block;
             --primary-background-color: #E91E63;
             --secondary-background-color: #ECEFF1;
+            --tertiary-background-color: #F50057;
             --highlight-background-color: #E64A19;
-            --primary-text-color: rgba(255,255,255,0.9);
-            --secondary-text-color: rgba(0,0,0,0.9);
+            --primary-text-color: rgba(255, 255, 255, 0.9);
+            --secondary-text-color: rgba(0, 0, 0, 0.9);
             --paper-tab-ink: #fff;
             color: var(--primary-text-color);
         }
         
         app-toolbar {
             background: var(--primary-background-color);
+            background: -moz-linear-gradient(45deg, #ee3945 0%, #dc1b7c 36%, #dc1b7c 92%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(45deg, #ee3945 0%, #dc1b7c 36%, #dc1b7c 92%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(45deg, #ee3945 0%, #dc1b7c 36%, #dc1b7c 92%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ee3945', endColorstr='#dc1b7c', GradientType=1);
+            /* IE6-9 fallback on horizontal gradient */
             height: 200px;
             /*-webkit-transition: width 300ms ease-in-out, height 300ms ease-in-out;
             -moz-transition: width 300ms ease-in-out, height 300ms ease-in-out;
@@ -30,7 +39,7 @@
         paper-tabs {
             margin-left: 16px;
             width: 450px;
-            --paper-tabs-selection-bar-color: #fff ;
+            --paper-tabs-selection-bar-color: #fff;
         }
         
         paper-toolbar {
@@ -40,14 +49,17 @@
         paper-item {
             color: var(--secondary-text-color);
         }
+        
         @media screen and (max-width: 840px) {
             app-toolbar {
                 height: 64px;
+                background: var(--primary-background-color);
             }
             app-toolbar [title] {
                 font-size: 20px;
-                font-weight: 300;
+                font-weight: 400;
                 margin-left: 12px;
+                color: white;
             }
         }
         </style>
@@ -73,23 +85,35 @@
                 <app-drawer id="drawer"></app-drawer>
             </template>
             <app-header-layout>
-                <app-header effects="waterfall fade-background">
-                    <app-toolbar wide-layout$="{{wide}}">
-                        <template is="dom-if" if="{{!wide}}">
-                            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
-                            <div title>limhenry.xyz</div>
-                        </template>
-                        <template is="dom-if" if="{{wide}}">
-                            <div title>limhenry.xyz</div>
-                            <paper-tabs attr-for-selected="id" selected="{{data.page}}" bottom-item>
-                                <paper-tab id="">HOME</paper-tab>
-                                <paper-tab id="project">PROJECT</paper-tab>
-                                <paper-tab id="contact">CONTACT</paper-tab>
-                                <paper-tab id="resources">RESOURCES</paper-tab>
-                            </paper-tabs>
-                        </template>
-                    </app-toolbar>
-                </app-header>
+                <template is="dom-if" if="{{!wide}}">
+                    <app-header reveals effects="waterfall fade-background">
+                        <app-toolbar wide-layout$="{{wide}}">
+                            <template is="dom-if" if="{{!wide}}">
+                                <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+                                <div title>limhenry.xyz</div>
+                            </template>
+                        </app-toolbar>
+                    </app-header>
+                </template>
+                <template is="dom-if" if="{{wide}}">
+                    <app-header effects="waterfall fade-background">
+                        <app-toolbar wide-layout$="{{wide}}">
+                            <template is="dom-if" if="{{!wide}}">
+                                <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+                                <div title>limhenry.xyz</div>
+                            </template>
+                            <template is="dom-if" if="{{wide}}">
+                                <div title>limhenry.xyz</div>
+                                <paper-tabs attr-for-selected="id" selected="{{data.page}}" bottom-item>
+                                    <paper-tab id="">HOME</paper-tab>
+                                    <paper-tab id="project">PROJECT</paper-tab>
+                                    <paper-tab id="contact">CONTACT</paper-tab>
+                                    <paper-tab id="resources">RESOURCES</paper-tab>
+                                </paper-tabs>
+                            </template>
+                        </app-toolbar>
+                    </app-header>
+                </template>
                 <div>
                     <carbon-location route="{{route}}"></carbon-location>
                     <carbon-route route="{{route}}" pattern="/:page" data="{{data}}"></carbon-route>
@@ -124,7 +148,7 @@
                     this.set('route.path', '/');
                 }
             }, 1);
-        },        
+        },
     });
     </script>
 </dom-module>

@@ -7,10 +7,10 @@
         
         #homePage {}
         
-        paper-card {
+        #avatar-card {
             background: white;
             color: var(--secondary-text-color);
-            max-width: 400px;
+            max-width: 450px;
             margin: 96px auto 0 auto;
             display: block;
             text-align: center;
@@ -25,7 +25,7 @@
             font-size: 1.8em;
         }
         
-        paper-card p {
+        #avatar-card p {
             text-align: center;
             padding: 4px 24px;
         }
@@ -39,51 +39,140 @@
             right: 0;
             left: 0;
             margin: 0 auto;
-            background-color: var(--primary-background-color);
+            background-color: var(--tertiary-background-color);
+        }
+        
+        .row {
+            max-width: 800px;
+            margin: 12px auto;
+            padding: 8px;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -ms-flex-direction: row;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-wrap: wrap;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            text-align: left;
+            justify-content: center;
+        }
+        
+        paper-card {
+            background-color: var(--tertiary-background-color);
+        }
+        
+        #row-card {
+            width: 350px;
+            margin: 12px 6px;
+            padding: 0 12px;
+            line-height: 24px;
+            flex-direction: column;
+            display: flex;
+            flex: 1;
+            max-width: 350px;
+            min-width: 350px;
+        }
+        
+        h2 {
+            font-weight: 400;
+            margin-bottom: 28px;
+        }
+        
+        ul {
+            list-style-type: square;
+            margin-left: -12px;
+        }
+        
+        li {
+            margin-bottom: 16px;
+            font-size: 16px;
         }
         
         .card-content {}
         
         @media screen and (max-width: 840px) {
-            paper-card {
+            paper-card .card-content {
+                padding: 16px 12px;
+            }
+            .row {
+                max-width: 450px;
+                display: block;
+                margin: 0 auto;
+                padding: 0;
+            }
+            #row-card {
+                min-width: 100%;
+                max-width: 450px;
+                width: 100%;
+                margin: 12px auto;
+            }
+            #avatar-card {
                 margin-top: 64px;
             }
-            paper-card p {
+            #avatar-card p {
                 padding: 4px 12px;
             }
             h1 {
                 margin-top: 56px;
                 margin-bottom: 16px;
             }
+            h2 {
+                margin-top: 16px;
+            }
             #avatar {
                 height: 96px;
                 width: 96px;
                 top: calc(-96px / 2);
             }
+            ul {
+                margin-left: -12px;
+            }
+            li {
+                margin-bottom: 12px;
+            }
         }
         </style>
         <div id="homePage">
-            <paper-card elevation="1">
+            <paper-card elevation="1" id="avatar-card">
                 <iron-image id="avatar" src="/img/profile.png" preload sizing="cover"></iron-image>
                 <div class="card-content">
                     <h1>Henry Lim</h1>
-                    <p>I am a front-end web developer. Passionate about Polymer, Firebase and Google. Student at Multimedia University, Malaysia. Google Developer Group Kuala Lumpur.</p>
+                    <p>I am a front-end web developer
+                        <br>Passionate about Polymer, Firebase and Google
+                        <br>Student at Multimedia University, Malaysia
+                        <br>Google Developer Group Kuala Lumpur</p>
                 </div>
             </paper-card>
-            <paper-card elevation="1">
-                <iron-image id="avatar" src="/img/profile.png" preload sizing="cover"></iron-image>
-                <div class="card-content">
-                    <h1>Henry Lim</h1>
-                    <p>I am a front-end web developer.Love Polymer, Firebase and Google. Student at Multimedia University, Malaysia. Google Developer Group Kuala Lumpur.</p>
-                </div>
-            </paper-card>
-            <paper-card elevation="1">
-                <iron-image id="avatar" src="/img/profile.png" preload sizing="cover"></iron-image>
-                <div class="card-content">
-                    <h1>Henry Lim</h1>
-                    <p>I am a front-end web developer.Love Polymer, Firebase and Google. Student at Multimedia University, Malaysia. Google Developer Group Kuala Lumpur.</p>
-                </div>
-            </paper-card>                        
+            <div class="row">
+                <paper-card elevation="1" id="row-card">
+                    <div class="card-content">
+                        <h2>My Skills</h2>
+                        <ul>
+                            <li>Polymer</li>
+                            <li>Firebase</li>
+                            <li>HTML/CSS/JS</li>
+                            <li>Python</li>
+                            <li>Web Design</li>
+                            <li>Eat/Sleep/Travel</li>
+                            <li>Piano: Abrsm Grade 8 <i>(Yes, seriously!)</i></li>
+                        </ul>
+                    </div>
+                </paper-card>
+                <paper-card elevation="1" id="row-card">
+                    <div class="card-content">
+                        <h2>Study/Research Area</h2>
+                        <ul>
+                            <li>Web Components/Polymer</li>
+                            <li>Material Design</li>
+                            <li>Progressive Web App</li>
+                            <li>Front-End Development</li>
+                            <li>Android</li>
+                        </ul>
+                    </div>
+                </paper-card>
+            </div>
         </div>
     </template>
     <script>
@@ -101,17 +190,10 @@
                 value: function() {
                     return {
                         'entry': [{
-                            name: 'fade-in-animation',
-                            node: this,
-                            timing: {
-                                delay: 200,
-                                duration: 500
-                            }
-                        }, {
                             name: 'transform-animation',
                             node: this.$.homePage,
                             transformOrigin: '100%',
-                            transformFrom: 'translateY(50%)',
+                            transformFrom: 'translateY(100%)',
                             transformTo: 'translateY(0%)',
                             timing: {
                                 delay: 400,
@@ -130,9 +212,9 @@
                             node: this.$.homePage,
                             transformOrigin: '100%',
                             transformFrom: 'translateY(0%)',
-                            transformTo: 'translateY(50%)',
+                            transformTo: 'translateY(100%)',
                             timing: {
-                                delay: 100,
+                                delay: 0,
                                 duration: 800
                             }
                         }],
@@ -140,7 +222,7 @@
                 }
             },
 
-        },        
+        },
     });
     </script>
 </dom-module>
