@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Rejected.us</title>
+
+		<meta name="theme-color" content="#3f51b5">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		
+		<script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" async></script>
+
+		<link rel="import" href="/bower_components/paper-card/paper-card.html">
+		<link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html">
+		<link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+		<link rel="import" href="/bower_components/paper-header-panel/paper-header-panel.html">	
+
+		<link rel="import" href="/bower_components/iron-ajax/iron-ajax.html">
+		<link rel="import" href="/bower_components/iron-icon/iron-icon.html">
+		<link rel="import" href="/bower_components/iron-image/iron-image.html">
+		<link rel="import" href="/bower_components/iron-icons/iron-icons.html">
+		<link rel="import" href="/bower_components/iron-icons/social-icons.html">
+		<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+		<link rel="import" href="/bower_components/iron-flex-layout/classes/iron-flex-layout.html">		
+		
+		<link rel="import" href="/rejected/rejected-card.html">
+		<link rel="import" href="/rejected/custom-icon.html">
+
+		<style>
+			body{
+				margin: 0;
+				font-family: Roboto;
+				background: #E9EAED;
+			}
+			paper-card{
+				width: 90%;
+				display: block;
+				margin: 0 auto;
+				margin-top: 12px;
+				margin-bottom: 24px;
+				text-align: center;
+				max-width: 460px;
+			    padding-top: 48px;
+			}
+			.h4, .h5, .h6, h4, h5, h6{
+			    margin-top: 10px;
+			    margin-bottom: 10px;				
+			}
+
+			a{
+				color: #2196F3;
+				text-decoration: none;
+			}
+
+			@media screen and (max-width: 980px) {
+				paper-card{
+					max-width: 360px;
+				}
+			}
+			</style>
+			<style is="custom-style">
+				.paper-header:not([style-scope]):not(.style-scope){
+					text-align: center;
+				}
+				.paper-header {
+					height: 60px;
+					font-size: 16px;
+					line-height: 60px;
+					padding: 0 10px;
+					color: white;
+					transition: height 0.2s;
+				}
+
+				.paper-header.medium-tall {
+					height: 142px;
+					line-height: 60px;
+					text-align: center;
+				}
+				.blue{
+					background: #3f51b5;
+				}
+
+				.paper-header br{
+					line-height: 24px;
+				}
+				.header-title{
+					font-size: 28px;
+					font-weight: 500;			
+				}
+				.header-description{
+					font-size: 16px;
+					line-height: 21px;
+					color: #E0E0E0;
+					margin-top: -52px;
+				}
+				.header-description a{
+					color: #FF9800;
+					text-decoration: none;
+				}
+				.header-description a:hover{
+					color: #FFC107;
+					text-decoration: none;
+				}				
+			</style>
+			
+	</head>
+	<body unresolved class="fullbleed layout vertical">
+		<template is="dom-bind" id="app">
+
+		<paper-header-panel mode="waterfall-tall" tall-class="medium-tall" class="flex blue">
+			<div class="paper-header">
+				<div class="header-title">They Rejected Us.</div><br>
+				<div class="header-description">Everyone’s been rejected - these are our stories. <br>To add your own, please <a href="https://github.com/jkup/rejected.us/issues/new">open an issue</a> or tweet me at <a href="https://twitter.com/jkup">@jkup</a></div>
+			</div>
+			
+			<rejected-card></rejected-card>
+			
+		</paper-header-panel>
+
+		<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			  ga('create', 'UA-57741199-1', 'auto');
+			  ga('send', 'pageview');
+		</script>
+	</body>
+</html>

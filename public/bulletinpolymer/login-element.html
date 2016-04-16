@@ -1,0 +1,28 @@
+<dom-module id="login-element">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+		</style>
+			<paper-card id="login-card">
+				<div class="card-content" style="padding:12px">
+					<img src="https://limhenry.me/bulletin/img/logo.png" height="60%" width="60%">
+					<h1>MMU Bulletin</h1>
+					<p>MMU Bulletin is MMU Bulletin Board with Material Design.</p>
+					<p>Login with your MMU Google Account (@student.mmu.edu.my)</p>
+				</div>
+				<div class="card-actions">
+					<button type="button" class="button button-large google-login" id="login-google" onClick="app.login()">
+						<img src="src/google_whiteg.png">
+						<span>Sign in with Google</span>
+					</button>
+				</div>	    
+			</paper-card>		
+	</template>
+	<script>
+		Polymer({
+			is: 'login-element'
+		});
+	</script>
+</dom-module>

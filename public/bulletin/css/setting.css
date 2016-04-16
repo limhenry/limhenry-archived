@@ -1,0 +1,32 @@
+body{
+  background: rgba(245, 245, 245, 0.4);
+}
+.nav-wrapper{
+  padding-left: 12px;
+  font-size: 1.5rem;
+  background-color: #2196F3
+}
+
+.card-panel{
+    margin: 2.5rem 0 2.5rem 0;
+}
+
+h5{
+  margin: 0.656rem 0 0.656rem 0;
+}
+@media only screen and (max-width: 992px){
+  .container{
+    padding: 0;
+    width: 100%;
+}
+  .card-panel{
+    margin: 0;
+  }
+  .toast{
+    margin-top: 0;
+    word-break: break-all;
+    height: auto;
+      line-height: 24px;
+  padding: 12px 24px;
+  }
+}

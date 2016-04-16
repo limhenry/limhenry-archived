@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+	<head>
+		<title>MMU Bulletin</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#147BCC">
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js" async></script>
+		<link rel="import" href="elements.html">
+		<link rel="import" href="loading-element.html">
+		<link rel="import" href="bulletin-element.html">
+		<link rel="import" href="login-element.html">	
+		<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+
+		<style>
+			body{
+				margin: 0;
+				font-family: Roboto;
+				background-color: #ECEFF1;
+			}
+			h1, h2, h3, h4, h5, h6, p, a, span{
+				overflow-wrap: break-word;
+			}
+			a{
+			    font-weight: 500;
+			    color: #3E3E3E;
+			    text-decoration: none;
+			    font-size: 0.9em;				
+			}
+			#dropShadow.has-shadow.paper-header-panel {
+				opacity: 0;
+			}
+			paper-toolbar.paper-toolbar-0.tall{
+				margin-bottom: -174px;
+				height: 420px;
+				background-color: #2196F3;
+			}
+			.heading {
+				width: 100%;
+				height: auto;
+				font-size: 1em;
+				text-align: left;
+				padding: 1rem 1.4rem;
+				line-height: 2rem;
+				font-weight: 400;
+				display: block;
+				cursor: pointer;
+				background-color: #fff;
+				border: 0px;
+				border-bottom: 1px solid #ddd;  
+			}
+			iron-collapse{
+				background-color: #FAFAFA;
+				color: #212121;
+				padding: 2rem;
+				border-bottom: 1px solid #DDDDDD;
+			}
+			paper-card .card-content{
+				padding: 0;
+			}
+			#loadingPage{
+				width: 100%;
+				height: 100%;
+				background-color: #2196F3;
+				position: absolute;
+			}
+			#loadingPage img{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -60px;
+				margin-top: -60px;
+			}
+			#login-card{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -250px;
+				margin-left: -180px;
+				width: 360px;
+				height: 500px;
+				text-align: center;			
+			}
+			.content p{
+				margin: 0;
+				padding: 0 0 2rem 0;
+				line-height: 2em;
+				font-family: Roboto;
+				font-size: 0.9em;
+				font-weight: 400;
+			}
+			.google-login{
+				font-family: Roboto,sans-serif;
+				font-weight: 500;
+				font-size: 1.2em;
+				border-radius: 2px;
+				width: 100%;
+				padding: 12px 0;
+				border: none;
+				background: #4285f4;
+				color: #fff;
+				text-shadow: none;	
+				cursor: pointer;
+			}
+			.google-login img{
+			    height: 22px;
+			    margin: 5px;
+			    margin-top: 3px;
+			    vertical-align: middle;			
+			}
+			paper-card .card-actions{
+				border-top: none;
+			}
+			#appTitle{
+			    display: flex;
+			    font-size: 48px;
+			    color: #FFFFFF;
+			    position: relative;
+			    max-width: 940px;
+			    margin: 0 auto;
+			    font-family: Roboto;
+			    font-weight: 300;
+			    margin-bottom: 24px;				
+			}
+			#sidebyside{
+				display: flex;
+				margin: 0 auto;
+			}
+			#sidebyside_inner{
+				flex-direction: row;
+				display: flex;
+				 margin: 0 auto;
+
+			}			
+			#bulletin-card{
+				width: 80%;
+				max-width: 740px;
+				min-width: 740px;
+				min-height: 2px;
+				display: flex;
+				flex-direction: column;
+				margin-right: 32px;
+				margin-bottom: 32px;
+			}
+			#bulletin-filter{
+				flex-direction: column;
+				min-width: 200px;
+				height: 100%;
+				margin-bottom: 32px;
+			}
+			#bulletin-filter h4{
+			    margin: 0;
+			    font-weight: 400;
+			    font-size: 1.2em;
+			    padding: 24px 18px;
+			    border-bottom: 1px solid #ddd;
+			}
+			paper-radio-button{
+				display: block;
+			}
+			button:focus, iron-collapse:focus{
+				outline:0;
+			}
+
+			#filter-search{
+			    display: flex;
+			    margin-bottom: 24px;				
+			}
+			#filter-filter{
+				width: 100%;
+			}
+			input{
+				padding: 0 12px;
+				height: 64px;
+				width: 100%;
+				border: none;
+				font-family: Roboto;
+				font-size: 1em;				
+			}
+			neon-animated-pages{
+				position: initial;
+			}
+			@media screen and (max-width: 1280px){
+				#bulletin-card{
+					max-width: 540px;
+					min-width: 540px;
+				}				
+				#appTitle{
+				    max-width: 752px;			
+				}				
+			}
+			@media screen and (max-width: 840px){
+				#bulletin-card{
+					width: 100%;
+					max-width: none;
+				}
+				#sidebyside{
+					display: block;
+				}
+				#sidebyside_inner{
+					flex-direction: column-reverse;
+				}
+				#bulletin-filter{
+					display: none;
+				}
+			}
+		</style>
+	</head>
+	<body class="fullbleed layout vertical" unresolved>
+		<template is="dom-bind" id="app">
+			<!-- <iron-pages selected="0" class="flex"> -->
+			<neon-animated-pages class="flex" selected="0" class="flex">
+				<loading-element></loading-element>
+				<login-element></login-element>
+				<bulletin-element></bulletin-element>
+			<!-- </iron-pages> -->
+			</neon-animated-pages>
+			<script>
+				var pages = document.querySelector('neon-animated-pages');
+				pages.selected = 0;
+			</script>
+		</template>
+		<script src="main.js" async></script>
+	</body>
+</html>

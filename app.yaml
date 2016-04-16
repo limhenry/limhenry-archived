@@ -6,26 +6,26 @@
 
   handlers:
   - url: /
-    static_files: public/index.html
-    upload: public/index.html
+    static_files: public/landing/index.html
+    upload: public/landing/index.html
 
   - url: /index.html
-    static_files: public/index.html
-    upload: public/index.html
+    static_files: public/landing/index.html
+    upload: public/landing/index.html
     http_headers:
       Vary: Accept-Encoding
 
   - url: /project.*
-    static_files: public/index.html
-    upload: public/index.html    
+    static_files: public/landing/index.html
+    upload: public/landing/index.html
 
   - url: /contact.*
-    static_files: public/index.html
-    upload: public/index.html
+    static_files: public/landing/index.html
+    upload: public/landing/index.html
 
   - url: /resources.*
-    static_files: public/index.html
-    upload: public/index.html        
+    static_files: public/landing/index.html
+    upload: public/landing/index.html
 
   - url: /bower_components/(.+)
     static_files: public/bower_components/\1
@@ -34,28 +34,108 @@
       Vary: Accept-Encoding
 
   - url: /elements/(.+)
-    static_files: public/elements/\1
-    upload: public/elements/(.*)
+    static_files: public/landing/elements/\1
+    upload: public/landing/elements/(.*)
     http_headers:
       Vary: Accept-Encoding
 
   - url: /data/(.+)
-    static_files: public/data/\1
-    upload: public/data/(.*)
+    static_files: public/landing/data/\1
+    upload: public/landing/data/(.*)
 
   - url: /img/(.+)
-    static_files: public/img/\1
-    upload: public/img/(.*) 
+    static_files: public/landing/img/\1
+    upload: public/landing/img/(.*) 
 
   - url: /elements.html
-    static_files: public/elements.html
-    upload: public/elements.html       
+    static_files: public/landing/elements.html
+    upload: public/landing/elements.html       
     http_headers:
       Vary: Accept-Encoding    
           
   - url: /sw-import.js
-    static_files: public/sw-import.js
-    upload: public/sw-import.js  
+    static_files: public/landing/sw-import.js
+    upload: public/landing/sw-import.js  
+
+  - url: /bulletin
+    static_files: public/bulletin/index.html
+    upload: public/bulletin/index.html   
+
+  - url: /bulletin/
+    static_files: public/bulletin/index.html
+    upload: public/bulletin/index.html   
+
+  - url: /bulletin/(.+)
+    static_files: public/bulletin/\1
+    upload: public/bulletin/(.*)    
+
+  - url: /slide
+    static_files: public/slide/index.html
+    upload: public/slide/index.html   
+
+  - url: /slide/
+    static_files: public/slide/index.html
+    upload: public/slide/index.html   
+
+  - url: /slide/(.+)
+    static_files: public/slide/\1
+    upload: public/slide/(.*)       
+
+  - url: /rejected
+    static_files: public/rejected/index.html
+    upload: public/rejected/index.html      
+
+  - url: /rejected/
+    static_files: public/rejected/index.html
+    upload: public/rejected/index.html   
+
+  - url: /rejected/(.+)
+    static_files: public/rejected/\1
+    upload: public/rejected/(.*)      
+
+  - url: /tmwifi
+    static_files: public/tmwifi/index.html
+    upload: public/tmwifi/index.html      
+
+  - url: /tmwifi/
+    static_files: public/tmwifi/index.html
+    upload: public/tmwifi/index.html   
+
+  - url: /tmwifi/(.+)
+    static_files: public/tmwifi/\1
+    upload: public/tmwifi/(.*)           
+
+  - url: /blog/
+    static_files: public/blog/index.html
+    upload: public/blog/index.html   
+
+  - url: /blog/(.+)
+    static_files: public/blog/\1
+    upload: public/blog/(.*)          
+
+  - url: /chat
+    static_files: public/chat/index.html
+    upload: public/chat/index.html      
+
+  - url: /chat/
+    static_files: public/chat/index.html
+    upload: public/chat/index.html   
+
+  - url: /chat/(.+)
+    static_files: public/chat/\1
+    upload: public/chat/(.*)    
+
+  - url: /gtav
+    static_files: public/gtav/index.html
+    upload: public/gtav/index.html      
+
+  - url: /gtav/
+    static_files: public/gtav/index.html
+    upload: public/gtav/index.html   
+
+  - url: /gtav/(.+)
+    static_files: public/gtav/\1
+    upload: public/gtav/(.*)                  
 
   - url: /.*
     static_files: public/404.html
