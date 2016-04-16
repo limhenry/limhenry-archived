@@ -13,11 +13,11 @@
     static_files: public/index.html
     upload: public/index.html
     http_headers:
-      Vary: Accept-Encoding    
+      Vary: Accept-Encoding
 
   - url: /project.*
     static_files: public/index.html
-    upload: public/index.html
+    upload: public/index.html    
 
   - url: /contact.*
     static_files: public/index.html
