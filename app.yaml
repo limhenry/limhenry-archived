@@ -50,7 +50,9 @@
   - url: /elements.html
     static_files: public/elements.html
     upload: public/elements.html       
-    
+    http_headers:
+      Vary: Accept-Encoding    
+          
   - url: /sw-import.js
     static_files: public/sw-import.js
     upload: public/sw-import.js  
