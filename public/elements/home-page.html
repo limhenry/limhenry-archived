@@ -60,6 +60,7 @@
         }
         
         paper-card {
+            color: white;
             background-color: var(--tertiary-background-color);
         }
         
@@ -99,14 +100,14 @@
             .row {
                 max-width: 450px;
                 display: block;
-                margin: 0 auto;
+                margin: 36px auto 0 auto;
                 padding: 0;
             }
             #row-card {
                 min-width: 100%;
                 max-width: 450px;
                 width: 100%;
-                margin: 12px auto;
+                margin: 8px auto;
             }
             #avatar-card {
                 margin-top: 64px;
@@ -134,7 +135,7 @@
             }
         }
         </style>
-        <div id="homePage">
+        <div id="homePage" class="fit layout vertical">
             <paper-card elevation="1" id="avatar-card">
                 <iron-image id="avatar" src="/img/profile.png" preload sizing="cover"></iron-image>
                 <div class="card-content">
@@ -148,7 +149,7 @@
             <div class="row">
                 <paper-card elevation="1" id="row-card">
                     <div class="card-content">
-                        <h2>My Skills</h2>
+                        <h2>Skills</h2>
                         <ul>
                             <li>Polymer</li>
                             <li>Firebase</li>
@@ -204,7 +205,7 @@
                             name: 'fade-out-animation',
                             node: this,
                             timing: {
-                                delay: 200,
+                                delay: 100,
                                 duration: 500
                             }
                         }, {
@@ -223,6 +224,12 @@
             },
 
         },
+
+
+        ready: function() {
+            this.playAnimation('entry');
+        }
+
     });
     </script>
 </dom-module>

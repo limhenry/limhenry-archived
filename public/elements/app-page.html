@@ -50,6 +50,10 @@
             color: var(--secondary-text-color);
         }
         
+        neon-animated-pages .iron-selected {
+            position: static;
+        }
+        
         @media screen and (max-width: 840px) {
             app-toolbar {
                 height: 64px;
@@ -63,7 +67,7 @@
             }
         }
         </style>
-        <iron-media-query query="(min-width: 840px)" query-matches="{{wide}}"></iron-media-query>
+        <iron-media-query query="(min-width: 840px)" query-matches="{{wide}}" on-query-matches-changed="_onQueryChangeds"></iron-media-query>
         <app-drawer-layout force-narrow>
             <template is="dom-if" if="{{!wide}}">
                 <app-drawer id="drawer" swipe-open>
@@ -74,19 +78,19 @@
                         </div>
                     </paper-toolbar>
                     <iron-selector attr-for-selected="id" selected="{{data.page}}">
-                        <paper-item id="" drawer-toggle>Home</paper-item>
-                        <paper-item id="project" drawer-toggle>Project</paper-item>
-                        <paper-item id="contact" drawer-toggle>Contact</paper-item>
-                        <paper-item id="resources" drawer-toggle>Resources</paper-item>
+                        <paper-item id="" drawer-toggle on-tap="scrollTop">Home</paper-item>
+                        <paper-item id="project" drawer-toggle on-tap="scrollTop">Project</paper-item>
+                        <paper-item id="contact" drawer-toggle on-tap="scrollTop">Contact</paper-item>
+                        <paper-item id="resources" drawer-toggle on-tap="scrollTop">Resources</paper-item>
                     </iron-selector>
                 </app-drawer>
             </template>
             <template is="dom-if" if="{{wide}}">
                 <app-drawer id="drawer"></app-drawer>
             </template>
-            <app-header-layout>
+            <app-header-layout id="appHeaderLayout">
                 <template is="dom-if" if="{{!wide}}">
-                    <app-header reveals effects="waterfall fade-background">
+                    <app-header effects="waterfall fade-background">
                         <app-toolbar wide-layout$="{{wide}}">
                             <template is="dom-if" if="{{!wide}}">
                                 <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
@@ -105,16 +109,16 @@
                             <template is="dom-if" if="{{wide}}">
                                 <div title>limhenry.xyz</div>
                                 <paper-tabs attr-for-selected="id" selected="{{data.page}}" bottom-item>
-                                    <paper-tab id="">HOME</paper-tab>
-                                    <paper-tab id="project">PROJECT</paper-tab>
-                                    <paper-tab id="contact">CONTACT</paper-tab>
-                                    <paper-tab id="resources">RESOURCES</paper-tab>
+                                    <paper-tab id="" on-tap="scrollTop">HOME</paper-tab>
+                                    <paper-tab id="project" on-tap="scrollTop">PROJECT</paper-tab>
+                                    <paper-tab id="contact" on-tap="scrollTop">CONTACT</paper-tab>
+                                    <paper-tab id="resources" on-tap="scrollTop">RESOURCES</paper-tab>
                                 </paper-tabs>
                             </template>
                         </app-toolbar>
                     </app-header>
                 </template>
-                <div>
+                <div id="appContent">
                     <carbon-location route="{{route}}"></carbon-location>
                     <carbon-route route="{{route}}" pattern="/:page" data="{{data}}"></carbon-route>
                     <neon-animated-pages class="flex" attr-for-selected="id" selected="{{data.page}}">
@@ -123,6 +127,7 @@
                         <contact-page id="contact"></contact-page>
                         <resources-page id="resources"></resources-page>
                     </neon-animated-pages>
+                    <footer-page></footer-page>
                 </div>
             </app-header-layout>
         </app-drawer-layout>
@@ -149,6 +154,19 @@
                 }
             }, 1);
         },
+        _onQueryChangeds: function() {
+            var div = this.$.appContent;
+            if (this.wide == false) {
+                div.style.paddingTop = "200px";
+            }
+            if (this.wide == true) {
+                div.style.paddingTop = "0px"
+            }
+        },
+        scrollTop: function(){
+            document.body.scrollTop = "0";
+        }
+
     });
     </script>
 </dom-module>

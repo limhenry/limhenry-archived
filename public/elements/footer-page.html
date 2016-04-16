@@ -1,0 +1,92 @@
+<dom-module id="footer-page">
+    <template>
+        <style>
+        :host {
+            margin-top: 48px;
+            display: block;
+            height: 144px;
+            min-height: 144px;
+            background: #F5F5F5;
+        }
+        
+        #footerPage {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        
+        #footer-main {
+            display: inline-block;
+            padding-top: 52px;
+            margin-left: 64px;
+        }
+        
+        #footer-main h3 {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 1.5em;
+            font-weight: 400;
+            margin: 4px 0;
+        }
+        
+        #footer-main p {
+            color: rgba(0, 0, 0, 0.6);
+            margin: 0;
+            font-size: 0.8em;
+            font-weight: 400;
+        }
+        
+        #footer-sub {
+            float: right;
+            margin-right: 64px;
+            margin-top: 68px;
+            display: inline-block;
+        }
+        
+        #footer-sub a {
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.6);
+            margin-left: 18px;
+            text-decoration: none;
+        }
+        
+        @media screen and (max-width: 840px) {
+            :host {
+                margin-top: 24px;
+            }
+            ;
+            #footer-main {
+                padding-top: 28px;
+                margin-left: 24px;
+            }
+            #footer-sub {
+                float: none;
+                margin-left: 24px;
+                margin-top: 14px;
+                display: block;
+            }
+            #footer-sub a {
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.7);
+                margin-right: 18px;
+                text-decoration: none;
+                font-size: 14px;
+                margin-left: 0;
+            }
+        }
+        </style>
+        <div id="footerPage">
+            <div id="footer-main">
+                <h3>limhenry.xyz</h3>
+                <p>by Henry Lim</p>
+            </div>
+            <div id="footer-sub">
+                <a href="/LICENSE.md">License</a>
+                <a href="https://github.com/limhenry/">GitHub</a>
+            </div>
+        </div>
+    </template>
+    <script>
+    Polymer({
+        is: 'footer-page'
+    });
+    </script>
+</dom-module>
