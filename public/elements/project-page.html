@@ -280,11 +280,9 @@
         },
         _onQueryChanged: function() {
             if (this.largeScreen == true) {
-                console.log("smallScreen")
                 this.customStyle['--paper-card-header-padding'] = '20px 30% 0px 30%';
                 this.updateStyles();
             } else if (this.largeScreen == false) {
-                console.log("largeScreen")
                 this.customStyle['--paper-card-header-padding'] = '28px 36px';
                 this.updateStyles();
             }

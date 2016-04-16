@@ -49,6 +49,11 @@
     static_files: public/sw-import.js
     upload: public/sw-import.js  
 
+  - url: /.*
+    static_files: public/404.html
+    upload: public/404.html        
+
+
   skip_files:
   - ^(.*/)?app\.yaml
   - ^(.*/)?app\.yml
