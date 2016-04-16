@@ -28,6 +28,8 @@
   - url: /bower_components/(.+)
     static_files: public/bower_components/\1
     upload: public/bower_components/(.*)    
+    http_headers:
+      Vary: Accept-Encoding
 
   - url: /elements/(.+)
     static_files: public/elements/\1
