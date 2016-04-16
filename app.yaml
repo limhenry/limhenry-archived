@@ -12,6 +12,8 @@
   - url: /index.html
     static_files: public/index.html
     upload: public/index.html
+    http_headers:
+      Vary: Accept-Encoding    
 
   - url: /project.*
     static_files: public/index.html
@@ -34,6 +36,8 @@
   - url: /elements/(.+)
     static_files: public/elements/\1
     upload: public/elements/(.*)
+    http_headers:
+      Vary: Accept-Encoding
 
   - url: /data/(.+)
     static_files: public/data/\1
