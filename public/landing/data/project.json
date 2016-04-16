@@ -110,7 +110,7 @@
     "title": "Blog",
     "image": "/img/b.png",
     "description": "Blog with Material Design. Articels written by me.",
-    "link": "https://limhenry.xyz/blog/",
+    "link": "/blog/",
     "category": "Web, Polymer"
 }, {
     "title": "GTA V PC Release Countdown (Archived)",
