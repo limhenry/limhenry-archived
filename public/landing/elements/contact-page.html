@@ -80,16 +80,18 @@
             max-width: 350px;
             min-width: 350px;
         }
-        paper-card{
+        
+        paper-card {
             color: white;
-        	background-color: var(--tertiary-background-color);
+            background-color: var(--tertiary-background-color);
         }
-        paper-card a{
-        	display: block;
-        	text-decoration: none;
-        	color: white;
-        	font-weight: 400;
-        	margin-bottom: 8px;
+        
+        paper-card a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-weight: 400;
+            margin-bottom: 8px;
         }
         
         @media screen and (max-width: 840px) {
@@ -98,12 +100,13 @@
                 margin-bottom: 16px;
             }
             .row {
+                max-width: 450px;
                 display: block;
-                margin: 0 auto;
                 margin: 36px auto 0 auto;
                 padding: 0;
             }
             #row-card {
+                min-width: 100%;
                 max-width: 450px;
                 width: 100%;
                 margin: 8px auto;
@@ -229,7 +232,7 @@
 
         },
 
-        ready: function(){
+        ready: function() {
             this.playAnimation('entry');
         }
     });

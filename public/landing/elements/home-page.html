@@ -78,29 +78,34 @@
         
         h2 {
             font-weight: 400;
-            margin-bottom: 28px;
+            margin-bottom: 18px;
         }
         
-        ul {
-            list-style-type: square;
-            margin-left: -12px;
+        .item-body {
+            margin: 24px 0;
         }
         
-        li {
-            margin-bottom: 16px;
-            font-size: 16px;
+        #item-title {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+        
+        #item-desc {
+            font-size: 15px;
+            line-height: 16px;
+            font-weight: 300;
         }
         
         .card-content {}
         
         @media screen and (max-width: 840px) {
             paper-card .card-content {
-                padding: 16px 12px;
+                padding: 4px;
             }
             .row {
                 max-width: 450px;
                 display: block;
-                margin: 36px auto 0 auto;
+                margin: 4px 8px;
                 padding: 0;
             }
             #row-card {
@@ -110,10 +115,11 @@
                 margin: 8px auto;
             }
             #avatar-card {
-                margin-top: 64px;
+                margin: 64px 8px 0px 8px;
             }
             #avatar-card p {
-                padding: 4px 12px;
+                padding: 12px;
+                text-align: left;
             }
             h1 {
                 margin-top: 56px;
@@ -127,14 +133,9 @@
                 width: 96px;
                 top: calc(-96px / 2);
             }
-            ul {
-                margin-left: -12px;
-            }
-            li {
-                margin-bottom: 12px;
-            }
         }
         </style>
+        <iron-ajax auto url="/data/home.json" handle-as="json" last-response="{{homeJson}}"></iron-ajax>
         <div id="homePage" class="fit layout vertical">
             <paper-card elevation="1" id="avatar-card">
                 <iron-image id="avatar" src="/img/profile.png" preload sizing="cover"></iron-image>
@@ -147,32 +148,30 @@
                 </div>
             </paper-card>
             <div class="row">
-                <paper-card elevation="1" id="row-card">
-                    <div class="card-content">
-                        <h2>Skills</h2>
-                        <ul>
-                            <li>Polymer</li>
-                            <li>Firebase</li>
-                            <li>HTML/CSS/JS</li>
-                            <li>Python</li>
-                            <li>Web Design</li>
-                            <li>Eat/Sleep/Travel</li>
-                            <li>Piano: Abrsm Grade 8 <i>(Yes, seriously!)</i></li>
-                        </ul>
-                    </div>
-                </paper-card>
-                <paper-card elevation="1" id="row-card">
-                    <div class="card-content">
-                        <h2>Study/Research Area</h2>
-                        <ul>
-                            <li>Web Components/Polymer</li>
-                            <li>Material Design</li>
-                            <li>Progressive Web App</li>
-                            <li>Front-End Development</li>
-                            <li>Android</li>
-                        </ul>
-                    </div>
-                </paper-card>
+                <template is="dom-repeat" items="[[homeJson]]">
+                    <paper-card elevation="1" id="row-card">
+                        <div class="card-content">
+                            <h2>Skills/Experiences</h2>
+                            <template is="dom-repeat" items="[[item.skill]]">
+                                <div class="item-body">
+                                    <div id="item-title">[[item.title]]</div>
+                                    <div id="item-desc">[[item.description]]</div>
+                                </div>
+                            </template>
+                        </div>
+                    </paper-card>
+                    <paper-card elevation="1" id="row-card">
+                        <div class="card-content">
+                            <h2>Study/Research Area</h2>
+                            <template is="dom-repeat" items="[[item.research]]">
+                                <div class="item-body">
+                                    <div id="item-title">[[item.title]]</div>
+                                    <div id="item-desc">[[item.description]]</div>
+                                </div>
+                            </template>
+                        </div>
+                    </paper-card>
+                </template>
             </div>
         </div>
     </template>
