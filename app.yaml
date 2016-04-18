@@ -133,7 +133,60 @@
 
   - url: /gtav/(.+)
     static_files: public/gtav/\1
-    upload: public/gtav/(.*)                  
+    upload: public/gtav/(.*)   
+
+  - url: /converter/download
+    static_files: public/converter/download/index.html
+    upload: public/converter/download/index.html      
+
+  - url: /converter/download/
+    static_files: public/converter/download/index.html
+    upload: public/converter/download/index.html   
+
+  - url: /converter/download/(.+)
+    static_files: public/converter/download/\1
+    upload: public/converter/download/(.*)      
+
+
+  - url: /converter/web
+    static_files: public/converter/web/index.html
+    upload: public/converter/web/index.html      
+
+  - url: /converter/web/
+    static_files: public/converter/web/index.html
+    upload: public/converter/web/index.html   
+
+  - url: /converter/web/(.+)
+    static_files: public/converter/web/\1
+    upload: public/converter/web/(.*)      
+
+
+  - url: /converter/faq
+    static_files: public/converter/faq/index.html
+    upload: public/converter/faq/index.html      
+
+  - url: /converter/faq/
+    static_files: public/converter/faq/index.html
+    upload: public/converter/faq/index.html   
+
+  - url: /converter/faq/(.+)
+    static_files: public/converter/faq/\1
+    upload: public/converter/faq/(.*)       
+
+
+  - url: /converter
+    static_files: public/converter/index.html
+    upload: public/converter/index.html      
+
+  - url: /converter/
+    static_files: public/converter/index.html
+    upload: public/converter/index.html   
+
+  - url: /converter/(.+)
+    static_files: public/converter/\1
+    upload: public/converter/(.*)     
+
+                           
 
   - url: /.*
     static_files: public/404.html
