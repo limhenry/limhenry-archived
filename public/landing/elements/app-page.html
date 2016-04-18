@@ -1,3 +1,17 @@
+<link rel="import" href="/bower_components/app-layout/app-layout.html">
+<link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="/bower_components/paper-item/paper-item.html">
+<link rel="import" href="/bower_components/carbon-route/carbon-route.html">
+<link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="/bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="/bower_components/carbon-route/carbon-location.html">
+<link rel="import" href="/bower_components/platinum-sw/platinum-sw-register.html">
+<link rel="import" href="/bower_components/iron-media-query/iron-media-query.html">
+<link rel="import" href="/bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="/bower_components/app-layout/app-scroll-effects/effects/waterfall.html">
+<link rel="import" href="/bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+
 <dom-module id="app-page">
     <template>
         <style>
@@ -12,22 +26,15 @@
             --paper-tab-ink: #fff;
             color: var(--primary-text-color);
         }
+
+        app-header-layout{
+            background: var(--primary-background-color);
+        }
         
         app-toolbar {
-            background: var(--primary-background-color);
-            background: -moz-linear-gradient(45deg, #ee3945 0%, #dc1b7c 36%, #dc1b7c 92%);
-            /* FF3.6-15 */
-            background: -webkit-linear-gradient(45deg, #ee3945 0%, #dc1b7c 36%, #dc1b7c 92%);
-            /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(45deg, #ee3945 0%, #dc1b7c 36%, #dc1b7c 92%);
-            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ee3945', endColorstr='#dc1b7c', GradientType=1);
-            /* IE6-9 fallback on horizontal gradient */
+            margin: 0 auto;
+            max-width: 1400px;
             height: 200px;
-            /*-webkit-transition: width 300ms ease-in-out, height 300ms ease-in-out;
-            -moz-transition: width 300ms ease-in-out, height 300ms ease-in-out;
-            -o-transition: width 300ms ease-in-out, height 300ms ease-in-out;
-            transition: width 300ms ease-in-out, height 300ms ease-in-out;*/
         }
         
         app-toolbar [title] {
@@ -48,14 +55,6 @@
         
         paper-item {
             color: var(--secondary-text-color);
-        }
-        
-        neon-animated-pages {
-            min-height: calc(100vh - 500px);
-        }
-        
-        neon-animated-pages .iron-selected {
-            position: static;
         }
         
         @media screen and (max-width: 840px) {
@@ -126,15 +125,23 @@
                     <carbon-location route="{{route}}"></carbon-location>
                     <carbon-route route="{{route}}" pattern="/:page" data="{{data}}"></carbon-route>
                     <neon-animated-pages class="flex" attr-for-selected="id" selected="{{data.page}}" fallback-selection="404">
-                        <home-page id=""></home-page>
-                        <project-page id="project"></project-page>
-                        <contact-page id="contact"></contact-page>
-                        <resources-page id="resources"></resources-page>
+                        <home-page id="">
+                            <footer-page></footer-page> 
+                        </home-page>
+                        <project-page id="project">
+                            <footer-page></footer-page> 
+                        </project-page>
+                        <contact-page id="contact">
+                            <footer-page></footer-page> 
+                        </contact-page>
+                        <resources-page id="resources">
+                            <footer-page></footer-page> 
+                        </resources-page>
                     </neon-animated-pages>
-                    <footer-page></footer-page>
                 </div>
             </app-header-layout>
         </app-drawer-layout>
+        <!-- <platinum-sw-register auto-register></platinum-sw-register> -->
     </template>
     <script>
     Polymer({
