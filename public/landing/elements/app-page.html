@@ -2,16 +2,16 @@
 <link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="/bower_components/paper-item/paper-item.html">
 <link rel="import" href="/bower_components/carbon-route/carbon-route.html">
-<link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html">
+<!-- <link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html"> -->
 <link rel="import" href="/bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="/bower_components/carbon-route/carbon-location.html">
+<link rel="import" href="/bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="/bower_components/platinum-sw/platinum-sw-register.html">
 <link rel="import" href="/bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="/bower_components/neon-animation/neon-animated-pages.html">
 <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="/bower_components/app-layout/app-scroll-effects/effects/waterfall.html">
 <link rel="import" href="/bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
-
+<link rel="import" href="/elements/footer-page.html">
 <dom-module id="app-page">
     <template>
         <style>
@@ -26,8 +26,8 @@
             --paper-tab-ink: #fff;
             color: var(--primary-text-color);
         }
-
-        app-header-layout{
+        
+        app-header-layout {
             background: var(--primary-background-color);
         }
         
@@ -57,6 +57,21 @@
             color: var(--secondary-text-color);
         }
         
+        #app-toolbar {
+            position: relative;
+            height: 168px;
+            background: #E91E63;
+        }
+        
+        #app-toolbar .bottom {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            padding: 0 16px;
+            height: 48px;
+        }
+        
         @media screen and (max-width: 840px) {
             app-toolbar {
                 height: 64px;
@@ -74,12 +89,12 @@
         <app-drawer-layout force-narrow>
             <template is="dom-if" if="{{!wide}}">
                 <app-drawer id="drawer" swipe-open>
-                    <paper-toolbar class="tall">
+                    <div id="app-toolbar">
                         <div class="bottom drawer-text">
                             <div>Henry Lim</div>
                             <div>limhenry.xyz</div>
                         </div>
-                    </paper-toolbar>
+                    </div>
                     <iron-selector attr-for-selected="id" selected="{{data.page}}">
                         <paper-item id="" drawer-toggle on-tap="scrollTop">Home</paper-item>
                         <paper-item id="project" drawer-toggle on-tap="scrollTop">Project</paper-item>
@@ -125,18 +140,10 @@
                     <carbon-location route="{{route}}"></carbon-location>
                     <carbon-route route="{{route}}" pattern="/:page" data="{{data}}"></carbon-route>
                     <neon-animated-pages class="flex" attr-for-selected="id" selected="{{data.page}}" fallback-selection="404">
-                        <home-page id="">
-                            <footer-page></footer-page> 
-                        </home-page>
-                        <project-page id="project">
-                            <footer-page></footer-page> 
-                        </project-page>
-                        <contact-page id="contact">
-                            <footer-page></footer-page> 
-                        </contact-page>
-                        <resources-page id="resources">
-                            <footer-page></footer-page> 
-                        </resources-page>
+                        <home-page id="" class="home"></home-page>
+                        <project-page id="project"></project-page>
+                        <contact-page id="contact"></contact-page>
+                        <resources-page id="resources"></resources-page>
                     </neon-animated-pages>
                 </div>
             </app-header-layout>
@@ -158,7 +165,7 @@
                     page: '/home/'
                 },
                 notify: true
-                
+
             },
         },
         ready: function() {
@@ -180,8 +187,41 @@
         scrollTop: function() {
             document.body.scrollTop = "0";
         },
-        _onDataChanged: function(){
-            if(this.route.path == "/404"){
+        _onDataChanged: function() {
+
+            if (this.data.page == "") {
+                if (!Polymer.isInstance(this.querySelector('home-page'))) {
+                    Polymer.Base.importHref(
+                        '/elements/home-page.html', () => {}, () => {}, true
+                    );
+                };
+            }
+
+            if (this.data.page == "project") {
+                if (!Polymer.isInstance(this.$.project)) {
+                    Polymer.Base.importHref(
+                        '/elements/project-page.html', () => {}, () => {}, true
+                    );
+                }
+            };
+
+            if (this.data.page == "contact") {
+                if (!Polymer.isInstance(this.$.contact)) {
+                    Polymer.Base.importHref(
+                        '/elements/contact-page.html', () => {}, () => {}, true
+                    );
+                }
+            };
+
+            if (this.data.page == "resources") {
+                if (!Polymer.isInstance(this.$.resources)) {
+                    Polymer.Base.importHref(
+                        '/elements/resources-page.html', () => {}, () => {}, true
+                    );
+                }
+            };
+
+            if (this.route.path == "/404") {
                 window.location.replace('/404/')
             }
         }

@@ -11,9 +11,12 @@
         <style>
         :host {
             display: block;
+            visibility: hidden;
         }
         
-        #homePage {}
+        #homePage {
+            visibility: hidden;
+        }
         
         #avatar-card {
             background: white;
@@ -70,6 +73,7 @@
         paper-card {
             color: white;
             background-color: var(--tertiary-background-color);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
         }
         
         #row-card {
@@ -155,7 +159,7 @@
                 </div>
             </paper-card>
             <div class="row">
-                <template is="dom-repeat" items="[[homeJson]]">
+                <template is="dom-repeat" items="[[homeJson]]" on-dom-change="_onDomChange">
                     <paper-card elevation="1" id="row-card">
                         <div class="card-content">
                             <h2>Skills/Experiences</h2>
@@ -181,7 +185,7 @@
                 </template>
             </div>
         </div>
-        <content></content>
+        <footer-page></footer-page>
     </template>
     <script>
     Polymer({
@@ -232,8 +236,9 @@
 
         },
 
-
-        ready: function() {
+        _onDomChange: function() {
+            this.style.visibility = "visible";
+            this.$.homePage.style.visibility = "visible";
             this.playAnimation('entry');
         }
 

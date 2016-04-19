@@ -23,16 +23,23 @@
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#C2185B">
 
-    <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" async></script>
+<!--     <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" async></script>
     <link rel="import" href="/elements/app-page.html">
     <link rel="import" href="/elements/home-page.html">
     <link rel="import" href="/elements/contact-page.html">
     <link rel="import" href="/elements/resources-page.html">
     <link rel="import" href="/elements/project-page.html">
-    <link rel="import" href="/elements/footer-page.html">
+    <link rel="import" href="/elements/footer-page.html"> -->
+
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" async></script>
+    <link rel="import" href="/elements/app-page.html">
+    
+
+
+    <!-- <link rel="import" id="bundle" href="/elements/elements.html"> -->
 
     <style>
     	body{
@@ -42,7 +49,8 @@
     	}
     </style>
 </head>
-<body>
+<body class="loading">
 	<app-page></app-page>
+    <!-- <script src="/app.js" async></script> -->
 </body>
 </html>

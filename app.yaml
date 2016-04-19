@@ -55,6 +55,10 @@
     static_files: public/landing/manifest.json
     upload: public/landing/manifest.json
 
+  - url: /app.js
+    static_files: public/landing/app.js
+    upload: public/landing/app.js      
+
   - url: /bulletin
     static_files: public/bulletin/index.html
     upload: public/bulletin/index.html   
