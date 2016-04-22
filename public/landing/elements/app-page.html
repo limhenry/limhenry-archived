@@ -8,13 +8,17 @@
             --tertiary-background-color: #F50057;
             --highlight-background-color: #E64A19;
             --primary-text-color: rgba(255, 255, 255, 0.9);
-            --secondary-text-color: rgba(0, 0, 0, 0.9);
+            --secondary-text-color: rgba(255, 255, 255, 1);
+            --tertiary-text-color: rgba(0, 0, 0, 0.8);
+            --icon-background-color: rgba(255, 255, 255, 1);
             --paper-tab-ink: #fff;
+            --paper-tab-color: #fff;
             color: var(--primary-text-color);
         }
         
         app-header-layout {
             background: var(--primary-background-color);
+            --primary-text-color: rgba(0, 0, 0, 0.8);
         }
         
         app-toolbar {
@@ -32,7 +36,7 @@
         paper-tabs {
             margin-left: 16px;
             width: 450px;
-            --paper-tabs-selection-bar-color: #fff;
+            --paper-tabs-selection-bar-color: var(--paper-tab-color);
         }
         
         paper-toolbar {
@@ -46,7 +50,7 @@
         #app-toolbar {
             position: relative;
             height: 168px;
-            background: #E91E63;
+            background: var(--primary-background-color);
         }
         
         #app-toolbar .bottom {
@@ -67,10 +71,11 @@
                 font-size: 20px;
                 font-weight: 400;
                 margin-left: 12px;
-                color: white;
+                color: var(--secondary-text-color);
             }
         }
         </style>
+        <paper-toast text="Tim Cook Mode Activated." id="easter"></paper-toast>
         <iron-media-query query="(min-width: 840px)" query-matches="{{wide}}" on-query-matches-changed="_onQueryChangeds"></iron-media-query>
         <app-drawer-layout force-narrow>
             <template is="dom-if" if="{{!wide}}">
@@ -132,9 +137,16 @@
                 </div>
             </app-header-layout>
         </app-drawer-layout>
-        <platinum-sw-register auto-register>
-            <platinum-sw-cache></platinum-sw-cache>
+
+        <platinum-sw-register auto-register
+                              clients-claim
+                              skip-waiting
+                              on-service-worker-installed="displayInstalledToast">
+          <platinum-sw-cache default-cache-strategy="fastest"
+                             cache-config-file="/cache-config.json">
+          </platinum-sw-cache>
         </platinum-sw-register>
+
     </template>
     <script>
     Polymer({
@@ -152,7 +164,7 @@
                 },
                 notify: true
 
-            },
+            }
         },
         ready: function() {
             this.async(function() {
@@ -160,6 +172,9 @@
                     this.set('route.path', '/');
                 }
             }, 1);
+        },
+        displayInstalledToast: function(){
+            console.log("offline liao")
         },
         _onQueryChangeds: function() {
             var div = this.$.appContent;
@@ -210,8 +225,18 @@
             if (this.route.path == "/404") {
                 window.location.replace('/404/')
             }
+        },
+        rosegold: function(){
+            this.customStyle['--primary-background-color'] = '#E6C1BE';
+            this.customStyle['--secondary-background-color'] = '#EAC4C1';
+            this.customStyle['--tertiary-background-color'] = '#EAC4C1';
+            this.customStyle['--primary-text-color'] = 'rgba(0, 0, 0, 0.9)';
+            this.customStyle['--secondary-text-color'] = 'rgba(0, 0, 0, 0.9)';
+            this.customStyle['--icon-background-color'] = 'rgba(0, 0, 0, 0.7)';
+            document.querySelector('.home').$.avatar.src="/img/profile-rose.webp";
+            this.updateStyles();
+            this.$.easter.toggle();
         }
-
     });
     </script>
 </dom-module>

@@ -39,9 +39,9 @@ gulp.task('cache-config', function(callback) {
     };
 
     glob([
-        '/public/landing/index.html',
-        '/public/landing/',
-        '/public/landing/bower_components/webcomponentsjs/webcomponents-lite.min.js',
+        'index.html',
+        './',
+        'bower_components/webcomponentsjs/webcomponents-lite.min.js',
         '{elements,scripts,styles}/**/*.*'
     ], { cwd: dir }, function(error, files) {
         if (error) {
@@ -53,7 +53,7 @@ gulp.task('cache-config', function(callback) {
             md5.update(JSON.stringify(config.precache));
             config.precacheFingerprint = md5.digest('hex');
 
-            var configPath = path.join(dir, 'cache-config.json');
+            var configPath = path.join('cache-config.json');
             fs.writeFile(configPath, JSON.stringify(config), callback);
         }
     });

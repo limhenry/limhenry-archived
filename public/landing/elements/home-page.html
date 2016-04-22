@@ -20,7 +20,7 @@
         
         #avatar-card {
             background: white;
-            color: var(--secondary-text-color);
+            color: var(--tertiary-text-color);
             max-width: 450px;
             margin: 96px auto 0 auto;
             display: block;
@@ -71,7 +71,7 @@
         }
         
         paper-card {
-            color: white;
+            color: var(--secondary-text-color);
             background-color: var(--tertiary-background-color);
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
         }
@@ -154,7 +154,7 @@
                     <h1>Henry Lim</h1>
                     <p>I am a front-end web developer
                         <br>Passionate about Polymer, Firebase and Google
-                        <br>Student at Multimedia University, Malaysia
+                        <br>Student at Multimedia University, <span on-tap="_counter" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" unselectable="on" onselectstart="return false;" onmousedown="return false;">Malaysia</span>
                         <br>Google Developer Group Kuala Lumpur</p>
                 </div>
             </paper-card>
@@ -198,6 +198,10 @@
         ],
 
         properties: {
+            counter: {
+                type: Number,
+                value: 1
+            },
             animationConfig: {
                 value: function() {
                     return {
@@ -208,7 +212,7 @@
                             transformFrom: 'translateY(100%)',
                             transformTo: 'translateY(0%)',
                             timing: {
-                                delay: 400,
+                                delay: 0,
                                 duration: 800
                             }
                         }],
@@ -240,6 +244,17 @@
             this.style.visibility = "visible";
             this.$.homePage.style.visibility = "visible";
             this.playAnimation('entry');
+        },
+
+        _counter: function() {
+
+            if (this.counter == 6) {
+                document.querySelector('app-page').rosegold();
+            } else if (this.counter > 6) {
+                console.log("no nid, you r gay already")
+            } else {
+                console.log(this.counter++);
+            }
         }
 
     });
