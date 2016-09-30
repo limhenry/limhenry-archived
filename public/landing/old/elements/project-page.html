@@ -1,0 +1,328 @@
+<link rel="import" href="/dist/iron-ajax/iron-ajax.html">
+<link rel="import" href="/dist/paper-card/paper-card.html">
+<link rel="import" href="/dist/paper-button/paper-button.html">
+<link rel="import" href="/dist/iron-collapse/iron-collapse.html">
+<link rel="import" href="/dist/iron-media-query/iron-media-query.html">
+<link rel="import" href="/dist/neon-animation/neon-animatable-behavior.html">
+<link rel="import" href="/dist/neon-animation/animations/fade-in-animation.html">
+<link rel="import" href="/dist/neon-animation/animations/cascaded-animation.html">
+<link rel="import" href="/dist/neon-animation/animations/fade-out-animation.html">
+<link rel="import" href="/dist/neon-animation/animations/transform-animation.html">
+<link rel="import" href="/dist/neon-animation/neon-shared-element-animatable-behavior.html">
+<link rel="import" href="/dist/iron-list/iron-list.html">
+<dom-module id="project-page">
+    <template>
+        <style>
+        :host {
+            display: block;
+            visibility: hidden;
+            --paper-card-header-padding: 28px 36px;
+        }
+        
+        #projectPage {
+            padding-top: 24px;
+        }
+        
+        .paper-card-0 .header.paper-card {
+            padding: 24px;
+        }
+        
+        paper-card {
+            width: 300px;
+            margin: 12px 6px;
+            line-height: 24px;
+            background: rgba(255, 255, 255, 1);
+            flex-direction: column;
+            display: flex;
+            flex: 1;
+            max-width: 300px;
+            min-width: 300px;
+            color: black;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            --paper-card-header: {
+                padding: var(--paper-card-header-padding);
+            }
+        }
+        
+        .card-content {
+            padding: 16px 22px;
+            flex: 1;
+            margin-bottom: auto;
+        }
+        
+        paper-card.card-actions {
+            margin-top: auto;
+        }
+        
+        #speaker-card {
+            display: block;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 8px;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -ms-flex-direction: row;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-wrap: wrap;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        
+        #speaker-name {
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 500;
+            margin: 0;
+            font-size: 22px;
+            padding-bottom: 8px;
+        }
+        
+        #speaker-post {
+            font-size: 1em;
+            margin: 0;
+            line-height: 24px;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        #speaker-desc {
+            font-size: 16px;
+        }
+        
+        .collapseIcon {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            right: 20px;
+            bottom: 14px;
+            color: var(--primary-background-color);
+            cursor: pointer;
+            -webkit-transition-duration: 0.5s;
+            -moz-transition-duration: 0.5s;
+            -o-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            -webkit-transition-property: -webkit-transform;
+            -moz-transition-property: -moz-transform;
+            -o-transition-property: -o-transform;
+            transition-property: transform;
+        }
+        
+        .collapseIcon.active {
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        
+        #speaker-short {
+            position: relative;
+        }
+        
+        paper-button {
+            --paper-button-ink-color: var(--primary-background-color);
+        }
+        
+        paper-button span {
+            vertical-align: middle;
+            margin-left: 4px;
+            font-weight: 400;
+        }
+        
+        .card-actions a {
+            text-decoration: none;
+            color: var(--secondary-text-color);
+            width: 100%;
+        }
+        
+        @media screen and (max-width: 1299px) {
+            #speaker-card {
+                max-width: 948px;
+            }
+        }
+        
+        @media screen and (max-width: 983px) {
+            #speaker-card {
+                max-width: 632px;
+            }
+        }
+        
+        @media screen and (max-width: 658px) {
+            #projectPage {
+                padding-top: 0;
+            }
+            #speaker-card {
+                max-width: none;
+                padding: 0;
+            }
+            paper-card {
+                min-width: 100%;
+                max-width: 100%;
+                width: 100%;
+                margin: 2px 0;
+                --paper-card-header: {
+                    padding: var(--paper-card-header-padding);
+                }
+            }
+            .card-content {
+                padding: 0;
+            }
+            #speaker-short {
+                padding: 16px 22px 18px 16px;
+            }
+            #speaker-desc {
+                padding: 0px 22px 12px 22px;
+                margin-top: -4px;
+            }
+            #speaker-post {
+                font-style: normal;
+                display: inline-block;
+            }
+        }
+        </style>
+        <div id="projectPage">
+            <iron-media-query query="min-width: 658px" query-matches="{{largeScreen}}" on-query-matches-changed="_onQueryChanged"></iron-media-query>
+            <iron-ajax auto url="/data/project.json" handle-as="json" last-response="{{projectsData}}"></iron-ajax>
+            <!-- <h1>iron-lsit</h1> -->
+            <div id="speakerPage">
+                <div id="speaker-container">
+                    <div id="speaker-card">
+                        <!--                         <h1>iron-lsit</h1>
+                        <template is="dom-bind">
+                            <iron-ajax url="/data/project.json" last-response="{{projectsData}}" auto></iron-ajax>
+                            <iron-list items="{{projectsData}}" as="item">
+                                <template>
+                                    <div>
+                                        hue
+                                    </div>
+                                </template>
+                            </iron-list>
+                        </template> -->
+                        <template is="dom-repeat" items="{{projectsData}}" id="speaker_dom" on-dom-change="_onDomChange">
+                            <paper-card image="{{item.image}}" class="animatedCard">
+                                <template is="dom-if" if="{{!largeScreen}}">
+                                    <div class="card-content">
+                                        <div id="speaker-short">
+                                            <h3 id="speaker-name">[[item.title]]</h3>
+                                            <h3 id="speaker-post">[[item.category]]</h3>
+                                            <iron-icon icon="icons:arrow-drop-down" on-click="toggleCollapse" class="collapseIcon"></iron-icon>
+                                        </div>
+                                        <iron-collapse id="collapse">
+                                            <p id="speaker-desc">[[item.description]]</p>
+                                            <div class="card-actions">
+                                                <paper-button on-click="openNewTab">
+                                                    <iron-icon icon="open-in-new"></iron-icon>
+                                                    <span>Open Project</span>
+                                                </paper-button>
+                                            </div>
+                                        </iron-collapse>
+                                    </div>
+                                </template>
+                                <template is="dom-if" if="{{largeScreen}}">
+                                    <div class="card-content">
+                                        <h3 id="speaker-name">[[item.title]]</h3>
+                                        <h3 id="speaker-post">[[item.category]]</h3>
+                                        <p id="speaker-desc">[[item.description]]</p>
+                                    </div>
+                                    <div class="card-actions">
+                                        <paper-button on-click="openNewTab">
+                                            <iron-icon icon="open-in-new"></iron-icon>
+                                            <span>Open Project</span>
+                                        </paper-button>
+                                    </div>
+                                </template>
+                            </paper-card>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer-page></footer-page>
+    </template>
+    <script>
+    Polymer({
+        is: 'project-page',
+
+
+        behaviors: [
+            Polymer.NeonAnimatableBehavior,
+            Polymer.NeonSharedElementAnimatableBehavior,
+            Polymer.NeonAnimationRunnerBehavior
+        ],
+
+        properties: {
+            animationConfig: {
+                value: function() {
+                    return {
+                        'entry': [{
+                            name: 'cascaded-animation',
+                            animation: 'transform-animation',
+                            transformFrom: 'translateY(300%)',
+                            transformTo: 'none',
+                            nodeDelay: 50,
+                            timing: {
+                                delay: 300,
+                            }
+                        }],
+                        'exit': [{
+                            name: 'fade-out-animation',
+                            node: this,
+                            timing: {
+                                delay: 500,
+                                duration: 500
+                            }
+                        }, {
+                            name: 'transform-animation',
+                            node: this.$.projectPage,
+                            transformOrigin: '100%',
+                            transformFrom: 'translateY(0%)',
+                            transformTo: 'translateY(30%)',
+                            timing: {
+                                delay: 100,
+                                duration: 800
+                            }
+                        }],
+                    }
+                }
+            },
+
+        },
+        _onDomChange: function() {
+            this.style.visibility = "visible";
+            var nodeList = Polymer.dom(this.root).querySelectorAll('.animatedCard');
+            this.animationConfig['entry'][0].nodes = Array.prototype.slice.call(nodeList);
+            this.playAnimation('entry');
+        },
+        toggleCollapse: function(event) {
+            var div = Polymer.dom(event).rootTarget;
+            div.toggleClass('active');
+            div.parentElement.parentElement.querySelector('iron-collapse').toggle();
+        },
+        _onQueryChanged: function() {
+            if (this.largeScreen == true) {
+                this.customStyle['--paper-card-header-padding'] = '20px 30% 0px 30%';
+                this.updateStyles();
+            } else if (this.largeScreen == false) {
+                this.customStyle['--paper-card-header-padding'] = '28px 36px';
+                this.updateStyles();
+            }
+        },
+        openNewTab: function(event) {
+            var win = window.open(event.model.item.link, '_blank');
+            win.focus();
+        },
+        ready: function() {
+            this.style.visibility = "visible";
+            if (this.largeScreen == false) {
+                this.customStyle['--paper-card-header-padding'] = '20px 30% 0px 30%';
+                this.updateStyles();
+            } else if (this.largeScreen == true) {
+                this.customStyle['--paper-card-header-padding'] = '28px 36px';
+                this.updateStyles();
+            }
+        }
+    });
+    </script>
+</dom-module>

@@ -2,16 +2,16 @@
 <html>
 <head>
 	<title>Remote for Google Slides™</title>
-	<script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" async></script>
+	<script src="/slide/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="theme-color" content="#1B5E20">	
-	<link rel="import" href="/bower_components/paper-card/paper-card.html">
-	<link rel="import" href="/bower_components/iron-pages/iron-pages.html">
-	<link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
-	<link rel="import" href="/bower_components/iron-icons/iron-icons.html">
-	<link rel="import" href="/bower_components/paper-ripple/paper-ripple.html">
+	<link rel="import" href="/slide/bower_components/paper-card/paper-card.html">
+	<link rel="import" href="/slide/bower_components/iron-pages/iron-pages.html">
+	<link rel="import" href="/slide/bower_components/paper-icon-button/paper-icon-button.html">
+	<link rel="import" href="/slide/bower_components/iron-icons/iron-icons.html">
+	<link rel="import" href="/slide/bower_components/paper-ripple/paper-ripple.html">
 	<script src="https://cdn.socket.io/socket.io-1.1.0.js"></script>
 	<style>
 		body{
@@ -54,7 +54,7 @@
 		paper-icon-button{
 			float: right;
 			margin: 12px;
-			z-index: 1;
+			z-index: 1 !important;
 		}
 		#remote{
 			height: 100%;
@@ -106,6 +106,18 @@
 			width:50%;
 			margin-bottom: 0;
 		}
+		.highlight{
+			background: #FFF176;
+			color: #0D47A1;
+			font-weight: 600;
+		}
+		.highlight b{
+			color: red;
+			font-weight: 900;
+		}		
+		code{
+			word-break: break-word;
+		}
 		@media screen and (max-width: 480px) {
 			.header-title{
 				margin:1em auto 1em;
@@ -150,8 +162,7 @@
 					  <div class="card-content">
 						<ul>
 							<li>Go to <a href="https://docs.google.com/presentation/" target="_blank">Google Slides</a> and open any presentation slide</li>
-							<li>Click on dropdown button (▼) and select "Present in new window"</li>
-							<img src="/slide/slide0.png">
+							<li class="highlight">Rename the URL from <code>docs.google.com/presentation/d/<i>your_slide_id</i>/<b>edit</b></code> to <code>docs.google.com/presentation/d/<i>your_slide_id</i>/<b>present</b></code></li>
 							<li>Wait for the presentation fully load.</li>
 							<li>A notification will popup and show a link with unique ID</li>
 							<img src="/slide/slide1.png">
@@ -173,9 +184,9 @@
 
 					<paper-card heading="About" image="" elevation="1" animated-shadow="false">
 					  <div class="card-content">
-						<p>Version: 0.5</p>
+						<p>Version: 0.6</p>
 						<p>This extension is created and developed by <a href="https://limhenry.xyz" target="_blank">Henry Lim</a></p>
-						<p>Any question? Find me at <a href="https://twitter.com/henrylim96" target="_blank">@henrylim96</a> or email me at henry (at) limhenry.xyz</p>
+						<p>Any question? Find me at <a href="https://twitter.com/henrylim96" target="_blank">@henrylim96</a> or email me at henrylim.everything (at) gmail.com</p>
 					  </div>
 					</paper-card>		
 

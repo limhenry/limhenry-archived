@@ -1,0 +1,55 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-resizable-behavior/iron-resizable-behavior.html">
+<link rel="import" href="../iron-a11y-keys-behavior/iron-a11y-keys-behavior.html">
+<link rel="import" href="../iron-behaviors/iron-control-state.html">
+<link rel="import" href="../iron-overlay-behavior/iron-overlay-behavior.html">
+<link rel="import" href="../neon-animation/neon-animation-runner-behavior.html">
+<link rel="import" href="../neon-animation/animations/opaque-animation.html">
+<link rel="import" href="iron-dropdown-scroll-manager.html">
+
+<!--
+`<iron-dropdown>` is a generalized element that is useful when you have
+hidden content (`.dropdown-content`) that is revealed due to some change in
+state that should cause it to do so.
+
+Note that this is a low-level element intended to be used as part of other
+composite elements that cause dropdowns to be revealed.
+
+Examples of elements that might be implemented using an `iron-dropdown`
+include comboboxes, menubuttons, selects. The list goes on.
+
+The `<iron-dropdown>` element exposes attributes that allow the position
+of the `.dropdown-content` relative to the `.dropdown-trigger` to be
+configured.
+
+    <iron-dropdown horizontal-align="right" vertical-align="top">
+      <div class="dropdown-content">Hello!</div>
+    </iron-dropdown>
+
+In the above example, the `<div>` with class `.dropdown-content` will be
+hidden until the dropdown element has `opened` set to true, or when the `open`
+method is called on the element.
+
+@demo demo/index.html
+-->
+
+<dom-module id="iron-dropdown">
+  <style>:host{position:fixed}#contentWrapper ::content>*{overflow:auto}#contentWrapper.animating ::content>*{overflow:hidden}</style>
+  <template>
+    <div id="contentWrapper">
+      <content id="content" select=".dropdown-content"></content>
+    </div>
+  </template>
+
+  <script>!function(){"use strict";Polymer({is:"iron-dropdown",behaviors:[Polymer.IronControlState,Polymer.IronA11yKeysBehavior,Polymer.IronOverlayBehavior,Polymer.NeonAnimationRunnerBehavior],properties:{horizontalAlign:{type:String,value:"left",reflectToAttribute:!0},verticalAlign:{type:String,value:"top",reflectToAttribute:!0},horizontalOffset:{type:Number,value:0,notify:!0},verticalOffset:{type:Number,value:0,notify:!0},positionTarget:{type:Object},openAnimationConfig:{type:Object},closeAnimationConfig:{type:Object},focusTarget:{type:Object},noAnimations:{type:Boolean,value:!1},allowOutsideScroll:{type:Boolean,value:!1}},listeners:{"neon-animation-finish":"_onNeonAnimationFinish"},observers:["_updateOverlayPosition(positionTarget, verticalAlign, horizontalAlign, verticalOffset, horizontalOffset)"],attached:function(){this.positionTarget=this.positionTarget||this._defaultPositionTarget,this._isRTL="rtl"==window.getComputedStyle(this).direction},get containedElement(){return Polymer.dom(this.$.content).getDistributedNodes()[0]},get _focusTarget(){return this.focusTarget||this.containedElement},get _defaultPositionTarget(){var t=Polymer.dom(this).parentNode;return t.nodeType===Node.DOCUMENT_FRAGMENT_NODE&&(t=t.host),t},get _localeHorizontalAlign(){return this._isRTL?"right"===this.horizontalAlign?"left":"right":this.horizontalAlign},_horizontalAlignTargetValue:function(t,i,e){var o;return o=e?document.documentElement.clientWidth-i.right-(this._fitWidth-t.right):i.left-t.left,o+=this.horizontalOffset,Math.max(o,0)},_verticalAlignTargetValue:function(t,i,e){var o;return o=e?document.documentElement.clientHeight-i.bottom-(this._fitHeight-t.bottom):i.top-t.top,o+=this.verticalOffset,Math.max(o,0)},_openedChanged:function(t){t&&this.disabled?this.cancel():(this.cancelAnimation(),this.sizingTarget=this.containedElement||this.sizingTarget,this._updateAnimationConfig(),Polymer.IronOverlayBehaviorImpl._openedChanged.apply(this,arguments))},_renderOpened:function(){this.allowOutsideScroll||Polymer.IronDropdownScrollManager.pushScrollLock(this),!this.noAnimations&&this.animationConfig&&this.animationConfig.open?(this.withBackdrop&&this.backdropElement.open(),this.$.contentWrapper.classList.add("animating"),this.playAnimation("open")):Polymer.IronOverlayBehaviorImpl._renderOpened.apply(this,arguments)},_renderClosed:function(){Polymer.IronDropdownScrollManager.removeScrollLock(this),!this.noAnimations&&this.animationConfig&&this.animationConfig.close?(this.withBackdrop&&this.backdropElement.close(),this.$.contentWrapper.classList.add("animating"),this.playAnimation("close")):Polymer.IronOverlayBehaviorImpl._renderClosed.apply(this,arguments)},_onNeonAnimationFinish:function(){this.$.contentWrapper.classList.remove("animating"),this.opened?Polymer.IronOverlayBehaviorImpl._finishRenderOpened.apply(this):Polymer.IronOverlayBehaviorImpl._finishRenderClosed.apply(this)},_updateAnimationConfig:function(){var t={},i=[];this.openAnimationConfig&&(t.open=[{name:"opaque-animation"}].concat(this.openAnimationConfig),i=i.concat(t.open)),this.closeAnimationConfig&&(t.close=this.closeAnimationConfig,i=i.concat(t.close)),i.forEach(function(t){t.node=this.containedElement},this),this.animationConfig=t},_updateOverlayPosition:function(){this.isAttached&&this.notifyResize()},refit:function(){if(this.opened){var t,i,e=this.containedElement;e&&(t=e.scrollTop,i=e.scrollLeft),Polymer.IronFitBehavior.refit.apply(this,arguments),e&&(e.scrollTop=t,e.scrollLeft=i)}},resetFit:function(){Polymer.IronFitBehavior.resetFit.apply(this,arguments);var t=this._localeHorizontalAlign,i=this.verticalAlign;this.style[t]=this.style[i]="0px";var e=this.getBoundingClientRect(),o=this.positionTarget.getBoundingClientRect(),n=this._horizontalAlignTargetValue(e,o,"right"===t),r=this._verticalAlignTargetValue(e,o,"bottom"===i);this.style[t]=n+"px",this.style[i]=r+"px"},_discoverInfo:function(){Polymer.IronFitBehavior._discoverInfo.apply(this,arguments),this._fitInfo.positionedBy.horizontally=this._localeHorizontalAlign,this._fitInfo.positionedBy.vertically=this.verticalAlign},_applyFocus:function(){var t=this.focusTarget||this.containedElement;t&&this.opened&&!this.noAutoFocus?t.focus():Polymer.IronOverlayBehaviorImpl._applyFocus.apply(this,arguments)}})}();</script>
+</dom-module>

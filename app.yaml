@@ -5,6 +5,7 @@
   threadsafe: yes
 
   handlers:
+
   - url: /
     static_files: public/landing/index.html
     upload: public/landing/index.html
@@ -15,53 +16,17 @@
     http_headers:
       Vary: Accept-Encoding
 
-  - url: /cache-config.json
-    static_files: public/landing/cache-config.json
-    upload: public/landing/cache-config.json
-
-  - url: /project.*
-    static_files: public/landing/index.html
-    upload: public/landing/index.html
-
-  - url: /contact.*
-    static_files: public/landing/index.html
-    upload: public/landing/index.html
-
-  - url: /resources.*
-    static_files: public/landing/index.html
-    upload: public/landing/index.html
-
-  - url: /bower_components/(.+)
-    static_files: public/bower_components/\1
-    upload: public/bower_components/(.*)    
-    http_headers:
-      Vary: Accept-Encoding
-
-  - url: /elements/(.+)
-    static_files: public/landing/elements/\1
-    upload: public/landing/elements/(.*)
-    http_headers:
-      Vary: Accept-Encoding
-
-  - url: /data/(.+)
-    static_files: public/landing/data/\1
-    upload: public/landing/data/(.*)
-
   - url: /img/(.+)
     static_files: public/landing/img/\1
     upload: public/landing/img/(.*) 
-          
-  - url: /sw-import.js
-    static_files: public/landing/sw-import.js
-    upload: public/landing/sw-import.js  
 
   - url: /manifest.json
     static_files: public/landing/manifest.json
     upload: public/landing/manifest.json
-
-  - url: /app.js
-    static_files: public/landing/app.js
-    upload: public/landing/app.js      
+    
+  - url: /blog.*
+    static_files: public/blog/index.html
+    upload: public/blog/index.html     
 
   - url: /bulletin
     static_files: public/bulletin/index.html
@@ -111,14 +76,6 @@
     static_files: public/tmwifi/\1
     upload: public/tmwifi/(.*)           
 
-  - url: /blog/
-    static_files: public/blog/index.html
-    upload: public/blog/index.html   
-
-  - url: /blog/(.+)
-    static_files: public/blog/\1
-    upload: public/blog/(.*)          
-
   - url: /chat
     static_files: public/chat/index.html
     upload: public/chat/index.html      
@@ -155,7 +112,6 @@
     static_files: public/converter/download/\1
     upload: public/converter/download/(.*)      
 
-
   - url: /converter/web
     static_files: public/converter/web/index.html
     upload: public/converter/web/index.html      
@@ -167,7 +123,6 @@
   - url: /converter/web/(.+)
     static_files: public/converter/web/\1
     upload: public/converter/web/(.*)      
-
 
   - url: /converter/faq
     static_files: public/converter/faq/index.html
@@ -181,7 +136,6 @@
     static_files: public/converter/faq/\1
     upload: public/converter/faq/(.*)       
 
-
   - url: /converter
     static_files: public/converter/index.html
     upload: public/converter/index.html      
@@ -193,8 +147,6 @@
   - url: /converter/(.+)
     static_files: public/converter/\1
     upload: public/converter/(.*)     
-
-                           
 
   - url: /.*
     static_files: public/404.html
@@ -221,3 +173,5 @@
   - ^testrunner\.py
   - ^grunt\.js
   - ^node_modules/(.*/)?
+  - /public/landing/bower_components$
+  - /public/landing/node_modules$
