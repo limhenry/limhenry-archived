@@ -17,3 +17,5 @@ _data/versions
 summit/dist
 deploy.bat
 serve.bat
+credentials.tar.gz
+client-secret.json
