@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
+        <meta name="theme-color" content="#ffffff">
+        <title>Henry Lim</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <style>
+            body {
+                margin: 0;
+                font-family: 'Roboto', sans-serif;
+                background: black;
+                color: white;
+            }
+
+            @keyframes shake {
+            0% {
+                transform: translate(2px, 1px) rotate(0deg);
+            }
+            10% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+            20% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+            30% {
+                transform: translate(0px, 2px) rotate(0deg);
+            }
+            40% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+            50% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+            60% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+            70% {
+                transform: translate(2px, 1px) rotate(-1deg);
+            }
+            80% {
+                transform: translate(-1px, -1px) rotate(1deg);
+            }
+            90% {
+                transform: translate(2px, 2px) rotate(0deg);
+            }
+            100% {
+                transform: translate(1px, -2px) rotate(-1deg);
+            }
+            }    
+
+
+            .glitch{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+            .glitch .text{
+                font-size: 30px;
+            }
+            .glitch .text span{
+                position: absolute;
+            }
+
+            .glitch_text {
+            animation: shake .4s infinite;
+            animation-direction: alternate;
+            z-index: 3;
+            }            
+
+            .glitch_move {
+            animation: color .4s infinite;
+            animation-direction: alternate;
+            z-index: 2;
+            }
+
+            .glitch_color {
+            animation: show .2s infinite;
+            animation-direction: alternate;
+            color: #F802F8;
+            z-index: 1;
+            }            
+
+
+            @keyframes show {
+            50% {
+                opacity: 0;
+                text-shadow: 2px 2px #AAE90E;
+            }
+            }
+
+            @keyframes color {
+            50% {
+                color: #b1b1b1;
+            }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="glitch">
+            <div class="text glitch_text"><span>HENRYLIM</span></div>
+            <div class="text glitch_move"><span>HENRYLIM</span></div>
+            <div class="text glitch_color"><span>HENRYLIM</span></div>
+        </div>
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-57741199-1', 'auto');
+        ga('send', 'pageview');
+        </script>    
+    </body>
+</html>

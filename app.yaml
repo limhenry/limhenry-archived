@@ -2,19 +2,28 @@
   version: 1
   runtime: python27
   api_version: 1
-  threadsafe: yes
+  threadsafe: true
+
+  libraries:
+  - name: webapp2
+    version: latest
+  - name: jinja2
+    version: latest
 
   handlers:
 
   - url: /
-    static_files: public/landing/index.html
-    upload: public/landing/index.html
+    script: public.landing.landing.app    
 
-  - url: /index.html
-    static_files: public/landing/index.html
-    upload: public/landing/index.html
-    http_headers:
-      Vary: Accept-Encoding
+  # - url: /
+  #   static_files: public/landing/index.html
+  #   upload: public/landing/index.html
+
+  # - url: /index.html
+  #   static_files: public/landing/index.html
+  #   upload: public/landing/index.html
+  #   http_headers:
+  #     Vary: Accept-Encoding
 
   - url: /img/(.+)
     static_files: public/landing/img/\1
@@ -23,7 +32,7 @@
   - url: /manifest.json
     static_files: public/landing/manifest.json
     upload: public/landing/manifest.json
-    
+
   - url: /blog.*
     static_files: public/blog/index.html
     upload: public/blog/index.html     
