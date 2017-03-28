@@ -1,0 +1,155 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="my-card.html">
+
+<dom-module id="my-home">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+      .container{
+        min-height: calc(100vh - 148px);        
+      }
+    </style>
+
+    <div class="container" id="container">
+      <div class="content" id="content">
+        <h1>HENRY LIM</h1>
+        <p>I'm a front-end web developer from Kuala Lumpur. I am trying to make the web great again with <a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web Apps</a>, <a href="https://www.polymer-project.org">Polymer</a> and <a href="https://firebase.google.com">Firebase</a>.</p>
+        <p>Also, I'm the co-organizer at <a href="https://www.facebook.com/GDGKualaLumpur/">Google Developer Group Kuala Lumpur</a>. We organize conferences, live-viewing party, workshops, and bringing all the latest Google technologies into the town.</p>
+      </div>
+    </div>
+
+    <div class="card-container" id="card">
+        <a rel="noopener" target="_blank" href="https://www.digitalnewsasia.com/mobility/student-nets-elusive-firebass-ticket-google’s-io-2017">
+            <my-card 
+              external
+              header="Student nets elusive Firebass for ticket to Google’s I/O 2017" 
+              description="Digital News Asia wrote an article about my journey of winning the ticket to Google I/O 2017 on March 21, 2017."
+              tag="NEWS / INTERVIEW"
+              background="../images/dna_firebass.jpg"
+              style="background: #01579B"></my-card>        
+        </a>
+
+      <div class="row">     
+        <a href="/talks">      
+          <my-card 
+            class="half"
+            header="Presentations &amp; Talks" 
+            description="I love to share all the Google's cutting-edge web technologies to everyone around me."
+            tag="PRESENTATIONS AND TALKS"
+            background="../images/presentations_and_talks.jpg"
+            style="background: #ef5451"></my-card>
+        </a>
+        <a href="/projects"> 
+          <my-card 
+            class="half light"
+            header="Projects" 
+            description="Trying to save the world using HTML, CSS and JavaScript."
+            tag="PROJECTS"
+            background="../images/projects.jpg"
+            bgposition="center center"
+            bgsize="contain"
+            style="background:#aebec6"></my-card>
+        </a>        
+      </div> 
+
+      <div class="row">    
+        <a href="/awards"> 
+          <my-card 
+            class="light half"
+            header="Honors &amp; Awards" 
+            description="(Drum roll) and the winner goes to ..."
+            tag="HONORS AND AWARDS"
+            background="../images/awards.jpg"
+            style="background:#f6d600"></my-card>
+        </a>          
+        <a rel="noopener" target="_blank" href="https://dribbble.com/henrylim96"> 
+          <my-card 
+            external
+            class="half"
+            header="Designs" 
+            description="I am a big fans of Material Design. I also design stuffs during my free time."
+            tag="DESIGN / DRIBBBLE"
+            background="../images/design.jpg"
+            bgposition="center center"
+            bgsize="contain"
+            style="background:#212121"></my-card>
+        </a>
+      </div>       
+    </div>   
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-home',
+      behaviors: [
+          Polymer.NeonAnimationRunnerBehavior,
+          Polymer.NeonSharedElementAnimatableBehavior
+      ],      
+      properties: {
+        animationConfig: {
+          value: function() {
+            return {
+              'entry': [{
+                name: 'hero-animation',
+                id: 'hero',
+                toPage: this,
+              },
+              {
+                name: 'fade-in-animation',
+                node: this.$.content,
+                timing: {delay: 600}
+              },      
+              {
+                name: 'fade-in-animation',
+                node: this.$.card,
+                timing: {delay: 900}
+              },                  
+              {
+                name: 'transform-animation',
+                node: this.$.content,
+                transformFrom: 'translateY(100%)',
+                transformTo: 'translateY(0%)',
+                timing: {delay: 500}
+              }],
+              'exit': [{
+                name: 'transform-animation',
+                node: this.$.card,
+                transformFrom: 'translateY(0)',
+                transformTo: 'translateY(300px)',
+                timing: {duration: 500}
+              },{
+                name: 'fade-out-animation',
+                node: this.$.card,
+                timing: {delay: 30}
+              }, {
+                name: 'hero-animation',
+                id: 'hero',
+                fromPage: this,
+              }]
+            }
+          }
+        },
+        sharedElements: {
+          value: function() {
+            return {
+              'hero': this.$.container
+            }
+          }
+        }
+      }
+    });  
+  </script>
+</dom-module>

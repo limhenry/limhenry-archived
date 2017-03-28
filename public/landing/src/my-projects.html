@@ -1,0 +1,137 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<link rel="import" href="my-item.html">
+
+<dom-module id="my-projects">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+      .container{
+        background: #a9b9c1;
+      }      
+      .card{
+        box-sizing: border-box;
+        margin: 0 auto;
+        width: 100%;
+        background: white;
+        padding: 16px;
+        transition: all 300ms ease-in-out;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+      .item-link{
+        text-decoration: none;
+        max-width: 680px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      my-item {
+        border-bottom: 1px solid #e9e9e9;
+      }      
+      .item-link:last-of-type my-item {
+        border-bottom: none;
+      }
+      #h{
+        height: 300px;
+      }
+    </style>
+
+    <div class="container" id="container">
+      <div class="content" id="content">
+        <h1>PROJECTS</h1>
+        <p>Trying to save the world using HTML, CSS and JavaScript. </p>
+      </div>
+    </div>
+
+    <div class="card" id="card">
+      <div class="card-container">
+        <template is="dom-repeat" items="{{data}}">
+            <a target="_blank" rel="noopener" href$="{{item.link}}" class="item-link">
+                <my-item
+                  link="{{item.link}}"
+                  header="{{item.header}}"
+                  date="{{item.date}}"
+                  info="{{item.info}}"
+                  techs="{{item.techs}}">
+                {{item.description}}
+                </my-item>
+            </a>       
+        </template>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-projects',
+      behaviors: [
+          Polymer.NeonAnimationRunnerBehavior,
+          Polymer.NeonSharedElementAnimatableBehavior
+      ],      
+      properties: {
+        animationConfig: {
+          value: function() {
+            return {
+              'entry': [{
+                name: 'hero-animation',
+                id: 'hero',
+                toPage: this,
+              },
+              {
+                name: 'fade-in-animation',
+                node: this.$.content,
+                timing: {delay: 600}
+              },     
+              {
+                name: 'fade-in-animation',
+                node: this.$.card,
+                timing: {delay: 900}
+              },                 
+              {
+                name: 'transform-animation',
+                node: this.$.content,
+                transformFrom: 'translateY(100%)',
+                transformTo: 'translateY(0%)',
+                timing: {delay: 500}
+              }],
+              'exit': [{
+                name: 'transform-animation',
+                node: this.$.card,
+                transformFrom: 'translateY(0)',
+                transformTo: 'translateY(300px)',
+                timing: {duration: 500}
+              },{
+                name: 'fade-out-animation',
+                node: this.$.card,
+                timing: {delay: 30}
+              }, {
+                name: 'hero-animation',
+                id: 'hero',
+                fromPage: this,
+              }]
+            }
+          }
+        },
+        sharedElements: {
+          value: function() {
+            return {
+              'hero': this.$.container
+            }
+          }
+        }
+      }
+    });    
+  </script>
+</dom-module>

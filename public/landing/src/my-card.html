@@ -1,0 +1,147 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-card">
+  <template>
+    <style include="shared-styles">
+      :host {
+        min-height: 320px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        cursor: pointer;
+        margin: 4px 8px;
+        padding: 16px 0;
+        transition: all 300ms ease-in-out;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+      :host(:hover){
+        z-index: 2;
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+      }
+      :host(.half){
+        width: 50%;
+        margin: 4px 8px;
+      }      
+      .content{
+        padding: 0 24px;
+        flex: 1;
+      }
+      h2{
+        font-size: 36px;
+        letter-spacing: -1px;
+        font-weight: 400;
+        margin: 12px 0;
+        line-height: 48px;
+        max-width: 80%;
+        color: #fff;
+      }
+      :host(.light) h2{
+        color: #000;
+      }
+
+      :host(.half) h2{
+        font-size: 28px;
+        line-height: 38px;
+      }
+      p{
+        max-width: 90%;
+        line-height: 28px;
+        color: rgba(255,255,255,0.9);
+        font-size: 15px;
+      }
+      :host(.light) p{
+        color: rgba(0,0,0,0.8);
+      }
+      .bottom{
+        color: rgba(255,255,255,0.7);
+        margin: 4px 0 0 2px;
+      }
+      :host(.light) .bottom{
+        color: rgba(0,0,0,0.7);
+      }
+      .tag{
+        margin: 0 24px;
+        display: inline-block;
+      }
+      iron-icon{
+        position: absolute;
+        bottom: 14px;
+        right: 18px;
+      }
+      .image{
+        margin: 14px auto 10px auto;
+        width: 100%;
+        height: 420px;
+        background-image: url("../images/dna_firebass.jpg");
+        filter: saturate(0.9);
+        background-repeat: no-repeat;
+      }
+      :host(.half) .image{
+        height: 280px;
+      }      
+
+      @media screen and (max-width: 860px){
+        h2{
+          font-size: 28px;
+          line-height: 38px;
+          max-width: 100%;
+        }
+        .image{
+          height: 260px;
+        }
+      }      
+    </style>
+
+    <div class="content">
+        <h2>{{header}}</h2>
+        <p>{{description}}</p>
+    </div>
+    <template is="dom-if" if="{{background}}">
+      <div class="image" style$="background-image: url({{background}}); background-position: {{bgposition}}; background-size: {{bgsize}}"></div>
+    </template>
+    <div class="bottom">
+        <div class="tag">{{tag}}</div>
+        <template is="dom-if" if="{{external}}">
+          <iron-icon icon="my-icons:launch"></iron-icon>
+        </template>
+        <template is="dom-if" if="{{!external}}">
+          <iron-icon icon="my-icons:chevron-right"></iron-icon>
+        </template>
+    </div>
+ 
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-card',
+      properties: {
+        header: {
+            type: String
+        },
+        description: {
+            type: String
+        },
+        tag: {
+            type: String
+        },
+        background: {
+            type: String
+        },
+        bgsize: {
+          type: String,
+          value: "cover"          
+        },
+        bgposition: {
+          type: String,
+          value: "center 20%"
+        },
+        external: {
+          type: Boolean,
+          value: false
+        }        
+      }
+    })    
+  </script>
+</dom-module>

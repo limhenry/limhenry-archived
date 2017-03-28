@@ -11,25 +11,44 @@
   handlers:
 
   - url: /
-    script: public.landing.landing.app    
+    static_files: public/landing/build/unbundled/index.html
+    upload: public/landing/build/unbundled/index.html
 
-  # - url: /
-  #   static_files: public/landing/index.html
-  #   upload: public/landing/index.html
+  - url: /talks.*
+    static_files: public/landing/build/unbundled/index.html
+    upload: public/landing/build/unbundled/index.html    
 
-  # - url: /index.html
-  #   static_files: public/landing/index.html
-  #   upload: public/landing/index.html
-  #   http_headers:
-  #     Vary: Accept-Encoding
+  - url: /awards.*
+    static_files: public/landing/build/unbundled/index.html
+    upload: public/landing/build/unbundled/index.html       
 
-  - url: /img/(.+)
-    static_files: public/landing/img/\1
-    upload: public/landing/img/(.*) 
+  - url: /projects.*
+    static_files: public/landing/build/unbundled/index.html
+    upload: public/landing/build/unbundled/index.html       
+
+  - url: /data/(.+)
+    static_files: public/landing/build/unbundled/data/\1
+    upload: public/landing/build/unbundled/data/(.*)       
+
+  - url: /bower_components/(.+)
+    static_files: public/landing/build/unbundled/bower_components/\1
+    upload: public/landing/build/unbundled/bower_components/(.*)       
+
+  - url: /src/(.+)
+    static_files: public/landing/build/unbundled/src/\1  
+    upload: public/landing/build/unbundled/src/(.*)     
+
+  - url: /images/(.+)
+    static_files: public/landing/build/unbundled/images/\1
+    upload: public/landing/build/unbundled/images/(.*) 
 
   - url: /manifest.json
-    static_files: public/landing/manifest.json
-    upload: public/landing/manifest.json
+    static_files: public/landing/build/unbundled/manifest.json
+    upload: public/landing/build/unbundled/manifest.json
+
+  - url: /service-worker.js
+    static_files: public/landing/service-worker.js
+    upload: public/landing/build/unbundled/service-worker.js
 
   - url: /blog.*
     static_files: public/blog/index.html
@@ -156,9 +175,8 @@
     upload: public/converter/(.*)     
 
   - url: /.*
-    static_files: public/404.html
-    upload: public/404.html        
-
+    static_files: public/landing/build/unbundled/index.html       
+    upload: public/landing/build/unbundled/index.html       
 
   skip_files:
   - ^(.*/)?app\.yaml
@@ -180,5 +198,3 @@
   - ^testrunner\.py
   - ^grunt\.js
   - ^node_modules/(.*/)?
-  - /public/landing/bower_components$
-  - /public/landing/node_modules$

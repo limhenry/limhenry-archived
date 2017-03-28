@@ -2,6 +2,9 @@ node_modules
 bower_components
 public/bower_components
 public/images_raw
+public/landing_old
+public/bower_components
+public/build
 [0-9.]*/components
 [0-9.]*/samples/components
 polymer-all
