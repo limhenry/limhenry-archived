@@ -8,12 +8,20 @@
         margin: 12px auto;
         font-size: 14px;
         color: #757575;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
-        align-items: flex-start;
+        -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start;
         padding: 0 6px 32px 6px;
       } 
       .title{
-        align-items: flex-start;
+        -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
         color: rgba(0, 0, 0, 0.6);
         transition: 150ms all ease-in-out;
@@ -31,7 +39,9 @@
       }
       h3{
         margin: 4px 24px 14px 0;
-        flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
         font-weight: 500;
         font-size: 19px;
       }
@@ -67,9 +77,6 @@
         }        
       }
     </style>
-    <!--<div class="icon">
-        <div class="logo"></div>
-    </div>-->
     <div class="info">
         <div class="title">
             <template is="dom-if" if="{{link}}">
