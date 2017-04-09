@@ -83,35 +83,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 name: 'hero-animation',
                 id: 'hero',
                 toPage: this,
-              },
-              {
-                name: 'fade-in-animation',
-                node: this.$.content,
-                timing: {delay: 600}
-              },      
-              {
-                name: 'fade-in-animation',
-                node: this.$.card,
-                timing: {delay: 900}
-              },                  
-              {
-                name: 'transform-animation',
-                node: this.$.content,
-                transformFrom: 'translateY(100%)',
-                transformTo: 'translateY(0%)',
-                timing: {delay: 500}
               }],
               'exit': [{
-                name: 'transform-animation',
-                node: this.$.card,
-                transformFrom: 'translateY(0)',
-                transformTo: 'translateY(300px)',
-                timing: {duration: 500}
-              },{
-                name: 'fade-out-animation',
-                node: this.$.card,
-                timing: {delay: 30}
-              }, {
                 name: 'hero-animation',
                 id: 'hero',
                 fromPage: this,
