@@ -16,6 +16,8 @@ before_install:
 - gcloud auth activate-service-account --key-file client-secret.json
 install:
 - cd public/landing && npm install -g bower polymer-cli && bower install && polymer build && cd ../../
+- cd public/slide && bower install && cd ../../
+- cd public/chat && bower install && cd ../../
 - gcloud config set project limhenryxyz
 script:
 - gcloud -q preview app deploy --version=1 --project=limhenryxyz app.yaml
