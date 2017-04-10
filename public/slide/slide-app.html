@@ -1,0 +1,255 @@
+<link rel="import" href="/slide/bower_components/polymer/polymer.html">
+<link rel="import" href="/slide/bower_components/paper-card/paper-card.html">
+<link rel="import" href="/slide/bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="/slide/bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="/slide/bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="/slide/bower_components/paper-ripple/paper-ripple.html">
+<dom-module id="slide-app">
+    <style>
+        :host {
+            display: block;
+        } 
+		.header-title{
+			margin: 1em auto 2.3em;			
+		}
+		.header-title h2{
+			display: inline-block;
+			font-weight: 500;
+		}
+		.header-title img{
+			vertical-align: middle;
+			margin-top: -8px;
+		}		
+		paper-card{
+		    margin: 0 auto;
+		    width: 100%;
+		    margin-bottom: 48px;
+		    padding: 12px;
+		    display: block;
+		}
+		.header.paper-card .title-text.paper-card{
+			padding: 16px 16px 0 16px;
+		}
+		.card-content{
+			line-height: 2em;
+		}
+		.section{
+			max-width: 600px;
+			margin: 0 auto;
+		}
+		paper-card img{
+			box-shadow: rgba(0, 0, 0, .10) 0px 2px 1px, rgba(0, 0, 0, .10) 0px 0px 1px;
+			margin: 6px 0 24px 0;
+		}
+		paper-icon-button{
+			float: right;
+			margin: 12px;
+			z-index: 1 !important;
+		}
+		#remote{
+			height: 100%;
+			width: 100%;
+			margin: 0 auto;
+			background: #1B5E20;
+			position: absolute;
+		}
+		#remote_container{
+			text-align: center;
+			color: white;
+			position: absolute;
+			width: 100%;
+			top: 50%;
+			left: 0;
+			right: 0;
+			margin-top: -50px;	
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		#footer{
+			width: 100%;
+			position: absolute;
+			bottom: 16px;
+			left: 0;
+			right: 0;
+			text-align: center;	
+		}
+		#footer img{
+			width: 36px;
+		}
+		#footer h3{
+			font-weight: 300;
+			margin: 2px;
+			color: white;
+			font-size: 15px;
+		}
+		#footer h4{
+			font-weight: 300;
+			margin: 2px;
+			color: white;
+			font-size: 12px;
+		}
+		#promo{
+			width:50%;
+			margin-bottom: 0;
+		}
+		.highlight{
+			background: #FFF176;
+			color: #0D47A1;
+			font-weight: 600;
+		}
+		.highlight b{
+			color: red;
+			font-weight: 900;
+		}		
+		code{
+			word-break: break-word;
+		}
+		@media screen and (max-width: 480px) {
+			.header-title{
+				margin:1em auto 1em;
+			}
+			paper-card{
+				margin-bottom: 12px;
+			}
+			paper-card img{
+				width: 100%;
+			}
+			#promo{
+				width:80%;
+				margin-bottom: 0;
+			}			
+		}
+
+    </style>
+  <template>
+    <iron-pages selected="0" id="ironpages">
+        <section>
+            <paper-icon-button icon="close" on-tap="showHelp" style="top: -16px;right: -10px;" id="paper-icon-close"></paper-icon-button>
+            <div class="section" >
+                <div class="header-title">
+                    <img src="/slide/icon_128.png" width="50px" width="50px">
+                    <h2>Remote for Google Slides™</h2>
+                </div>
+                <paper-card heading="What is Remote for Google Slides™?" image="" elevation="1" animated-shadow="false">
+                    <div class="card-content">
+                    <p>Remote for Google Slides™ is a Chrome Extension + Webapp that allows you to control the presentation slide on another device, remotely.</p>			  	
+                    </div>
+                </paper-card>
+
+                <paper-card heading="Download" image="" elevation="1" animated-shadow="false">
+                    <div class="card-content">
+                    <a href="https://chrome.google.com/webstore/detail/google-slides-remote/pojijacppbhikhkmegdoechbfiiibppi?utm_source=limhenry.xyz" target="_blank"><img src="/slide/promo.png" id="promo"></a>
+                    <p>Get the Chrome Extension on <a href="https://chrome.google.com/webstore/detail/google-slides-remote/pojijacppbhikhkmegdoechbfiiibppi?utm_source=limhenry.xyz" target="_blank">Chrome Web Store</a></p>		
+                    </div>
+                </paper-card>
+
+                <paper-card heading="How do I use Remote for Google Slides™?" image="" elevation="1" animated-shadow="false">
+                    <div class="card-content">
+                    <ul>
+                        <li>Go to <a href="https://docs.google.com/presentation/" target="_blank">Google Slides</a> and open any presentation slide</li>
+                        <li class="highlight">Rename the URL from <code>docs.google.com/presentation/d/<i>your_slide_id</i>/<b>edit</b></code> to <code>docs.google.com/presentation/d/<i>your_slide_id</i>/<b>present</b></code></li>
+                        <li>Wait for the presentation fully load.</li>
+                        <li>A notification will popup and show a link with unique ID</li>
+                        <img src="/slide/slide1.png">
+                        <li>Open the link on another device</li>
+                        <li>A notification will pop out again once both devices are ready</li>
+                        <img src="/slide/slide2.png">
+                    </ul>	  	
+                    </div>
+                </paper-card>
+
+                <paper-card heading="Known Issues" image="" elevation="1" animated-shadow="false">
+                    <div class="card-content">
+                    <ul>
+                        <li>This program currently doesn't support "back to previous slide". 
+                        <br>Only "click to next slide" is working, so far</li>
+                    </ul>	
+                    </div>
+                </paper-card>
+
+                <paper-card heading="About" image="" elevation="1" animated-shadow="false">
+                    <div class="card-content">
+                    <p>Version: 0.6</p>
+                    <p>This extension is created and developed by <a href="https://limhenry.xyz" target="_blank">Henry Lim</a></p>
+                    <p>Any question? Find me at <a href="https://twitter.com/henrylim96" target="_blank">@henrylim96</a> or email me at henrylim.everything (at) gmail.com</p>
+                    </div>
+                </paper-card>		
+
+                <paper-card heading="Disclaimer" image="" elevation="1" animated-shadow="false">
+                    <div class="card-content">
+                    <p>This program is not by Google nor is it officially supported by Google</p>
+                    <p>The program is provided as is and the author is not responsible for any problems as a result of the use of this program.</p>
+                    </div>
+                </paper-card>			
+            </div>		
+        </section>
+        <section>
+            <paper-icon-button icon="info-outline" on-tap="showHelp" style="color:white"></paper-icon-button>
+            <div id="remote" on-tap="clickaction">
+                <div id="remote_container">
+                    <p>Next Slide</p>
+                    <p><b>Current Slide:</b> [[slideID]]</p>
+                </div>
+                </div>
+                <paper-ripple></paper-ripple>
+                <div id="footer">
+                <img src="/slide/icon_128.png">
+                <h3>Remote for Google Slides™</h3>
+                <h4>Control Google Slides on any device, remotely.</h4>
+                </div>
+        </section>
+    </iron-pages>
+  </template>
+  <script>
+    Polymer({
+        is: 'slide-app',
+
+        properties: {
+            ws: {
+                type: Object,
+                notify: true
+            }
+        },
+    
+        showHelp: function(){
+            var ironPages = this.$.ironpages;
+            if (ironPages.selected == 0){
+                ironPages.selected = 1;
+            }
+            else{
+                ironPages.selected = 0;
+            }
+        },
+
+        clickaction: function(){
+            this.ws.emit('clickaction', window.location.href.split('#')[1]);
+        },
+
+        ready: function(){
+            this.slideID = "1";
+            var ironPages = this.$.ironpages;
+            if (window.location.hash){
+                ironPages.selected = 1;
+                this.ws = io('https://websocket-limhenry.rhcloud.com:8443');
+
+                this.ws.on('connect', function () {
+                    this.ws.emit('joinRoom', window.location.href.split('#')[1]);
+                }.bind(this));
+
+                this.ws.on('receiveSlideID', function(slideID){
+                    this.slideID = slideID;
+                }.bind(this))
+            }
+            else{
+                document.getElementById('paper-icon-close').style.display = "none";
+                ironPages.selected = 0;
+            }            
+        }  
+    });  
+  </script>  
+</dom-module>
+    
