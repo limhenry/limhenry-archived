@@ -11,44 +11,44 @@
   handlers:
 
   - url: /
-    static_files: public/landing/build/unbundled/index.html
-    upload: public/landing/build/unbundled/index.html
+    static_files: public/landing/build/default/index.html
+    upload: public/landing/build/default/index.html
 
   - url: /talks.*
-    static_files: public/landing/build/unbundled/index.html
-    upload: public/landing/build/unbundled/index.html    
+    static_files: public/landing/build/default/index.html
+    upload: public/landing/build/default/index.html    
 
   - url: /awards.*
-    static_files: public/landing/build/unbundled/index.html
-    upload: public/landing/build/unbundled/index.html       
+    static_files: public/landing/build/default/index.html
+    upload: public/landing/build/default/index.html       
 
   - url: /projects.*
-    static_files: public/landing/build/unbundled/index.html
-    upload: public/landing/build/unbundled/index.html       
+    static_files: public/landing/build/default/index.html
+    upload: public/landing/build/default/index.html       
 
   - url: /data/(.+)
-    static_files: public/landing/build/unbundled/data/\1
-    upload: public/landing/build/unbundled/data/(.*)       
+    static_files: public/landing/build/default/data/\1
+    upload: public/landing/build/default/data/(.*)       
 
   - url: /bower_components/(.+)
-    static_files: public/landing/build/unbundled/bower_components/\1
-    upload: public/landing/build/unbundled/bower_components/(.*)       
+    static_files: public/landing/build/default/bower_components/\1
+    upload: public/landing/build/default/bower_components/(.*)       
 
   - url: /src/(.+)
-    static_files: public/landing/build/unbundled/src/\1  
-    upload: public/landing/build/unbundled/src/(.*)     
+    static_files: public/landing/build/default/src/\1  
+    upload: public/landing/build/default/src/(.*)     
 
   - url: /images/(.+)
-    static_files: public/landing/build/unbundled/images/\1
-    upload: public/landing/build/unbundled/images/(.*) 
+    static_files: public/landing/build/default/images/\1
+    upload: public/landing/build/default/images/(.*) 
 
   - url: /manifest.json
-    static_files: public/landing/build/unbundled/manifest.json
-    upload: public/landing/build/unbundled/manifest.json
+    static_files: public/landing/build/default/manifest.json
+    upload: public/landing/build/default/manifest.json
 
   - url: /service-worker.js
     static_files: public/landing/service-worker.js
-    upload: public/landing/build/unbundled/service-worker.js
+    upload: public/landing/build/default/service-worker.js
 
   - url: /blog.*
     static_files: public/blog/index.html

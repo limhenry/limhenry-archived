@@ -7,6 +7,7 @@ public/landing/bower_components
 public/slide/bower_components
 public/chat/bower_components
 public/build
+public/slide2
 [0-9.]*/components
 [0-9.]*/samples/components
 polymer-all
