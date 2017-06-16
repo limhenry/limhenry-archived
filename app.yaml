@@ -47,7 +47,7 @@
     upload: public/landing/build/default/manifest.json
 
   - url: /service-worker.js
-    static_files: public/landing/service-worker.js
+    static_files: public/landing/build/default/service-worker.js
     upload: public/landing/build/default/service-worker.js
 
   - url: /blog.*
