@@ -175,8 +175,8 @@
     upload: public/converter/(.*)     
 
   - url: /.*
-    static_files: public/landing/build/unbundled/index.html       
-    upload: public/landing/build/unbundled/index.html       
+    static_files: public/landing/build/default/index.html       
+    upload: public/landing/build/default/index.html       
 
   skip_files:
   - ^(.*/)?app\.yaml
