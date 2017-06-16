@@ -1,7 +1,7 @@
 {
   "name": "Henry Lim",
   "short_name": "Henry",
-  "start_url": "/?homescreen=1",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#ffc400",
   "background_color": "#ffc400",
