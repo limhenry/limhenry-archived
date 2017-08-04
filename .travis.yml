@@ -29,7 +29,7 @@ install:
 - cd public/landing && bower install && polymer build && cd ../../
 - cd public/slide && bower install && cd ../../
 - cd public/chat && bower install && cd ../../
-- gcloud config set project limhenryxyz
-- gcloud config set app/use_gsutil false
+# - gcloud config set project limhenryxyz
+# - gcloud config set app/use_gsutil false
 script:
-- gcloud -q preview app deploy --version=1 --project=limhenryxyz app.yaml
+- gcloud --quiet --project limhenryxyz app deploy
