@@ -12,8 +12,8 @@ before_install:
   -in credentials.tar.gz.enc -out credentials.tar.gz -d
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
-- curl -o /tmp/google-cloud-sdk-98.0.0-linux-x86_64.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-98.0.0-linux-x86_64.tar.gz
-- tar xzf /tmp/google-cloud-sdk-98.0.0-linux-x86_64.tar.gz -C /tmp
+- curl -o /tmp/google-cloud-sdk-165.0.0-linux-x86_64.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-165.0.0-linux-x86_64.tar.gz
+- tar xzf /tmp/google-cloud-sdk-165.0.0-linux-x86_64.tar.gz -C /tmp
 - source '/tmp/google-cloud-sdk/path.bash.inc'
 - which gcloud
 - gcloud version
@@ -29,7 +29,5 @@ install:
 - cd public/landing && bower install && polymer build && cd ../../
 - cd public/slide && bower install && cd ../../
 - cd public/chat && bower install && cd ../../
-# - gcloud config set project limhenryxyz
-# - gcloud config set app/use_gsutil false
 script:
 - gcloud --quiet --project limhenryxyz app deploy
