@@ -6,6 +6,12 @@
         "link": "https://ss16-git-issue-voter.firebaseapp.com/"
     },
     {
+        "header": "Google I/O Extended 2017 Kuala Lumpur Progressive Web App",
+        "techs": "Polymer, Firebase, HTML, CSS, Javascript ",
+        "description": "A progressive web app (PWA) for one of the biggest GDGKL event - Google I/O Extended 2017 Kuala Lumpur.",
+        "link": "https://medium.com/@limhenry/case-study-the-google-i-o-extended-2017-kuala-lumpur-progressive-web-app-a786e82984d7"
+    },
+    {
         "header": "Project Cerium",
         "techs": "Polymer, HTML, CSS, Javascript ",
         "description": "Project Cerium is a conference website template with Material Design built for Google Developer Groups. ",
@@ -55,10 +61,16 @@
     }
     ],
     "talks": [{
+        "header": "Google I/O Extended 2017 Kuala Lumpur",
+        "date": "July 22, 2017",
+        "info": "Kuala Lumpur, Malaysia",
+        "description":"Building a better web with Web Components and Polymer 2.0",
+        "link": "https://docs.google.com/presentation/d/1bBcJvUyfhsEvQhu1HiE64-ttFOYbQEzNjd03sKASc7c/edit?usp=sharing"
+    },{
         "header": "Polymer Polytechnic MMU Cyberjaya 2017",
         "date": "Jan 17, 2017",
         "info": "Cyberjaya, Malaysia",
-        "description":"Intro to Polymer &amp; Build your first Polymer element (Codelabs)",
+        "description":"Intro to Polymer & Build your first Polymer element (Codelabs)",
         "link": "https://docs.google.com/presentation/d/1bBcJvUyfhsEvQhu1HiE64-ttFOYbQEzNjd03sKASc7c/edit?usp=sharing"
     },
     {

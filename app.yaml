@@ -49,6 +49,7 @@
   - url: /service-worker.js
     static_files: public/landing/build/default/service-worker.js
     upload: public/landing/build/default/service-worker.js
+    expiration: "0m"
 
   - url: /blog.*
     static_files: public/blog/index.html
