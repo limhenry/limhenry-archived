@@ -12,11 +12,9 @@ before_install:
   -in credentials.tar.gz.enc -out credentials.tar.gz -d
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
-- curl -o /tmp/google-cloud-sdk-98.0.0-linux-x86_64.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-98.0.0-linux-x86_64.tar.gz
-- tar xzf /tmp/google-cloud-sdk-98.0.0-linux-x86_64.tar.gz -C /tmp
-- source '/tmp/google-cloud-sdk/path.bash.inc'
-- which gcloud
-- gcloud version
+- echo "deb http://packages.cloud.google.com/apt cloud-sdk-jessie main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
+- curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+- apt-get update && apt-get install -y google-cloud-sdk
 - gcloud auth activate-service-account --key-file client-secret.json
 - curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 - sudo apt-key adv --keyserver pgp.mit.edu --recv D101F7899D41F3C3
