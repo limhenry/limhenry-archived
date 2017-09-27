@@ -10,22 +10,6 @@
 
   handlers:
 
-  - url: /
-    static_files: public/landing/build/default/index.html
-    upload: public/landing/build/default/index.html
-
-  - url: /talks.*
-    static_files: public/landing/build/default/index.html
-    upload: public/landing/build/default/index.html    
-
-  - url: /awards.*
-    static_files: public/landing/build/default/index.html
-    upload: public/landing/build/default/index.html       
-
-  - url: /projects.*
-    static_files: public/landing/build/default/index.html
-    upload: public/landing/build/default/index.html       
-
   - url: /data/(.+)
     static_files: public/landing/build/default/data/\1
     upload: public/landing/build/default/data/(.*)       
@@ -54,18 +38,6 @@
   - url: /blog.*
     static_files: public/blog/index.html
     upload: public/blog/index.html     
-
-  - url: /bulletin
-    static_files: public/bulletin/index.html
-    upload: public/bulletin/index.html   
-
-  - url: /bulletin/
-    static_files: public/bulletin/index.html
-    upload: public/bulletin/index.html   
-
-  - url: /bulletin/(.+)
-    static_files: public/bulletin/\1
-    upload: public/bulletin/(.*)    
 
   - url: /slide
     static_files: public/slide/index.html
@@ -174,6 +146,31 @@
   - url: /converter/(.+)
     static_files: public/converter/\1
     upload: public/converter/(.*)     
+
+  - url: /bulletin
+    script: bulletin.app  
+
+  - url: /bulletin/
+    script: bulletin.app  
+
+  - url: /bulletin/(.+)
+    script: bulletin.app
+
+  - url: /
+    static_files: public/landing/build/default/index.html
+    upload: public/landing/build/default/index.html
+
+  - url: /talks.*
+    static_files: public/landing/build/default/index.html
+    upload: public/landing/build/default/index.html    
+
+  - url: /awards.*
+    static_files: public/landing/build/default/index.html
+    upload: public/landing/build/default/index.html       
+
+  - url: /projects.*
+    static_files: public/landing/build/default/index.html
+    upload: public/landing/build/default/index.html      
 
   - url: /.*
     static_files: public/landing/build/default/index.html       
