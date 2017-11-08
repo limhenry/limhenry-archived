@@ -34,22 +34,13 @@
     static_files: public/landing/build/default/service-worker.js
     upload: public/landing/build/default/service-worker.js
     expiration: "0m"
+    http_headers:
+      Vary: Accept-Encoding
+      service-worker-allowed: /
 
   - url: /blog.*
     static_files: public/blog/index.html
     upload: public/blog/index.html     
-
-  - url: /slide
-    static_files: public/slide/index.html
-    upload: public/slide/index.html   
-
-  - url: /slide/
-    static_files: public/slide/index.html
-    upload: public/slide/index.html   
-
-  - url: /slide/(.+)
-    static_files: public/slide/\1
-    upload: public/slide/(.*)       
 
   - url: /rejected
     static_files: public/rejected/index.html
@@ -155,6 +146,15 @@
 
   - url: /bulletin/(.+)
     script: bulletin.app
+
+  - url: /slide
+    script: slide.app  
+
+  - url: /slide/
+    script: slide.app  
+
+  - url: /slide/(.+)
+    script: slide.app
 
   - url: /
     static_files: public/landing/build/default/index.html
