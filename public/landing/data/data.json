@@ -1,6 +1,12 @@
 {
     "projects": [
         {
+            "header": "Remote for Google Slides",
+            "techs": "Progressive Web Apps, Preact, Firebase, HTML, CSS, Javascript ",
+            "description": "Remote for Google Slides is a Chrome Extension + Progressive Web App that allows you to control Google Slides on any device, remotely. ",
+            "link": "https://chrome.google.com/webstore/detail/remote-for-google-slides/pojijacppbhikhkmegdoechbfiiibppi?utm=limhenryxyz"
+        },
+        {
             "header": "GDG Kuala Lumpur Progressive Web App",
             "techs": "Progressive Web Apps, Polymer, Firebase, HTML, CSS, Javascript",
             "description": "A progressive web app (PWA) for Google Developer Group (GDG) Kuala Lumpur. ",
@@ -13,10 +19,10 @@
             "link": "https://ss16-git-issue-voter.firebaseapp.com/"
         },
         {
-            "header": "Remote for Google Slides",
+            "header": "Url Shortener",
             "techs": "Progressive Web Apps, Preact, Firebase, HTML, CSS, Javascript ",
-            "description": "Remote for Google Slides is a Chrome Extension + Progressive Web App that allows you to control Google Slides on any device, remotely. ",
-            "link": "https://chrome.google.com/webstore/detail/remote-for-google-slides/pojijacppbhikhkmegdoechbfiiibppi?utm=limhenryxyz"
+            "description": "A URL Shortener using Firebase (Cloud Firestore, Cloud Functions, Hosting and Authentication) and Preact ",
+            "link": "https://github.com/limhenry/urlshortener/"
         },
         {
             "header": "Google I/O Extended 2017 Kuala Lumpur Progressive Web App",
@@ -84,6 +90,12 @@
         }
     ],
     "talks": [
+        {
+            "header": "GDG DevFest + GBG GDay Georgetown 2017",
+            "date": "Nov 18, 2017",
+            "info": "Georgetown, Malaysia",
+            "description": "Image Styling with Polymer 3.0 and Web Worker"
+        },
         {
             "header": "GDG Kuala Lumpur Firebase Meetup",
             "date": "Oct 7, 2017",

@@ -36,7 +36,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <style>
       :host {
-        --app-primary-color: #ffc400;
+        --app-primary-color: #fdd077;
         --app-secondary-color: black;
 
         display: block;
@@ -227,8 +227,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       properties: {
         page: {
           type: String,
-          reflectToAttribute: true,
-          observer: '_pageChanged',
+          reflectToAttribute: true
         },
       },
       observers: [
@@ -240,16 +239,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var color;
 
         if (this.page == 'talks'){
-          color = '#ef5451';
+          color = '#F62459';
         }       
         else if (this.page == 'projects'){
-          color = '#a9b9c1';
+          color = '#947CB0';
         }       
         else if (this.page == 'awards'){
-          color = '#f6d600';
+          color = '#F27935';
         }     
         else{
-          color = '#ffc400';
+          color = '#fdd077';
         }  
 
         document.getElementsByName('theme-color')[0].content = color;
@@ -259,11 +258,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         if (!this.$.drawer.persistent) {
           this.$.drawer.close();
         }
-      },
-      _pageChanged: function(page) {
-        // Load page import on demand. Show 404 page if fails
-        //var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
-        //this.importHref(resolvedPageUrl, null, this._showPage404, true);
       },
       _showPage404: function() {
         this.page = 'view404';
