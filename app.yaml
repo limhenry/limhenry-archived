@@ -12,140 +12,114 @@
 
   - url: /data/(.+)
     static_files: public/landing/build/default/data/\1
-    upload: public/landing/build/default/data/(.*)       
+    upload: public/landing/build/default/data/(.*)  
+    secure: always     
+    expiration: "0m"
 
   - url: /bower_components/(.+)
     static_files: public/landing/build/default/bower_components/\1
-    upload: public/landing/build/default/bower_components/(.*)       
+    upload: public/landing/build/default/bower_components/(.*) 
+    secure: always      
 
   - url: /src/(.+)
     static_files: public/landing/build/default/src/\1  
     upload: public/landing/build/default/src/(.*)     
+    secure: always
 
   - url: /images/(.+)
     static_files: public/landing/build/default/images/\1
     upload: public/landing/build/default/images/(.*) 
+    secure: always
 
   - url: /manifest.json
     static_files: public/landing/build/default/manifest.json
     upload: public/landing/build/default/manifest.json
+    secure: always
 
   - url: /service-worker.js
     static_files: public/landing/build/default/service-worker.js
     upload: public/landing/build/default/service-worker.js
     expiration: "0m"
+    secure: always
     http_headers:
       Vary: Accept-Encoding
       service-worker-allowed: /
 
   - url: /blog.*
     static_files: public/blog/index.html
-    upload: public/blog/index.html     
-
-  - url: /rejected
-    static_files: public/rejected/index.html
-    upload: public/rejected/index.html      
-
-  - url: /rejected/
-    static_files: public/rejected/index.html
-    upload: public/rejected/index.html   
-
-  - url: /rejected/(.+)
-    static_files: public/rejected/\1
-    upload: public/rejected/(.*)      
-
-  - url: /tmwifi
-    static_files: public/tmwifi/index.html
-    upload: public/tmwifi/index.html      
-
-  - url: /tmwifi/
-    static_files: public/tmwifi/index.html
-    upload: public/tmwifi/index.html   
-
-  - url: /tmwifi/(.+)
-    static_files: public/tmwifi/\1
-    upload: public/tmwifi/(.*)           
-
-  - url: /chat
-    static_files: public/chat/index.html
-    upload: public/chat/index.html      
-
-  - url: /chat/
-    static_files: public/chat/index.html
-    upload: public/chat/index.html   
-
-  - url: /chat/(.+)
-    static_files: public/chat/\1
-    upload: public/chat/(.*)    
-
-  - url: /gtav
-    static_files: public/gtav/index.html
-    upload: public/gtav/index.html      
-
-  - url: /gtav/
-    static_files: public/gtav/index.html
-    upload: public/gtav/index.html   
-
-  - url: /gtav/(.+)
-    static_files: public/gtav/\1
-    upload: public/gtav/(.*)   
+    upload: public/blog/index.html 
 
   - url: /converter/download
     static_files: public/converter/download/index.html
     upload: public/converter/download/index.html      
+    secure: always
 
   - url: /converter/download/
     static_files: public/converter/download/index.html
     upload: public/converter/download/index.html   
+    secure: always
 
   - url: /converter/download/(.+)
     static_files: public/converter/download/\1
     upload: public/converter/download/(.*)      
+    secure: always
 
   - url: /converter/web
     static_files: public/converter/web/index.html
     upload: public/converter/web/index.html      
+    secure: always
 
   - url: /converter/web/
     static_files: public/converter/web/index.html
     upload: public/converter/web/index.html   
+    secure: always
 
   - url: /converter/web/(.+)
     static_files: public/converter/web/\1
     upload: public/converter/web/(.*)      
+    secure: always
 
   - url: /converter/faq
     static_files: public/converter/faq/index.html
     upload: public/converter/faq/index.html      
+    secure: always
 
   - url: /converter/faq/
     static_files: public/converter/faq/index.html
     upload: public/converter/faq/index.html   
+    secure: always
 
   - url: /converter/faq/(.+)
     static_files: public/converter/faq/\1
     upload: public/converter/faq/(.*)       
+    secure: always
 
   - url: /converter
     static_files: public/converter/index.html
     upload: public/converter/index.html      
+    secure: always
 
   - url: /converter/
     static_files: public/converter/index.html
     upload: public/converter/index.html   
+    secure: always
 
   - url: /converter/(.+)
     static_files: public/converter/\1
-    upload: public/converter/(.*)     
+    upload: public/converter/(.*)    
+    secure: always 
 
   - url: /bulletin
     script: bulletin.app  
+    secure: always
 
   - url: /bulletin/
     script: bulletin.app  
+    secure: always
 
   - url: /bulletin/(.+)
     script: bulletin.app
+    secure: always
 
   - url: /slide
     script: slide.app  
@@ -159,22 +133,27 @@
   - url: /
     static_files: public/landing/build/default/index.html
     upload: public/landing/build/default/index.html
+    secure: always
 
   - url: /talks.*
     static_files: public/landing/build/default/index.html
     upload: public/landing/build/default/index.html    
+    secure: always
 
   - url: /awards.*
     static_files: public/landing/build/default/index.html
-    upload: public/landing/build/default/index.html       
+    upload: public/landing/build/default/index.html   
+    secure: always    
 
   - url: /projects.*
     static_files: public/landing/build/default/index.html
-    upload: public/landing/build/default/index.html      
+    upload: public/landing/build/default/index.html 
+    secure: always     
 
   - url: /.*
     static_files: public/landing/build/default/index.html       
-    upload: public/landing/build/default/index.html       
+    upload: public/landing/build/default/index.html    
+    secure: always   
 
   skip_files:
   - ^(.*/)?app\.yaml

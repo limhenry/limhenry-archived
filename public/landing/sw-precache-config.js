@@ -39,13 +39,7 @@ module.exports = {
     },
     {
       urlPattern: /\/data\/.*json/,
-      handler: 'fastest',
-      options: {
-        cache: {
-          maxEntries: 100,
-          name: 'data-cache'
-        }
-      }
+      handler: 'networkFirst'
     }
   ],
   navigateFallback: 'index.html',
