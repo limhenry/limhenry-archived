@@ -35,7 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="my-app">
   <template>
     <style>
-      :host {
+       :host {
         --app-primary-color: #fdd077;
         --app-secondary-color: black;
 
@@ -49,6 +49,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app-header {
         color: #000;
         background-color: var(--app-primary-color);
+        -webkit-transition: all 300ms ease-in-out;
+        -o-transition: all 300ms ease-in-out;
         transition: all 300ms ease-in-out;
       }
 
@@ -56,7 +58,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --paper-icon-button-ink-color: white;
       }
 
-      app-drawer{
+      app-drawer {
         --app-drawer-width: 300px;
       }
 
@@ -70,96 +72,115 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         text-decoration: none;
         color: var(--app-secondary-color);
         line-height: 40px;
+        -webkit-transition: all 150ms ease-in-out;
+        -o-transition: all 150ms ease-in-out;
         transition: all 150ms ease-in-out;
       }
 
-      .drawer-list a:focus{
+      .drawer-list a:focus {
         outline: none;
       }
 
-      .drawer-list a:hover{
-        background: rgba(0,0,0,0.04);
+      .drawer-list a:hover {
+        background: rgba(0, 0, 0, 0.04);
       }
 
       .drawer-list a.iron-selected {
         color: black;
         font-weight: bold;
-        background: rgba(0,0,0,0.1);
+        background: rgba(0, 0, 0, 0.1);
       }
 
-      .nav-list a{
+      .nav-list {
+        display: flex;
+        width: 100%;
+        margin-top: 24px;
+        justify-content: flex-end;
+      }
+
+      .nav-list a {
         font-size: 16px;
         text-decoration: none;
         color: black;
-        margin: 0 -4px;
+        margin: 0 2px;
         padding: 0 12px 18px 12px;
+        -webkit-transition: 150ms all ease-in-out;
+        -o-transition: 150ms all ease-in-out;
         transition: 150ms all ease-in-out;
-        border-bottom: 2px solid rgba(0,0,0,0);
-      }
-      .nav-list a:hover{
-        padding-bottom: 18px;
-        border-bottom: 2px solid rgba(0,0,0,0.3);
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
       }
 
-      .nav-list a.iron-selected{
+      .nav-list a:hover {
+        padding-bottom: 18px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+      }
+
+      .nav-list a.iron-selected {
         padding-bottom: 18px;
         border-bottom: 2px solid black;
       }
 
-      .social{
+      .social {
         padding: 48px 0 12px 0;
       }
+
+      .social a {
+        text-decoration: none;
+      }
+
       .social .container,
-      footer .container{
+      footer .container {
         max-width: 960px;
         margin: 0 auto;
         padding: 0 8px;
       }
-      .social .container{
-        text-align: right;  
+
+      .social .container {
+        text-align: right;
       }
-      .social .container iron-icon{
+
+      .social .container iron-icon {
         margin: 8px 14px 8px 0;
         width: 26px;
         height: 26px;
-        color: rgba(0,0,0,0.55);
+        color: rgba(0, 0, 0, 0.55);
+        -webkit-transition: all 150ms ease-in-out;
+        -o-transition: all 150ms ease-in-out;
         transition: all 150ms ease-in-out;
       }
-      .social .container iron-icon:hover{
-        color: rgba(0,0,0,0.85);
+
+      .social .container iron-icon:hover {
+        color: rgba(0, 0, 0, 0.85);
       }
-      footer{
-        color: rgba(0,0,0,0.5);
+
+      footer {
+        color: rgba(0, 0, 0, 0.5);
         font-family: 'Roboto', sans-serif;
         background: white;
         padding: 48px 0;
         font-size: 12px;
-      }     
+      }
+
       neon-animated-pages .iron-selected {
         position: static;
-      }  
-      @media screen and (max-width: 860px){
+      }
+
+      @media screen and (max-width: 860px) {
         app-header paper-icon-button {
+          display: -webkit-box !important;
+          display: -ms-flexbox !important;
           display: flex !important;
-        }        
-        .nav-list{
+        }
+        .nav-list {
           display: none;
         }
       }
     </style>
 
     <app-location route="{{route}}"></app-location>
-    <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+    <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
 
-    <iron-ajax 
-      auto
-      url="../data/data.json"
-      handle-as="json"
-      last-response="{{data}}"></iron-ajax>
+    <iron-ajax auto url="../data/data.json" handle-as="json" last-response="{{data}}"></iron-ajax>
 
     <app-scrollpos-control selected="{{page}}" reset></app-scrollpos-control>
 
@@ -176,7 +197,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </app-drawer>
 
       <!-- Main content -->
-      <app-header-layout >
+      <app-header-layout>
         <app-header fixed effects="waterfall" slot="header">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
@@ -190,11 +211,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </app-toolbar>
         </app-header>
 
-        <neon-animated-pages
-            selected="[[page]]"
-            attr-for-selected="name"
-            fallback-selection="home"
-            role="main">
+        <neon-animated-pages selected="[[page]]" attr-for-selected="name" fallback-selection="home" role="main">
           <my-home name="home"></my-home>
           <my-talks name="talks" data="{{data.talks}}"></my-talks>
           <my-awards name="awards" data="{{data.awards}}"></my-awards>
@@ -204,12 +221,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <div class="social">
           <div class="container">
-            <a target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/henrylim96"><iron-icon icon="my-icons:twitter"></iron-icon></a>
-            <a target="_blank" rel="noopener" title="GitHub" href="https://github.com/limhenry"><iron-icon icon="my-icons:github"></iron-icon></a>
-            <a target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com/henrylim96"><iron-icon icon="my-icons:dribbble"></iron-icon></a>
-            <a target="_blank" rel="noopener" title="Medium" href="https://medium.com/@limhenry"><iron-icon icon="my-icons:medium"></iron-icon></a>
-            <a target="_blank" rel="noopener" title="Linkedin" href="https://www.linkedin.com/in/henrylim96/"><iron-icon icon="my-icons:linkedin"></iron-icon></a>
-            <a target="_blank" rel="noopener" title="Email" href="mailto:lets.email.henry@gmail.com"><iron-icon icon="my-icons:email"></iron-icon></a>
+            <a target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/henrylim96">
+              <iron-icon icon="my-icons:twitter"></iron-icon>
+            </a>
+            <a target="_blank" rel="noopener" title="GitHub" href="https://github.com/limhenry">
+              <iron-icon icon="my-icons:github"></iron-icon>
+            </a>
+            <a target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com/henrylim96">
+              <iron-icon icon="my-icons:dribbble"></iron-icon>
+            </a>
+            <a target="_blank" rel="noopener" title="Medium" href="https://medium.com/@limhenry">
+              <iron-icon icon="my-icons:medium"></iron-icon>
+            </a>
+            <a target="_blank" rel="noopener" title="Linkedin" href="https://www.linkedin.com/in/henrylim96/">
+              <iron-icon icon="my-icons:linkedin"></iron-icon>
+            </a>
           </div>
         </div>
         <footer>
@@ -234,22 +260,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         '_routePageChanged(routeData.page)',
       ],
 
-      _routePageChanged: function(page) {
+      _routePageChanged: function (page) {
         this.page = page || 'home';
         var color;
 
-        if (this.page == 'talks'){
+        if (this.page == 'talks') {
           color = '#F62459';
-        }       
-        else if (this.page == 'projects'){
+        } else if (this.page == 'projects') {
           color = '#947CB0';
-        }       
-        else if (this.page == 'awards'){
+        } else if (this.page == 'awards') {
           color = '#F27935';
-        }     
-        else{
+        } else {
           color = '#fdd077';
-        }  
+        }
 
         document.getElementsByName('theme-color')[0].content = color;
         this.customStyle['--app-primary-color'] = color;
@@ -259,7 +282,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           this.$.drawer.close();
         }
       },
-      _showPage404: function() {
+      _showPage404: function () {
         this.page = 'view404';
       },
     });
