@@ -110,12 +110,12 @@
     secure: always 
 
   - url: /slides
-    static_files: public/slides/index.html
+    static_files: public/slides/build/index.html
     upload: public/slides/build/index.html   
     secure: always
 
   - url: /slides/
-    static_files: public/slides/index.html
+    static_files: public/slides/build/index.html
     upload: public/slides/build/index.html   
     secure: always
 
