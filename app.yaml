@@ -109,6 +109,21 @@
     upload: public/converter/(.*)    
     secure: always 
 
+  - url: /slides
+    static_files: public/slides/index.html
+    upload: public/slides/build/index.html   
+    secure: always
+
+  - url: /slides/
+    static_files: public/slides/index.html
+    upload: public/slides/build/index.html   
+    secure: always
+
+  - url: /slides/(.+)
+    static_files: public/slides/build/\1
+    upload: public/slides/build/(.*)    
+    secure: always 
+
   - url: /bulletin
     script: bulletin.app  
     secure: always
@@ -120,15 +135,6 @@
   - url: /bulletin/(.+)
     script: bulletin.app
     secure: always
-
-  - url: /slide
-    script: slide.app  
-
-  - url: /slide/
-    script: slide.app  
-
-  - url: /slide/(.+)
-    script: slide.app
 
   - url: /
     static_files: public/landing/build/default/index.html

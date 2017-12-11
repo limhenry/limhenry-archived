@@ -9,6 +9,12 @@ public/slide/bower_components
 public/chat/bower_components
 public/build
 public/slide2
+public/slide_old
+public/slides/build
+public/slides/node_modules
+public/bulletin
+public/bulletinpolymer
+public/blog
 [0-9.]*/components
 [0-9.]*/samples/components
 polymer-all
@@ -26,3 +32,4 @@ deploy.bat
 serve.bat
 credentials.tar.gz
 client-secret.json
+package-lock.json

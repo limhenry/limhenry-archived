@@ -27,7 +27,6 @@ install:
 - yarn global add bower --ignore-engines
 - yarn global add polymer-cli --ignore-engines
 - cd public/landing && bower install && polymer build && cd ../../
-- cd public/slide && bower install && cd ../../
-- cd public/chat && bower install && cd ../../
+- cd public/slides && npm install && npm run build && cd ../../
 script:
 - gcloud --quiet --project limhenryxyz app deploy
