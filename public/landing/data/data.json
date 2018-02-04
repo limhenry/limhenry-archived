@@ -1,10 +1,22 @@
 {
     "projects": [
         {
-            "header": "Remote for Google Slides",
+            "header": "Remote for Slides",
             "techs": "Progressive Web Apps, Preact, Firebase, HTML, CSS, Javascript ",
-            "description": "Remote for Google Slides is a Chrome Extension + Progressive Web App that allows you to control Google Slides on any device, remotely. ",
-            "link": "https://chrome.google.com/webstore/detail/remote-for-google-slides/pojijacppbhikhkmegdoechbfiiibppi?utm=limhenryxyz"
+            "description": "Remote for Slides is a Chrome Extension + Progressive Web App that allows you to control Google Slides and Ludus on any device, remotely. ",
+            "link": "https://limhenry.xyz/slides/?utm=limhenryxyz"
+        },
+        {
+            "header": "Spotify Stations PWA",
+            "techs": "Progressive Web Apps, Polymer, HTML, CSS, Javascript ",
+            "description": "Trying to recreate the UI of Spotify Stations using web technologies. ",
+            "link": "https://github.com/limhenry/spotify-stations"
+        },
+        {
+            "header": "Android Things Digital Smart Clock",
+            "techs": "Android Things, Android, Java, IOT ",
+            "description": "A smart digital clock built using Android Things. ",
+            "link": "https://medium.com/@limhenry/diy-android-things-smart-digital-clock-e6e79d26a3bb"
         },
         {
             "header": "GDG Kuala Lumpur Progressive Web App",
@@ -70,14 +82,14 @@
             "header": "Google Firebase AppFest Hackathon Malaysia ",
             "date": "Oct 2017",
             "info": "2nd Place ",
-            "description": "Static Showdown Hackathon is a worldwide 48-hour hackathon that centers on static web applications organized by Google’s Firebase.",
+            "description": "Google Firebase AppFest Hackathon is a hackathon organized by Google and the Firebase Team.",
             "link": "https://events.withgoogle.com/google-developers-firebase-hackathon-malaysia/"
         },
         {
             "header": "Nasa Space Apps Challenge 2017 Kuala Lumpur (Hackathon) ",
             "date": "Apr 2017",
             "info": "Top 10 Finalists ",
-            "description": "descriptionThe international hackathon, Space Apps is technology development competition that occurs over 48 hours in cities around the world."
+            "description": "The International Space Apps Challenge is an international mass collaboration focused on space exploration that takes place over 48-hours in cities around the world."
         },
         {
             "header": "Google's Firebase Static Showdown 2016 Hackathon ",

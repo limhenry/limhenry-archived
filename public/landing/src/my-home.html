@@ -21,7 +21,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
       .container{
-        min-height: calc(100vh - 148px);        
+        min-height: auto;
+      }
+
+      @media screen and (max-width: 1600px) {
+        .container{
+          min-height: calc(100vh - 148px);        
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        .container{
+          min-height: auto;
+        }
       }
     </style>
 
@@ -63,8 +75,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <my-card 
                 external
                 class="half light"
-                header="Remote for Google Slides" 
-                description="Meet Remote for Google Slides — a Chrome Extension and a Progressive Web App that allows you to control Google Slides on any device, remotely."
+                header="Remote for Slides" 
+                description="Meet Remote for Slides — a Chrome Extension and a Progressive Web App that allows you to control Google Slides and Ludus on any device, remotely."
                 tag="PRODUCT"
                 bgposition="center center"
                 bgsize="contain"
@@ -76,8 +88,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <my-card 
                 class="half"
                 external
-                header="Remote for Google Slides is featured on TNW" 
-                description="Remote for Google Slides is featured on The Next Web (TNW) on 4 December 2017. "
+                header="Remote for Slides is featured on TNW" 
+                description="Remote for Slides is featured on The Next Web (TNW) on 4 December 2017. "
                 tag="NEWS / THE NEXT WEB"
                 bgposition="center center"
                 bgsize="contain"
@@ -100,7 +112,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </a>
         <a href="/projects"> 
           <my-card 
-            class="half light"
+            class="half"
             header="Projects" 
             description="Trying to save the world using HTML, CSS and JavaScript."
             tag="PROJECTS"
