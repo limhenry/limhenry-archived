@@ -12,7 +12,7 @@ before_install:
   -in credentials.tar.gz.enc -out credentials.tar.gz -d
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
-- curl -o /tmp/google-cloud-sdk-186.0.0-linux-x86_64.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-186.0.0-linux-x86_64.tar.gz,
+- curl -o /tmp/google-cloud-sdk-186.0.0-linux-x86_64.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-186.0.0-linux-x86_64.tar.gz
 - tar xzf /tmp/google-cloud-sdk-186.0.0-linux-x86_64.tar.gz -C /tmp
 - source '/tmp/google-cloud-sdk/path.bash.inc'
 - which gcloud
