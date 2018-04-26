@@ -4,6 +4,7 @@ import { Router } from 'preact-router';
 import Header from './header';
 import Home from 'async!../routes/home';
 import Stories from 'async!../routes/stories';
+import StoriesPost from 'async!../routes/stories-post';
 import Projects from 'async!../routes/projects';
 import Talks from 'async!../routes/talks';
 import Awards from 'async!../routes/awards';
@@ -25,10 +26,11 @@ export default class App extends Component {
 				<Header />
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
-					<Stories path="/stories/" />
-					<Projects path="/projects/" />
-					<Talks path="/talks/" />
-					<Awards path="/awards/" />
+					<Stories path="/stories" />
+					<StoriesPost path="/stories/:id" />
+					<Projects path="/projects" />
+					<Talks path="/talks" />
+					<Awards path="/awards" />
 					{/* <Profile path="/profile/" user="me" />
 					<Profile path="/profile/:user" /> */}
 				</Router>

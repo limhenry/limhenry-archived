@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { route } from 'preact-router';
-import { Link } from 'preact-router/match';
+import { Link, Match } from 'preact-router/match';
 import Toolbar from 'preact-material-components/Toolbar';
 import Drawer from 'preact-material-components/Drawer';
 import 'preact-material-components/Drawer/style.css';
@@ -8,6 +8,7 @@ import 'preact-material-components/Toolbar/style.css';
 import style from './style';
 
 export default class Header extends Component {
+
 	closeDrawer() {
 		this.drawer.MDComponent.open = false;
 	}
@@ -24,11 +25,13 @@ export default class Header extends Component {
 		this.closeDrawer();
 	};
 
+	ggg = this.linkTo('/awards');
 	goHome = this.linkTo('/');
 	goStories = this.linkTo('/stories');
 	goProjects = this.linkTo('/projects');
 	goTalks = this.linkTo('/talks');
 	goAwards = this.linkTo('/awards');
+
 
 	render() {
 		return (
@@ -46,7 +49,13 @@ export default class Header extends Component {
 						<Toolbar.Section class={style.section} align-end>
 							<div class={style.navList}>
 								<Link activeClassName={style.active} href="/">Home</Link>
-								<Link activeClassName={style.active} href="/stories">Stories</Link>
+								<Match path="/stories">
+									{({ path, url }) => (
+										(path.startsWith('/stories/')) ?
+											<Link activeClassName={style.active} href="/stories" path={url}>Stories</Link>
+											: <Link activeClassName={style.active} href="/stories">Stories</Link>
+									)}
+								</Match>
 								<Link activeClassName={style.active} href="/projects">Projects</Link>
 								<Link activeClassName={style.active} href="/talks">Talks</Link>
 								<Link activeClassName={style.active} href="/awards">Awards</Link>

@@ -18,8 +18,8 @@ export default class Stories extends Component {
 				<h2>News &amp; Interviews</h2>
 				<div class="card_container">
 					{ data.stories.news_interview.map(item => (
-						<a class="card" href="[[rootPath]]stories/[[item.id]]/">
-							{/* <div class="card_header" style="background-image: url([[rootPath]]images/[[item.image]])"></div> */}
+						<a class="card" href={'/stories/' + item.id}>
+							<Image fetchOnDemand alt={item.header} id="card_header" src={item.image} placeholder={item.placeholder}/>
 							<div class="card_content">
 								<div class="title">{item.header}</div>
 								<div class="date">{item.date} | {item.author}</div>
@@ -35,8 +35,8 @@ export default class Stories extends Component {
 				<h2>Top Stories</h2>
 				<div class="card_container">
 					{ data.stories.top_stories.map(item => (
-						<a class="card" href="[[rootPath]]stories/[[item.id]]/">
-							{/* <div class="card_header" style="background-image: url([[rootPath]]images/[[item.image]])"></div> */}
+						<a class="card" href={'/stories/' + item.id}>
+							<Image fetchOnDemand alt={item.header} id="card_header" src={item.image} placeholder={item.placeholder}/>
 							<div class="card_content">
 								<div class="title">{item.header}</div>
 								<div class="date">{item.date} | {item.author}</div>

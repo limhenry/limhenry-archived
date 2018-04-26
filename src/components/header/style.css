@@ -48,6 +48,10 @@
     border-bottom: 2px solid var(--app-primary-color);
 }
 
+.navList a[hidden] {
+    display: none;
+}
+
 .drawerList {
     margin: 0 20px;
 }

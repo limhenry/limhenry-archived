@@ -328,21 +328,24 @@
                 "id": "turn-your-phone-into-a-google-slides-remote-control-with-this-chrome-extension",
                 "date": "December 4, 2017",
                 "author": "The Next Web",
-                "image": "Remote-for-Google-Slides-796x398.jpg"
+                "image": "https://res.cloudinary.com/limhenry/image/upload/v1524728085/limhenryxyz/Remote-for-Google-Slides-796x398.jpg",
+                "placeholder": "https://res.cloudinary.com/limhenry/image/upload/c_thumb,w_10/v1524728085/limhenryxyz/Remote-for-Google-Slides-796x398.jpg"
             },
             {
                 "header": "解碼通關",
                 "id": "解碼通關",
                 "date": "April 5, 2017",
                 "author": "Oriental Daily 東方日報",
-                "image": "od.jpg"
+                "image": "https://res.cloudinary.com/limhenry/image/upload/v1524738843/limhenryxyz/od.jpg",
+                "placeholder": "https://res.cloudinary.com/limhenry/image/upload/c_thumb,w_10/v1524738843/limhenryxyz/od.jpg"
             },
             {
                 "header": "Student nets elusive Firebass for ticket to Google’s I/O 2017",
                 "id": "student-nets-elusive-firebass-ticket-googles-io-2017",
                 "date": "March 21, 2017",
                 "author": "Digital News Asia",
-                "image": "dna.jpg"
+                "image": "https://res.cloudinary.com/limhenry/image/upload/v1524728038/limhenryxyz/dna.jpg",
+                "placeholder": "https://res.cloudinary.com/limhenry/image/upload/c_thumb,w_10/v1524728038/limhenryxyz/dna.jpg"
             }
         ],
         "top_stories": [
@@ -351,21 +354,25 @@
                 "id": "i-am-now-a-google-developer-expert-in-web-technologies",
                 "date": "April 20, 2018",
                 "author": "Henry Lim",
-                "image": "gde.jpg"
+                "image": "https://res.cloudinary.com/limhenry/image/upload/v1524728038/limhenryxyz/gde.jpg",
+                "placeholder": "https://res.cloudinary.com/limhenry/image/upload/c_thumb,w_10/v1524728038/limhenryxyz/gde.jpg"
             },
             {
                 "header": "Meet Remote for Slides, a new way to control your presentation slides",
                 "id": "meet-remote-for-slides-a-new-way-to-control-your-presentation-slides",
                 "date": "December 2, 2017",
                 "author": "Henry Lim",
-                "image": "remote.jpg"
+                "image": "https://res.cloudinary.com/limhenry/image/upload/v1524728086/limhenryxyz/remote.jpg",
+                "placeholder": "https://res.cloudinary.com/limhenry/image/upload/c_thumb,w_10/v1524728086/limhenryxyz/remote.jpg"
             },
             {
                 "header": "Why I love Firebase (and what is Firebase) ❤️🔥",
                 "id": "why-i-love-firebase-and-what-is-firebase",
                 "date": "August 15, 2017",
                 "author": "Henry Lim",
-                "image": "firebase.jpg"
+                "image": "https://res.cloudinary.com/limhenry/image/upload/v1524739042/limhenryxyz/firebase.jpg",
+                "placeholder": "https://res.cloudinary.com/limhenry/image/upload/c_thumb,w_10/v1524739042/limhenryxyz/firebase.jpg"
+
             }
         ]
     },
