@@ -1,0 +1,76 @@
+.section {
+    padding: 0;
+}
+
+.toolbar {
+    background-color: white;
+    color: black;
+}
+
+.icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 16px 0 16px 16px;
+    cursor: pointer;
+}
+
+.navList {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.navList a {
+    margin: 0 2px;
+    box-sizing: border-box;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    vertical-align: middle;
+    color: #424242;
+    font-size: 14px;
+    padding: 3px 12px 0 12px;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 150ms ease-in-out;
+}
+
+.navList a:hover, .navList.no-tab a.iron-selected:hover {
+    border-bottom: 2px solid #BCC8FB;
+}
+
+.navList a.active {
+    border-bottom: 2px solid var(--app-primary-color);
+}
+
+.drawerList {
+    margin: 0 20px;
+}
+
+.drawerList a {
+    display: block;
+    padding: 0 16px;
+    text-decoration: none;
+    color: #424242;
+    line-height: 48px;
+}
+
+.drawerList a:focus {
+    outline: none;
+}
+
+.drawerList a.active {
+    color: #1976D2;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 860px) {
+    .navList {
+        display: none;
+    }
+}

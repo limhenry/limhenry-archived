@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <meta name="description" content="Remote for Slides is a Chrome Extension and a Progressive Web App that allows you to control Google Slides and Ludus on any device, remotely, without the need for any extra hardware.">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
+    <% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
+        <meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
+    <% } %>
+    <% for (var chunk of webpack.chunks) { %>
+        <% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>
+            <% for (var file of chunk.files) { %>
+                <% if (htmlWebpackPlugin.options.preload && file.match(/\.(js|css)$/)) { %>
+                    <link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+                <% } else if (file.match(/manifest\.json$/)) { %>
+                <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath + file %>">
+            <% } %>
+        <% } %>
+    <% } %>
+
+    <style type="text/css">
+        @font-face {
+        font-family: 'Google Sans';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Google Sans Regular'), local('GoogleSans-Regular'), url(/assets/fonts/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+        font-family: 'Google Sans';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Google Sans Medium'), local('GoogleSans-Medium'), url(/assets/fonts/4UabrENHsxJlGDuGo1OIlLU94YtzCwZsPF4o.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    </style>
+</head>
+
+<body>
+    <%= htmlWebpackPlugin.options.ssr({
+			url: '/'
+	}) %>
+    <script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
+    <script>
+        window.fetch || document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')
+    </script>
+    <!-- Google Analytics -->
+    <!-- <script>
+        window.ga = window.ga || function () {
+            (ga.q = ga.q || []).push(arguments)
+        };
+        ga.l = +new Date;
+        ga('create', 'UA-57741199-3', 'auto');
+        ga('send', 'pageview');
+    </script> -->
+    <!-- <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+    <script>
+        // if ('serviceWorker' in navigator) {
+        //     navigator.serviceWorker.register('sw.js').then(reg => {
+        //         reg.onupdatefound = () => {
+        //             var installingWorker = reg.installing;
+        //             installingWorker.onstatechange = () => {
+        //                 switch (installingWorker.state) {
+        //                     case 'installed':
+        //                         if (navigator.serviceWorker.controller) {
+        //                             document.querySelector('.toast').setAttribute('toggle', '');
+        //                             setTimeout(() => {
+        //                                 document.querySelector('.toast').removeAttribute('toggle');
+        //                             }, 5000);
+        //                         }
+        //                         break;
+        //                     case 'redundant':
+        //                         console.error('The installing service worker became redundant.');
+        //                         break;
+        //                 }
+        //             }
+        //         }
+        //     }).catch(e => {
+        //         console.error('Error during service worker registration:', e);
+        //     })
+        // }
+    </script>
+</body>
+
+</html>

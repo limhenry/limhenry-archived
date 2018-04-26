@@ -1,0 +1,62 @@
+:host {
+    display: block;
+    padding-bottom: 128px;
+}
+
+.hero {
+    max-width: 1200px;
+}
+
+.item {
+    position: relative;
+}
+
+.item_container {
+    margin-top: 0;
+}
+
+.item_container .item {
+    max-width: 1200px;
+    padding: 24px 20px;
+    box-sizing: border-box;
+}
+
+.item_container .item_description {
+    max-width: 960px;
+}
+
+.item iron-icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    right: 22px;
+    color: #b7b7b7;
+    width: 18px;
+}
+
+.item_header,
+.item_info,
+.item_description {
+    margin-right: 36px;
+}
+
+h2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+@media screen and (max-width: 640px) {
+    h2 {
+        margin-top: 48px;
+        font-size: 28px;
+        padding: 8px 16px;
+    }
+    .item_container .item {
+        padding: 20px 16px;
+    }
+}

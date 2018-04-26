@@ -1,0 +1,106 @@
+.hero {
+	margin-bottom: 96px;
+}
+
+.hero_description p {
+	line-height: 38px;
+	font-size: 24px;
+}
+
+.hero_description a {
+	text-decoration: none;
+	color: #1550b3;
+	font-weight: 500;
+}
+
+h2 {
+	text-align: center;
+	max-width: 860px;
+	margin: 0 auto;
+	padding: 20px;
+	box-sizing: border-box;
+	font-weight: 400;
+	font-size: 40px;
+}
+
+.card_container {
+	max-width: 1200px;
+}
+
+.read_more {
+	text-decoration: none;
+	font-size: 15px;
+	line-height: 15px;
+	text-align: center;
+	margin: 0 auto 48px auto;
+	text-transform: uppercase;
+	font-weight: 600;
+	cursor: pointer;
+	color: #3367d6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.read_more iron-icon {
+	margin-left: 6px;
+	width: 22px;
+	height: 22px;
+}
+
+footer {
+	margin-top: 128px;
+	font-family: 'Roboto', 'Noto', sans-serif;
+	background: #FAFAFA;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px 80px;
+	color: rgba(0, 0, 0, 0.65);
+	font-size: 13px;
+}
+
+footer a {
+	text-decoration: none;
+}
+
+footer iron-icon {
+	margin: 8px 16px 8px 0;
+	width: 26px;
+	height: 26px;
+	color: rgba(0, 0, 0, 0.65);
+	-webkit-transition: all 150ms ease-in-out;
+	-o-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+}
+
+footer iron-icon:hover {
+	color: rgba(0, 0, 0, 0.95);
+}
+
+@media screen and (max-width: 860px) {
+	.hero_description p {
+		line-height: 30px;
+	}
+	footer {
+		flex-direction: column-reverse;
+		align-items: flex-start;
+		padding: 48px 16px;
+	}
+	footer .footer_social {
+		margin-bottom: 16px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	h2 {
+		margin-top: 48px;
+		font-size: 28px;
+		padding: 8px 16px;
+		text-align: left
+	}
+	.hero_description p {
+		font-size: 20px;
+		line-height: 30px;
+	}
+}

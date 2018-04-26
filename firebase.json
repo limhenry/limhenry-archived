@@ -1,0 +1,89 @@
+{
+  "hosting": {
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600, no-cache"
+          },
+          {
+            "key": "Access-Control-Max-Age",
+            "value": "600"
+          }
+        ]
+      },
+      {
+        "source": "/sw.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "private, no-cache"
+          }
+        ]
+      },
+      {
+        "source": "**/*.chunk.*.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</bundle.67b02.js>; rel=preload; as=script, </style.c8f82.css>; rel=preload; as=style, </route-home.chunk.5cb7d.js>; rel=preload; as=script"
+          }
+        ]
+      },
+      {
+        "source": "/talks",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</bundle.67b02.js>; rel=preload; as=script, </style.c8f82.css>; rel=preload; as=style, </route-talks.chunk.dc3a8.js>; rel=preload; as=script"
+          }
+        ]
+      },
+      {
+        "source": "/stories",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</bundle.67b02.js>; rel=preload; as=script, </style.c8f82.css>; rel=preload; as=style, </route-stories.chunk.4cb7d.js>; rel=preload; as=script"
+          }
+        ]
+      },
+      {
+        "source": "/projects",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</bundle.67b02.js>; rel=preload; as=script, </style.c8f82.css>; rel=preload; as=style, </route-projects.chunk.fa2d0.js>; rel=preload; as=script"
+          }
+        ]
+      },
+      {
+        "source": "/awards",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</bundle.67b02.js>; rel=preload; as=script, </style.c8f82.css>; rel=preload; as=style, </route-awards.chunk.d974a.js>; rel=preload; as=script"
+          }
+        ]
+      }
+    ],
+    "public": "build"
+  }
+}

@@ -1,24 +1,38 @@
 {
-  "name": "cerium",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/limhenry/cerium.git"
-  },
-  "author": "limhenry <henrylim.everything@gmail.com>",
+  "private": true,
+  "name": "limhenry",
+  "version": "0.0.0",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/limhenry/cerium/issues"
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "serve": "preact build && preact serve",
+    "dev": "preact watch",
+    "lint": "eslint src"
   },
-  "homepage": "https://github.com/limhenry/cerium#readme",
-  "dependencies": {},
+  "eslintConfig": {
+    "extends": "eslint-config-synacor",
+    "rules": {
+      "no-unused-vars": "warn",
+      "react/sort-comp": "off",
+      "lines-around-comment": "off",
+      "react/prefer-stateless-function": "off"
+    }
+  },
+  "eslintIgnore": [
+    "build/*"
+  ],
   "devDependencies": {
-    "browser-sync": "^2.12.3",
-    "gulp": "^3.9.1"
+    "eslint": "^4.5.0",
+    "eslint-config-synacor": "^1.1.0",
+    "if-env": "^1.0.0",
+    "preact-cli": "^2.0.0"
+  },
+  "dependencies": {
+    "pimg": "^1.0.0",
+    "preact": "^8.2.1",
+    "preact-compat": "^3.17.0",
+    "preact-material-components": "^1.4.0",
+    "preact-router": "^2.5.5"
   }
 }
