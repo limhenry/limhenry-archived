@@ -19,7 +19,7 @@ export default class Stories extends Component {
 				<div class="card_container">
 					{ data.stories.news_interview.map(item => (
 						<a class="card" href={'/stories/' + item.id}>
-							<Image fetchOnDemand alt={item.header} id="card_header" src={item.image} placeholder={item.placeholder}/>
+							<Image fetchOnDemand alt={item.header} className="card_header" src={item.image} placeholder={item.placeholder}/>
 							<div class="card_content">
 								<div class="title">{item.header}</div>
 								<div class="date">{item.date} | {item.author}</div>
@@ -36,7 +36,7 @@ export default class Stories extends Component {
 				<div class="card_container">
 					{ data.stories.top_stories.map(item => (
 						<a class="card" href={'/stories/' + item.id}>
-							<Image fetchOnDemand alt={item.header} id="card_header" src={item.image} placeholder={item.placeholder}/>
+							<Image fetchOnDemand alt={item.header} className="card_header" src={item.image} placeholder={item.placeholder}/>
 							<div class="card_content">
 								<div class="title">{item.header}</div>
 								<div class="date">{item.date} | {item.author}</div>

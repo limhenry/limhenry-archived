@@ -8,6 +8,8 @@ import StoriesPost from 'async!../routes/stories-post';
 import Projects from 'async!../routes/projects';
 import Talks from 'async!../routes/talks';
 import Awards from 'async!../routes/awards';
+import Footer from './footer';
+import BottomNavBar from './bottom_navbar';
 // import Home from 'async!../routes/home';
 // import Profile from 'async!../routes/profile';
 
@@ -18,6 +20,9 @@ export default class App extends Component {
 	 */
 	handleRoute = e => {
 		this.currentUrl = e.url;
+		if (typeof window !== "undefined") {
+			window.scrollTo(0, 0);
+		}
 	};
 
 	render() {
@@ -31,9 +36,9 @@ export default class App extends Component {
 					<Projects path="/projects" />
 					<Talks path="/talks" />
 					<Awards path="/awards" />
-					{/* <Profile path="/profile/" user="me" />
-					<Profile path="/profile/:user" /> */}
 				</Router>
+				{/* <Footer /> */}
+				<BottomNavBar />
 			</div>
 		);
 	}

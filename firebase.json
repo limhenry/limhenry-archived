@@ -43,7 +43,7 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</bundle.67b02.js>; rel=preload; as=script, </style.c8f82.css>; rel=preload; as=style, </route-home.chunk.5cb7d.js>; rel=preload; as=script"
+            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-home.chunk.0f728.js>; rel=preload; as=script"
           }
         ]
       },
@@ -52,7 +52,16 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</bundle.67b02.js>; rel=preload; as=script, </style.c8f82.css>; rel=preload; as=style, </route-talks.chunk.dc3a8.js>; rel=preload; as=script"
+            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-talks.chunk.de99a.js>; rel=preload; as=script"
+          }
+        ]
+      },
+      {
+        "source": "/stories-post",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-stories-post.chunk.67c8c.js>; rel=preload; as=script"
           }
         ]
       },
@@ -61,7 +70,7 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</bundle.67b02.js>; rel=preload; as=script, </style.c8f82.css>; rel=preload; as=style, </route-stories.chunk.4cb7d.js>; rel=preload; as=script"
+            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-stories.chunk.14a12.js>; rel=preload; as=script"
           }
         ]
       },
@@ -70,7 +79,7 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</bundle.67b02.js>; rel=preload; as=script, </style.c8f82.css>; rel=preload; as=style, </route-projects.chunk.fa2d0.js>; rel=preload; as=script"
+            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-projects.chunk.69fab.js>; rel=preload; as=script"
           }
         ]
       },
@@ -79,11 +88,11 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</bundle.67b02.js>; rel=preload; as=script, </style.c8f82.css>; rel=preload; as=style, </route-awards.chunk.d974a.js>; rel=preload; as=script"
+            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-awards.chunk.32b52.js>; rel=preload; as=script"
           }
         ]
       }
     ],
     "public": "build"
-  }
+  } 
 }

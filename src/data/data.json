@@ -378,8 +378,10 @@
     },
     "talks": [
         {
-            "header": "GDG DevFest + GBG GDay Georgetown 2017",
+            "header": "GDG DevFest + GBG GDay Georgetown '17",
             "date": "Nov 18, 2017",
+            "month": "Nov",
+            "year": "2017",
             "info": "Georgetown, Malaysia",
             "topic": [
                 {
@@ -396,6 +398,8 @@
         {
             "header": "GDG Kuala Lumpur Firebase Meetup",
             "date": "Oct 7, 2017",
+            "month": "Oct",
+            "year": "2017",
             "info": "Kuala Lumpur, Malaysia",
             "topic": [
                 {
@@ -408,6 +412,8 @@
         {
             "header": "GDG Kuala Lumpur Web Meetup",
             "date": "Aug 19, 2017",
+            "month": "Aug",
+            "year": "2017",
             "info": "Kuala Lumpur, Malaysia",
             "topic": [
                 {
@@ -428,6 +434,8 @@
         {
             "header": "Barcamp Cyberjaya 2017",
             "date": "Aug 5, 2017",
+            "month": "Aug",
+            "year": "2017",
             "info": "Cyberjaya, Malaysia",
             "topic": [
                 {
@@ -442,8 +450,10 @@
             "description": "Building a better web with Web Components and Polymer 2.0"
         },
         {
-            "header": "Google I/O Extended 2017 Kuala Lumpur",
+            "header": "Google I/O Extended '17 Kuala Lumpur",
             "date": "July 22, 2017",
+            "month": "July",
+            "year": "2017",
             "info": "Kuala Lumpur, Malaysia",
             "topic": [
                 {
@@ -458,8 +468,10 @@
             "description": "Building a better web with Web Components and Polymer 2.0"
         },
         {
-            "header": "Polymer Polytechnic MMU Cyberjaya 2017",
+            "header": "Polymer Polytechnic MMU Cyberjaya '17",
             "date": "Jan 17, 2017",
+            "month": "Jan",
+            "year": "2017",
             "info": "Cyberjaya, Malaysia",
             "description": "Intro to Polymer & Build your first Polymer element (Codelabs)",
             "topic": [
@@ -475,8 +487,10 @@
             "link": "https://docs.google.com/presentation/d/1bBcJvUyfhsEvQhu1HiE64-ttFOYbQEzNjd03sKASc7c/edit?usp=sharing"
         },
         {
-            "header": "GDG DevFest Kuala Lumpur 2016 ",
+            "header": "GDG DevFest Kuala Lumpur '16 ",
             "date": "Dec 10, 2016",
+            "month": "Dec",
+            "year": "2016",
             "info": "Bukit Jalil, Malaysia",
             "description": "Make the web great again: What comes next for the web",
             "topic": [
@@ -488,8 +502,10 @@
             "link": "https://docs.google.com/presentation/d/1n1kepJWqvzPPgJgzvmpN8xS9p1NKWet38gAj6ZWxLJA"
         },
         {
-            "header": "GDG DevFest Kuala Lumpur 2016 ",
+            "header": "GDG DevFest Kuala Lumpur '16 ",
             "date": "Dec 10, 2016",
+            "month": "Dec",
+            "year": "2016",
             "info": "Bukit Jalil, Malaysia",
             "description": "Workshop: Build a Progressive Web Apps with Firebase, Polymerfire and Polymer",
             "topic": [
@@ -515,6 +531,8 @@
         {
             "header": "Barcamp Cyberjaya 2016",
             "date": "Dec 3, 2016",
+            "month": "Dec",
+            "year": "2016",
             "info": "Cyberjaya, Malaysia",
             "description": "Make the web great again: What comes next for the web ",
             "topic": [
@@ -526,8 +544,10 @@
             "link": "https://docs.google.com/presentation/d/1n1kepJWqvzPPgJgzvmpN8xS9p1NKWet38gAj6ZWxLJA"
         },
         {
-            "header": "Google I/O Extended 2016 Kuala Lumpur ",
+            "header": "Google I/O Extended '16 Kuala Lumpur ",
             "date": "July 30, 2016",
+            "month": "July",
+            "year": "2016",
             "info": "Bukit Jalil, Malaysia",
             "description": "Fishing Firebass: Catching a ticket to Google I/O 2017 ",
             "topic": [
@@ -539,8 +559,10 @@
             "link": "https://drive.google.com/open?id=1gMOb3XstnqLERnoUzejvnteKVInAwmbBcyJsZttoCTk"
         },
         {
-            "header": "Tech Talk Thursday with Google and GDGKL: Firebase, PWA, Polymer & Angular ",
+            "header": "Tech Talk Thursday with Google and GDGKL",
             "date": "July 14, 2016",
+            "month": "July",
+            "year": "2016",
             "info": "Cyberjaya, Malaysia",
             "topic": [
                 {
@@ -560,8 +582,10 @@
             "link": "https://drive.google.com/open?id=1OSwv0JFQP_v4XFbE9xUlyAwYfT8dqnDJzryZ6hZdXrA"
         },
         {
-            "header": "Progressive Web Apps Dev Summit 2016 Kuala Lumpur Live Viewing Party ",
+            "header": "PWA Dev Summit '16 Kuala Lumpur Live Viewing Party ",
             "date": "June 20, 2016",
+            "month": "June",
+            "year": "2016",
             "info": "Kuala Lumpur, Malaysia",
             "topic": [
                 {
@@ -576,8 +600,10 @@
             "description": "Intro to Progressive Web Apps & Service Worker Codelabs"
         },
         {
-            "header": "Google Cloud Platform NEXT Extended 2016 Kuala Lumpur",
+            "header": "Google Cloud Platform NEXT Extended '16 Kuala Lumpur",
             "date": "April 30, 2016",
+            "month": "Apr",
+            "year": "2016",
             "info": "Bukit Jalil, Malaysia",
             "topic": [
                 {
@@ -594,6 +620,8 @@
         {
             "header": "Barcamp Cyberjaya 2015",
             "date": "Dec 19, 2015",
+            "month": "Dec",
+            "year": "2015",
             "info": "Cyberjaya, Malaysia",
             "topic": [
                 {

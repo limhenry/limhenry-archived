@@ -39,11 +39,6 @@ export default class Header extends Component {
 				<Toolbar class={style.toolbar}>
 					<Toolbar.Row>
 						<Toolbar.Section align-start>
-							<svg onClick={this.openDrawer} class={style.icon} viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
-								<g>
-									<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-								</g>
-							</svg>
 							<Toolbar.Title>limhenry.xyz</Toolbar.Title>
 						</Toolbar.Section>
 						<Toolbar.Section class={style.section} align-end>

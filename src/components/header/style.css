@@ -38,14 +38,29 @@
     text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: border-bottom 150ms ease-in-out;
+    position: relative;
 }
 
-.navList a:hover, .navList.no-tab a.iron-selected:hover {
-    border-bottom: 2px solid #BCC8FB;
+.navList a:hover::before {
+    height: 3px;
+    width: 100%;
+    background: #BCC8FB;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
-.navList a.active {
-    border-bottom: 2px solid var(--app-primary-color);
+.navList a.active::before {
+    height: 3px;
+    width: 100%;
+    background: var(--app-primary-color);
+    content: '';
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .navList a[hidden] {

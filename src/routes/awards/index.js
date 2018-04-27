@@ -15,11 +15,13 @@ export default class Awards extends Component {
 					</div>
 				</div>
 
-				<div class="cover" style="background-image:url([[rootPath]]images/firebass.jpg)">
+				{/* <div class="cover" style="background-image:url(https://res.cloudinary.com/limhenry/image/upload/v1524738836/limhenryxyz/firebass.jpg)">
 					<div class="cover_label">
 						<span>Winner of Google's Firebass Challenge @ Google I/O 2017</span>
-					</div>
-				</div>
+					</div> */}
+				{/* </div> */}
+
+				<Image className="cover" fetchOnDemand alt="em" src="https://res.cloudinary.com/limhenry/image/upload/v1524738836/limhenryxyz/firebass.jpg" placeholder="https://res.cloudinary.com/limhenry/image/upload/c_thumb,w_10/v1524738836/limhenryxyz/firebass.jpg"/>
 
 				<div class="item_container">
 					{ data.awards.map(item => (

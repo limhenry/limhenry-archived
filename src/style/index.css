@@ -2,15 +2,24 @@
   --app-primary-color: #4285f4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 body {
+  height: 100%;
   margin: 0 auto;
+  overflow: auto;
   font-family: 'Google Sans', 'Noto', sans-serif;
   line-height: 1.5;
-  min-height: 100vh;
   background-color: #ffffff;
-  max-width: 1440px;
+  /* max-width: 1440px; */
+  -webkit-overflow-scrolling: touch;
 }
 
 * {
@@ -24,6 +33,20 @@ body {
 .mdc-theme--dark {
 	background-color: #333;
 	color: #fff;
+}
+
+.mdc-dialog__body--scrollable {
+  max-height: 65vh !important;
+}
+
+@media screen and (max-width: 860px) {
+  .mdc-dialog__surface {
+    width: 100% !important;
+    height: 100%;
+  }
+  .mdc-dialog__body--scrollable {
+    max-height: initial !important;
+  }
 }
 
 /* copy from polymer */
@@ -50,9 +73,13 @@ body {
 }
 
 .cover {
+  width: 100%;
   height: 600px;
+  object-fit: cover;
+  object-position: center;
   background-size: cover;
   background-position: center;
+  display: block;
 }
 
 .cover_label {
@@ -110,24 +137,22 @@ body {
 }
 
 .item_container .item_header {
-  font-size: 24px;
+  font-size: 23px;
   font-weight: 400;
   max-width: 95%;
   line-height: 36px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   transition: 70ms color ease-in-out;
 }
 
 .item_container .item_info {
   font-size: 15px;
-  margin-bottom: 16px;
   color: #5d5d5d;
 }
 
 .item_container .item_description {
   font-size: 15px;
   color: #313131;
-  font-family: 'Roboto', 'Noto', sans-serif;
 }
 
 .item_info {
@@ -138,14 +163,11 @@ body {
 .item_tag {
   border-radius: 18px;
   height: 30px;
-  font-size: 12px;
-  line-height: 12px;
-  padding: 8px;
+  font-size: 13px;
+  line-height: 13px;
+  padding: 4px 12px 4px 0;
   box-sizing: border-box;
-  border: 1px solid #DFE1E5;
-  color: black;
-  margin-right: 6px;
-  margin-bottom: 6px;
+  color: #2b2b2b;
   display: flex;
   align-items: center;
 }
@@ -188,7 +210,7 @@ body {
   box-shadow: 0 0 2px rgba(38, 50, 56, .2), 0 8px 24px 0 rgba(0, 0, 0, .2)
 }
 
-.card #card_header {
+.card .card_header {
   height: 220px;
   background-size: cover;
   background-position: center;
@@ -214,7 +236,7 @@ body {
 .card .card_content .description {
   line-height: 26px;
   color: #313131;
-  font-family: 'Roboto', 'Noto', sans-serif;
+  /* font-family: 'Roboto', 'Noto', sans-serif; */
 }
 
 .card .card_content .date {
@@ -331,6 +353,7 @@ body {
     padding: 0;
   }
   .card {
+    border-radius: 0;
     border: none;
     width: 100%;
     margin: 0;

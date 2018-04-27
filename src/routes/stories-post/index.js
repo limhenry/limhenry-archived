@@ -39,7 +39,7 @@ export default class StoriesPost extends Component {
 
 					<div class={style.story_origin}>
 						<div class={style.box}></div>Originally posted on:
-                        <a href={data.link} target="_blank">{story.publisher}</a>
+                        <a href={story.link} target="_blank">{story.publisher}</a>
 					</div>
 				</div>
 			</div>

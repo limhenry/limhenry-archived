@@ -12,20 +12,20 @@ export default class Home extends Component {
 	
 	render() {
 		return (
-			<div class={style.home}>
+			<div id={style.home}>
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<div class="hero_title">I'm Henry Lim</div>
 					<div className={[style.hero_description, 'hero_description'].join(' ')}>
-						<p>I am a <a href="https://developers.google.com/experts/" target="_blank">Google Developer Expert</a> in Web Technologies. I am making the web great again with Polymer, Web Components, Progressive Web Apps and Firebase.</p>
-						<p>Also, I am a community co-organizer at <a href="https://facebook.com/GDGKualaLumpur/" target="_blank">Google Developer Group Kuala Lumpur</a>. We organize conferences, meetups, workshops, and bringing all the latest Google technologies into the town.</p>
+						<p>I am a <a href="https://developers.google.com/experts/" target="_blank" rel="noopener">Google Developer Expert</a> in Web Technologies. I am making the web great again with Polymer, Web Components, Progressive Web Apps and Firebase.</p>
+						<p>Also, I am a community co-organizer at <a href="https://facebook.com/GDGKualaLumpur/" target="_blank" rel="noopener">Google Developer Group Kuala Lumpur</a>. We organize conferences, meetups, workshops, and bringing all the latest Google technologies into the town.</p>
 					</div>
 				</div>
 
 				<h2>My Stories</h2>
 				<div class="card_container">
 				{ data.stories.featured_stories.map(item => (
-					<a class="card" href="/stories/{item.id}/">
-						<Image fetchOnDemand alt={item.header} id="card_header" src={item.image} placeholder={item.placeholder}/>
+					<a class="card" href={'/stories/' + item.id}>
+						<Image fetchOnDemand alt={item.header} className="card_header" src={item.image} placeholder={item.placeholder}/>
 						<div class="card_content">
 							<div class="title">{item.header}</div>
 							<div class="date">{item.date} | {item.author}</div>
@@ -46,8 +46,8 @@ export default class Home extends Component {
 				<h2>My Projects</h2>
 				<div class="card_container">
 				{ data.projects.featured_projects.map(item => (
-					<a class="card" href="{item.link}" target="_blank">
-						<Image fetchOnDemand alt={item.header} id="card_header" src={item.image} placeholder={item.placeholder}/>
+					<a class="card" href={item.link} target="_blank" rel="noopener">
+						<Image fetchOnDemand alt={item.header} className="card_header" src={item.image} placeholder={item.placeholder}/>
 						<div class="card_content">
 							<div class="title">{item.header}</div>
 							<div class="description">{item.description}</div>

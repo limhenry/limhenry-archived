@@ -11,7 +11,7 @@ export default class Projects extends Component {
 
 	render() {
 		return (
-			<div>
+			<div id={style.projects}>
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<div class="hero_title">Projects</div>
 					<div class="hero_description">
@@ -23,7 +23,7 @@ export default class Projects extends Component {
 				<div class="card_container">
 					{ data.projects.featured_projects.map(item => (
 						<a class="card" href={item.link} target="blank">
-							<Image fetchOnDemand alt={item.header} id="card_header" src={item.image} placeholder={item.placeholder}/>
+							<Image fetchOnDemand alt={item.header} className="card_header" src={item.image} placeholder={item.placeholder}/>
 							<div class="card_content">
 								<div class="title">{item.header}</div>
 								<div class="description">{item.description}</div>
