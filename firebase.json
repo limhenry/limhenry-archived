@@ -43,34 +43,7 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-home.chunk.0f728.js>; rel=preload; as=script"
-          }
-        ]
-      },
-      {
-        "source": "/talks",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-talks.chunk.de99a.js>; rel=preload; as=script"
-          }
-        ]
-      },
-      {
-        "source": "/stories-post",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-stories-post.chunk.67c8c.js>; rel=preload; as=script"
-          }
-        ]
-      },
-      {
-        "source": "/stories",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-stories.chunk.14a12.js>; rel=preload; as=script"
+            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-home.chunk.ef8d1.js>; rel=preload; as=script"
           }
         ]
       },
@@ -79,7 +52,7 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-projects.chunk.69fab.js>; rel=preload; as=script"
+            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-projects.chunk.733f8.js>; rel=preload; as=script"
           }
         ]
       },
@@ -88,11 +61,38 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</bundle.76aae.js>; rel=preload; as=script, </style.d2d25.css>; rel=preload; as=style, </route-awards.chunk.32b52.js>; rel=preload; as=script"
+            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-awards.chunk.feab6.js>; rel=preload; as=script"
+          }
+        ]
+      },
+      {
+        "source": "/stories-post",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-stories-post.chunk.1b674.js>; rel=preload; as=script"
+          }
+        ]
+      },
+      {
+        "source": "/talks",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-talks.chunk.1f62d.js>; rel=preload; as=script"
+          }
+        ]
+      },
+      {
+        "source": "/stories",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-stories.chunk.6393b.js>; rel=preload; as=script"
           }
         ]
       }
     ],
     "public": "build"
-  } 
+  }
 }

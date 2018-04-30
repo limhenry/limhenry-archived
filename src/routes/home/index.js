@@ -9,6 +9,13 @@ export default class Home extends Component {
 	componentDidMount() {
 		this.setState({data: data});
 	}
+
+	constructor(props) {
+		super(props);
+		if (typeof window !== "undefined") {
+			document.title = 'Henry Lim';
+		}
+	}
 	
 	render() {
 		return (

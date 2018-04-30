@@ -3,8 +3,8 @@ import { Link, Match } from 'preact-router/match';
 import style from './style';
 
 export default class BottomNavBar extends Component {
-	render() {
-		return (
+    render() {
+        return (
             <div class={style.bottom_navbar}>
                 <Link activeClassName={style.active} class={style.nav_item} href="/">
                     <svg>
@@ -16,16 +16,28 @@ export default class BottomNavBar extends Component {
                         Home
                     </span>
                 </Link>
-                <Link activeClassName={style.active} class={style.nav_item} href="/stories">
-                    <svg>
-                        <g>
-                            <path d="M13 12h7v1.5h-7zm0-2.5h7V11h-7zm0 5h7V16h-7zM21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 15h-9V6h9v13z"></path>
-                        </g>
-                    </svg>
-                    <span>
-                        Stories
-                    </span>
-                </Link>
+                <Match path="/stories">
+                    {({ path, url }) => (
+                        (path.startsWith('/stories/')) ?
+                            <Link activeClassName={style.active} class={style.nav_item} href="/stories" path={url}>
+                                <svg>
+                                    <g>
+                                        <path d="M13 12h7v1.5h-7zm0-2.5h7V11h-7zm0 5h7V16h-7zM21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 15h-9V6h9v13z"></path>
+                                    </g>
+                                </svg>
+                                <span>Stories</span>
+                            </Link>
+                            : <Link activeClassName={style.active} class={style.nav_item} href="/stories">
+                                <svg>
+                                    <g>
+                                        <path d="M13 12h7v1.5h-7zm0-2.5h7V11h-7zm0 5h7V16h-7zM21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 15h-9V6h9v13z"></path>
+                                    </g>
+                                </svg>
+                                <span>Stories</span>
+                            </Link>
+                    )}
+                </Match>
+
                 <Link activeClassName={style.active} class={style.nav_item} href="/projects">
                     <svg>
                         <g>
@@ -55,6 +67,6 @@ export default class BottomNavBar extends Component {
                     </span>
                 </Link>
             </div>
-		);
-	}
+        );
+    }
 }

@@ -1,17 +1,46 @@
 import { h, Component } from 'preact';
+import { route } from 'preact-router';
 import Image from 'pimg';
 import style from './style';
 import data from '../../data/data.json'
+import projects from '../../data/projects.json'
+import Dialog from '../../components/dialog';
 import '../../style';
 
 export default class Projects extends Component {
+	toggleDialog = (id, item) => {
+		if (typeof window !== "undefined") {
+			document.title = item.title + ' - Projects - Henry Lim';
+		}
+		this.dialog.toggle(id, item, 'projects');
+	}
+
 	componentDidMount() {
 		this.setState({data: data});
+		if (this.id && projects[this.id]) {
+			if (typeof window !== "undefined") {
+				document.title = item.title + ' - Projects - Henry Lim';
+			}
+			this.dialog.toggle(this.id, projects[this.id], 'projects');
+		}
+		else {
+			route('/projects');
+		}
+	}
+
+	constructor(props) {
+		super(props);
+		if (typeof window !== "undefined") {
+			document.title = 'Projects - Henry Lim';
+		}
 	}
 
 	render() {
 		return (
 			<div id={style.projects}>
+
+				<Dialog ref={dialog => { this.dialog = dialog; }}/>
+
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<div class="hero_title">Projects</div>
 					<div class="hero_description">
@@ -37,21 +66,22 @@ export default class Projects extends Component {
 				</div>
 
 				<h2>All Projects</h2>
-				<div className={[style.item_container, 'item_container'].join(' ')}>
-					{ data.projects.all_projects.map(item => (
-						<a className={[style.item, 'item'].join(' ')} href={item.link} target="blank">
-							<iron-icon icon="henry-icons:open-in-new"></iron-icon>
-							<div class="item_header">{item.header}</div>
-							<div class="item_info">
-							{ item.techs.map(item => (
-								<div class="item_tag">
-									<div class="item_circle" id={item.id}></div>
-									<span>{item.value}</span>
+
+				<div class="item_container">
+					{ Object.keys(projects).map(item => (
+						<div class="item" onClick={() => this.toggleDialog(item, projects[item])}>
+							<div class="content">
+								<div class="item_header">{projects[item].title}</div>
+								<div class="item_info">
+									{projects[item].tags.map(item => (
+										<div class="item_tag">
+											<div class="item_circle" id={item.id}></div>
+											<span>{item.value}</span>
+										</div>
+									))}
 								</div>
-							))}
 							</div>
-							<div class="item_description">{item.description}</div>
-						</a>
+						</div>
 					))}
 				</div>
 			</div>

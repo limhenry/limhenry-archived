@@ -1,0 +1,266 @@
+{
+    "image-styling-with-polymer-and-web-worker": {
+        "subtitle": "GDG DevFest + GBG GDay Georgetown '17",
+        "date": "Nov 18, 2017",
+        "month": "Nov",
+        "year": "2017",
+        "info": "Georgetown, Malaysia",
+        "tags": [
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "title": "Image Styling with Polymer 3.0 and Web Worker"
+    },
+    "introduction-to-firebase-and-firebase-cloud-firestore": {
+        "subtitle": "GDG Kuala Lumpur Firebase Meetup",
+        "date": "Oct 7, 2017",
+        "month": "Oct",
+        "year": "2017",
+        "info": "Kuala Lumpur, Malaysia",
+        "tags": [
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            }
+        ],
+        "title": "Introduction to Firebase and Firebase Cloud Firestore"
+    },
+    "make-the-web-great-again-with-progressive-web-apps-and-polymer": {
+        "subtitle": "GDG Kuala Lumpur Web Meetup",
+        "date": "Aug 19, 2017",
+        "month": "Aug",
+        "year": "2017",
+        "info": "Kuala Lumpur, Malaysia",
+        "tags": [
+            {
+                "id": "pwa",
+                "value": "Progressive Web Apps"
+            },
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "title": "Make The Web Great Again with Progressive Web Apps and Polymer"
+    },
+    "building-a-better-web-with-web-components-and-polymer-barcamp": {
+        "subtitle": "Barcamp Cyberjaya 2017",
+        "date": "Aug 5, 2017",
+        "month": "Aug",
+        "year": "2017",
+        "info": "Cyberjaya, Malaysia",
+        "tags": [
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "title": "Building a better web with Web Components and Polymer 2.0",
+        "description": "Polymer is the most popular way to build your own Web Component, and they're natively supported in Chrome and Safari today, with other browsers joining the party soon. In this session, you will learn how Web Components and Polymer can help you build performant, maintainable web apps that unlock the full potential of the browser. You'll also hear about the latest advancements in the Polymer library that are bringing Polymer development closer to native than ever before, like ES6 class-based syntax and a suite of tools."
+    },
+    "building-a-better-web-with-web-components-and-polymer-io": {
+        "subtitle": "Google I/O Extended '17 Kuala Lumpur",
+        "date": "July 22, 2017",
+        "month": "July",
+        "year": "2017",
+        "info": "Kuala Lumpur, Malaysia",
+        "tags": [
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "title": "Building a better web with Web Components and Polymer 2.0",
+        "description": "Polymer is the most popular way to build your own Web Component, and they're natively supported in Chrome and Safari today, with other browsers joining the party soon. In this session, you will learn how Web Components and Polymer can help you build performant, maintainable web apps that unlock the full potential of the browser. You'll also hear about the latest advancements in the Polymer library that are bringing Polymer development closer to native than ever before, like ES6 class-based syntax and a suite of tools."
+    },
+    "intro-to-polymer-and-build-your-first-polymer-element": {
+        "subtitle": "Polymer Polytechnic MMU Cyberjaya '17",
+        "date": "Jan 17, 2017",
+        "month": "Jan",
+        "year": "2017",
+        "info": "Cyberjaya, Malaysia",
+        "title": "Intro to Polymer & Build your first Polymer element (Codelabs)",
+        "tags": [
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "link": "https://docs.google.com/presentation/d/1bBcJvUyfhsEvQhu1HiE64-ttFOYbQEzNjd03sKASc7c/edit?usp=sharing"
+    },
+    "make-the-web-great-again-what-comes-next-for-the-web-devfest": {
+        "subtitle": "GDG DevFest Kuala Lumpur '16 ",
+        "date": "Dec 10, 2016",
+        "month": "Dec",
+        "year": "2016",
+        "info": "Bukit Jalil, Malaysia",
+        "title": "Make the web great again: What comes next for the web",
+        "tags": [
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "link": "https://docs.google.com/presentation/d/1n1kepJWqvzPPgJgzvmpN8xS9p1NKWet38gAj6ZWxLJA",
+        "description": "In this session, Henry will share the next visionary steps for the web, with Progressive Web Apps, Accelerated Mobile Pages, Physical Web, WebVR and more."
+    },
+    "build-a-progressive-web-apps-with-firebase-polymerfire-and-polymer": {
+        "subtitle": "GDG DevFest Kuala Lumpur '16 ",
+        "date": "Dec 10, 2016",
+        "month": "Dec",
+        "year": "2016",
+        "info": "Bukit Jalil, Malaysia",
+        "title": "Workshop: Build a Progressive Web Apps with Firebase, Polymerfire and Polymer",
+        "tags": [
+            {
+                "id": "pwa",
+                "value": "Progressive Web Apps"
+            },
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "link": "https://codelabs.developers.google.com/codelabs/polymer-firebase-pwa/index.html"
+    },
+    "make-the-web-great-again-what-comes-next-for-the-web-barcamp": {
+        "subtitle": "Barcamp Cyberjaya 2016",
+        "date": "Dec 3, 2016",
+        "month": "Dec",
+        "year": "2016",
+        "info": "Cyberjaya, Malaysia",
+        "title": "Make the web great again: What comes next for the web ",
+        "tags": [
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "link": "https://docs.google.com/presentation/d/1n1kepJWqvzPPgJgzvmpN8xS9p1NKWet38gAj6ZWxLJA"
+    },
+    "fishing-firebass-catching-a-ticket-to-google-io-2017": {
+        "subtitle": "Google I/O Extended '16 Kuala Lumpur ",
+        "date": "July 30, 2016",
+        "month": "July",
+        "year": "2016",
+        "info": "Bukit Jalil, Malaysia",
+        "title": "Fishing Firebass: Catching a ticket to Google I/O 2017 ",
+        "tags": [
+            {
+                "id": "other",
+                "value": "Other"
+            }
+        ],
+        "link": "https://drive.google.com/open?id=1gMOb3XstnqLERnoUzejvnteKVInAwmbBcyJsZttoCTk",
+        "description": "Firebass Challenge is an Alternate Reality Game (ARG) that lives across a variety of static web pages created by Google’s Firebase team. In this lightning talk, he will share his journey of becoming the first 100 people to win the free Google I/O 2017 ticket. He will also talk about how Firebase team and Insturment (A digital creative agency) created this amazing Alternate Reality Game while teaching the participant a little bit about the new version of Firebase."
+    },
+    "building-progressive-web-apps-and-use-the-platform-to-build-a-better-web": {
+        "subtitle": "Tech Talk Thursday with Google and GDGKL",
+        "date": "July 14, 2016",
+        "month": "July",
+        "year": "2016",
+        "info": "Cyberjaya, Malaysia",
+        "tags": [
+            {
+                "id": "pwa",
+                "value": "Progressive Web Apps"
+            },
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "title": "Building Progressive Web Apps & Use The Platform to build a Better Web",
+        "link": "https://drive.google.com/open?id=1OSwv0JFQP-v4XFbE9xUlyAwYfT8dqnDJzryZ6hZdXrA"
+    },
+    "intro-to-progressive-web-apps-and-service-worker-codelabs": {
+        "subtitle": "PWA Dev Summit '16 Kuala Lumpur Live Viewing Party ",
+        "date": "June 20, 2016",
+        "month": "June",
+        "year": "2016",
+        "info": "Kuala Lumpur, Malaysia",
+        "tags": [
+            {
+                "id": "pwa",
+                "value": "Progressive Web Apps"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "title": "Intro to Progressive Web Apps & Service Worker Codelabs"
+    },
+    "how-to-make-a-simple-chat-app-with-firebase": {
+        "subtitle": "Google Cloud Platform NEXT Extended '16 Kuala Lumpur",
+        "date": "April 30, 2016",
+        "month": "Apr",
+        "year": "2016",
+        "info": "Bukit Jalil, Malaysia",
+        "tags": [
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "title": "How to make a simple chat app with Firebase",
+        "description": "In this session, you will learn how to build a simple chat webapp with Firebase Realtime Database and more."
+    },
+    "intro-to-polymer-and-firebase": {
+        "subtitle": "Barcamp Cyberjaya 2015",
+        "date": "Dec 19, 2015",
+        "month": "Dec",
+        "year": "2015",
+        "info": "Cyberjaya, Malaysia",
+        "tags": [
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            }
+        ],
+        "title": "Intro to Polymer and Firebase",
+        "link": "https://docs.google.com/presentation/d/1l_MAGdLBAy4gZ4uszT44AegxiW5yf297tYzNohMunBc/"
+    }
+}

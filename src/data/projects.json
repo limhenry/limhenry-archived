@@ -1,0 +1,249 @@
+{
+    "remote-for-slides": {
+        "title": "Remote for Slides",
+        "tags": [
+            {
+                "id": "pwa",
+                "value": "Progressive Web Apps"
+            },
+            {
+                "id": "preact",
+                "value": "Preact"
+            },
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "description": "Remote for Slides is a Chrome Extension + Progressive Web App that allows you to control Google Slides and Ludus on any device, remotely. ",
+        "link": "https://limhenry.xyz/slides/?utm=limhenryxyz"
+    },
+    "spotify-stations-pwa": {
+        "title": "Spotify Stations PWA",
+        "tags": [
+            {
+                "id": "pwa",
+                "value": "Progressive Web Apps"
+            },
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "description": "Trying to recreate the UI of Spotify Stations using web technologies. ",
+        "link": "https://github.com/limhenry/spotify-stations"
+    },
+    "android-things-digital-smart-clock": {
+        "title": "Android Things Digital Smart Clock",
+        "tags": [
+            {
+                "id": "android_things",
+                "value": "Android Things"
+            },
+            {
+                "id": "android",
+                "value": "Android"
+            },
+            {
+                "id": "iot",
+                "value": "IoT"
+            }
+        ],
+        "description": "A smart digital clock built using Android Things. ",
+        "link": "https://medium.com/@limhenry/diy-android-things-smart-digital-clock-e6e79d26a3bb"
+    },
+    "gdgkl-pwa": {
+        "title": "GDG Kuala Lumpur Progressive Web App",
+        "tags": [
+            {
+                "id": "pwa",
+                "value": "Progressive Web Apps"
+            },
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "description": "A progressive web app (PWA) for Google Developer Group (GDG) Kuala Lumpur. ",
+        "link": "https://www.gdgkl.org/"
+    },
+    "github-issues-voter": {
+        "title": "GitHub Issues Voter",
+        "tags": [
+            {
+                "id": "pwa",
+                "value": "Progressive Web Apps"
+            },
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "description": "Best Progressive Web App at the Google's Firebase Static Showdown 2016 Global Hackathon. GitHub Issues Voter is a progressive web app that allow you to upvote or downvote to any GitHub issues you interested. ",
+        "link": "https://ss16-git-issue-voter.firebaseapp.com/"
+    },
+    "url-shortener": {
+        "title": "URL Shortener",
+        "tags": [
+            {
+                "id": "pwa",
+                "value": "Progressive Web Apps"
+            },
+            {
+                "id": "preact",
+                "value": "Preact"
+            },
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "description": "A URL Shortener using Firebase (Cloud Firestore, Cloud Functions, Hosting and Authentication) and Preact ",
+        "link": "https://github.com/limhenry/urlshortener/"
+    },
+    "google-io-extended-2017-kuala-lumpur-pwa": {
+        "title": "Google I/O Extended 2017 Kuala Lumpur Progressive Web App",
+        "tags": [
+            {
+                "id": "pwa",
+                "value": "Progressive Web Apps"
+            },
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "description": "A progressive web app (PWA) for one of the biggest GDGKL event - Google I/O Extended 2017 Kuala Lumpur.",
+        "link": "https://medium.com/@limhenry/case-study-the-google-i-o-extended-2017-kuala-lumpur-progressive-web-app-a786e82984d7"
+    },
+    "project-cerium": {
+        "title": "Project Cerium",
+        "tags": [
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "description": "Project Cerium is a conference website template with Material Design built for Google Developer Groups. ",
+        "link": "https://github.com/limhenry/cerium"
+    },
+    "alphabet-music-info": {
+        "title": "Alphabet Music Info ",
+        "tags": [
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "description": "The definitive list of songs used in Google and other Google-related YouTube Channel, in commercials, keynote addresses, presentations, and other marketing materials. ",
+        "link": "https://alphabetmusicinfo.appspot.com/"
+    },
+    "gdg-devfest_kuala-lumpur-2015": {
+        "title": "GDG DevFest Kuala Lumpur 2015 ",
+        "tags": [
+            {
+                "id": "polymer",
+                "value": "Polymer"
+            },
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "description": "Event page for GDG DevFest Kuala Lumpur 2015 with Material Design. ",
+        "link": "https://devfestkl2015.appspot.com/"
+    },
+    "mmu-bulletin": {
+        "title": "MMU Bulletin ",
+        "tags": [
+            {
+                "id": "firebase",
+                "value": "Firebase"
+            },
+            {
+                "id": "python",
+                "value": "Python"
+            },
+            {
+                "id": "web",
+                "value": "Web"
+            }
+        ],
+        "description": "A responsive bulletin board for Multimedia University with Material Design. Also available on Facebook.  ",
+        "link": "https://limhenry.xyz/bulletin/"
+    },
+    "auto-wifi-mmu": {
+        "title": "Auto WiFi MMU (Redesigned) ",
+        "tags": [
+            {
+                "id": "android",
+                "value": "Android"
+            }
+        ],
+        "description": "Android app that login to the campus WiFi automatically. Redesigned the app with Material Design. ",
+        "link": ""
+    },
+    "web-fundamentals-google-developers": {
+        "title": "Web Fundamentals - Google Developers",
+        "tags": [
+            {
+                "id": "other",
+                "value": "Other"
+            }
+        ],
+        "description": "Web Fundamentals is a site to showcase best practices and tools for modern Web Development. I am a contributor, translator and language moderator for Chinese verions of Web Fundamentals. ",
+        "link": "https://github.com/google/WebFundamentals/"
+    }
+}

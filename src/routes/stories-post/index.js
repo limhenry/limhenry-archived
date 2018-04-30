@@ -21,14 +21,17 @@ export default class StoriesPost extends Component {
 
 		import('../../data/' + this.id + '.json').then((e) => {
 			this.setState({ 'story': e });
+			if (typeof window !== "undefined") {
+				document.title = e.header + ' - Henry Lim';
+			}
 		}).catch(error => {
-			// route('/stories');
+			route('/stories');
 		})
 	}
 
 	render({ id }, { story }) {
 		return (
-			<div>
+			<div id={style.storiesPost}>
 				<div class={style.story_container}>
 					<h1 class={style.story_title}>{story.header}</h1>
 					<div class={style.story_author}>{story.author} - {story.publisher}</div>

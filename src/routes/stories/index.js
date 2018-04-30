@@ -5,6 +5,13 @@ import data from '../../data/data.json'
 import '../../style';
 
 export default class Stories extends Component {
+	constructor(props) {
+		super(props);
+		if (typeof window !== "undefined") {
+			document.title = 'Stories - Henry Lim';
+		}
+	}
+
 	render() {
 		return (
 			<div>

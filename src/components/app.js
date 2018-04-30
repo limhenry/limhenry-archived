@@ -34,7 +34,9 @@ export default class App extends Component {
 					<Stories path="/stories" />
 					<StoriesPost path="/stories/:id" />
 					<Projects path="/projects" />
+					<Projects path="/projects/:id" />
 					<Talks path="/talks" />
+					<Talks path="/talks/:id" />
 					<Awards path="/awards" />
 				</Router>
 				{/* <Footer /> */}

@@ -1,0 +1,9 @@
+#awards {
+    margin-bottom: 96px;
+}
+
+@media screen and (max-width: 860px) {
+    #awards {
+        margin-bottom: 74px;
+    }
+}
