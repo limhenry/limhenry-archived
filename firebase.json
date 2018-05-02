@@ -1,98 +1,96 @@
 {
-  "hosting": {
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
-    "headers": [
-      {
-        "source": "**",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=3600, no-cache"
-          },
-          {
-            "key": "Access-Control-Max-Age",
-            "value": "600"
-          }
-        ]
-      },
-      {
-        "source": "/sw.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "private, no-cache"
-          }
-        ]
-      },
-      {
-        "source": "**/*.chunk.*.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000"
-          }
-        ]
-      },
-      {
-        "source": "/",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-home.chunk.ef8d1.js>; rel=preload; as=script"
-          }
-        ]
-      },
-      {
-        "source": "/projects",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-projects.chunk.733f8.js>; rel=preload; as=script"
-          }
-        ]
-      },
-      {
-        "source": "/awards",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-awards.chunk.feab6.js>; rel=preload; as=script"
-          }
-        ]
-      },
-      {
-        "source": "/stories-post",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-stories-post.chunk.1b674.js>; rel=preload; as=script"
-          }
-        ]
-      },
-      {
-        "source": "/talks",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-talks.chunk.1f62d.js>; rel=preload; as=script"
-          }
-        ]
-      },
-      {
-        "source": "/stories",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</bundle.91d35.js>; rel=preload; as=script, </style.eb05f.css>; rel=preload; as=style, </route-stories.chunk.6393b.js>; rel=preload; as=script"
-          }
-        ]
-      }
-    ],
-    "public": "build"
-  }
+  "rewrites": [
+    {
+      "source": "**",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "**",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, no-cache"
+        },
+        {
+          "key": "Access-Control-Max-Age",
+          "value": "600"
+        }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-cache"
+        }
+      ]
+    },
+    {
+      "source": "**/*.chunk.*.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</bundle.2a526.js>; rel=preload; as=script, </style.44c0f.css>; rel=preload; as=style, </route-home.chunk.c72e1.js>; rel=preload; as=script"
+        }
+      ]
+    },
+    {
+      "source": "/projects",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</bundle.2a526.js>; rel=preload; as=script, </style.44c0f.css>; rel=preload; as=style, </route-projects.chunk.cc107.js>; rel=preload; as=script"
+        }
+      ]
+    },
+    {
+      "source": "/talks",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</bundle.2a526.js>; rel=preload; as=script, </style.44c0f.css>; rel=preload; as=style, </route-talks.chunk.f9cd1.js>; rel=preload; as=script"
+        }
+      ]
+    },
+    {
+      "source": "/awards",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</bundle.2a526.js>; rel=preload; as=script, </style.44c0f.css>; rel=preload; as=style, </route-awards.chunk.4f91c.js>; rel=preload; as=script"
+        }
+      ]
+    },
+    {
+      "source": "/stories",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</bundle.2a526.js>; rel=preload; as=script, </style.44c0f.css>; rel=preload; as=style, </route-stories.chunk.a1ca8.js>; rel=preload; as=script"
+        }
+      ]
+    },
+    {
+      "source": "/stories-post",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</bundle.2a526.js>; rel=preload; as=script, </style.44c0f.css>; rel=preload; as=style, </route-stories-post.chunk.62ddd.js>; rel=preload; as=script"
+        }
+      ]
+    }
+  ],
+  "public": "build"
 }

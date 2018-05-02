@@ -12,6 +12,7 @@ export default class Projects extends Component {
 		if (typeof window !== 'undefined') {
 			document.title = item.title + ' - Projects - Henry Lim';
 		}
+		route('/projects/' + id);
 		this.dialog.toggle(id, item, 'projects');
 	}
 
@@ -32,6 +33,17 @@ export default class Projects extends Component {
 		}
 		else {
 			route('/projects');
+		}
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.id !== this.props.id) {
+			if (nextProps.id) {
+				this.dialog.toggle(nextProps.id, projects[nextProps.id], 'projects');
+			}
+			else {
+				this.dialog.close();
+			}
 		}
 	}
 

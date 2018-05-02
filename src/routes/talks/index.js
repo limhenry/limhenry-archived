@@ -10,6 +10,7 @@ export default class Talks extends Component {
 		if (typeof window !== 'undefined') {
 			document.title = item.title + ' - Talks - Henry Lim';
 		}
+		route('/talks/' + id);
 		this.dialog.toggle(id, item, 'talks');
 	}
 
@@ -30,6 +31,17 @@ export default class Talks extends Component {
 		}
 		else {
 			route('/talks');
+		}
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.id !== this.props.id) {
+			if (nextProps.id) {
+				this.dialog.toggle(nextProps.id, talks[nextProps.id], 'talks');
+			}
+			else {
+				this.dialog.close();
+			}
 		}
 	}
 

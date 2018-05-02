@@ -46,8 +46,12 @@
   line-height: 30px;
 }
 
+.dialog_body .subtitle {
+  margin-bottom: 36px;
+}
+
 .dialog_body p {
-  margin-top: 32px;
+  margin: 0;
   color: #202124;
   white-space: pre-line;
 }
@@ -167,15 +171,15 @@
 
 @media screen and (max-width: 860px) {
   .dialog_header {
-    min-height: 200px;
+    min-height: 0px;
   }
   .dialog_header .header_text {
     font-size: 24px;
-    padding: 0 16px;
+    padding: 22px 16px 0 16px;
     width: 100%;
   }
   .dialog_body {
-    padding: 16px 24px;
+    padding: 22px 24px;
     font-size: 16px;
     line-height: 28px;
     max-height: initial;

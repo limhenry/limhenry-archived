@@ -10,6 +10,7 @@ export default class Awards extends Component {
 		if (typeof window !== 'undefined') {
 			document.title = item.title + ' - Awards - Henry Lim';
 		}
+		route('/awards/' + id);
 		this.dialog.toggle(id, item, 'awards');
 	}
 
@@ -28,8 +29,16 @@ export default class Awards extends Component {
 			}
 			this.dialog.toggle(this.id, awards[this.id], 'awards');
 		}
-		else {
-			route('/awards');
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.id !== this.props.id) {
+			if (nextProps.id) {
+				this.dialog.toggle(nextProps.id, awards[nextProps.id], 'awards');
+			}
+			else {
+				this.dialog.close();
+			}
 		}
 	}
 
@@ -75,29 +84,6 @@ export default class Awards extends Component {
 						</div>
 					))}
 				</div>
-
-				{/* <div class="item_container">
-					{Object.keys(talks).map(item => (
-						<div class="item" onClick={() => this.toggleDialog(item, talks[item])}>
-							<div class="date">
-								<div class="month">{talks[item].month}</div>
-								<div>{talks[item].year}</div>
-							</div>
-							<div class="content">
-								<div class="item_header">{talks[item].title}</div>
-								<div class="item_info">
-									<div class="item_description">{talks[item].subtitle}</div>
-									{talks[item].tags.map(item => (
-										<div class="item_tag">
-											<div class="item_circle" id={item.id}></div>
-											<span>{item.value}</span>
-										</div>
-									))}
-								</div>
-							</div>
-						</div>
-					))}
-				</div> */}
 			</div>
 		);
 	}

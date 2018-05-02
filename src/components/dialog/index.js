@@ -45,7 +45,10 @@ export default class CustomDialog extends Component {
 	toggle(dataId, dataItem, dataType) {
 		this.setState({ data: dataItem, id: dataId, type: dataType });
 		this.scrollingDlg.MDComponent.show();
-		route('/' + dataType + '/' + dataId);
+	}
+
+	close() {
+		this.scrollingDlg.MDComponent.close();
 	}
 
 	constructor(props) {
@@ -64,9 +67,15 @@ export default class CustomDialog extends Component {
 					<div class={style.header_text}>{data.title}</div>
 				</div>
 				<div class={style.dialog_body} scrollable>
-					<div>{data.date}</div>
-					<div>{data.subtitle}</div>
-					<p>{data.description}</p>
+					{data.date &&
+						<div>{data.date}</div>
+					}
+					{data.subtitle &&
+						<div class={style.subtitle}>{data.subtitle}</div>
+					}
+					{data.description &&
+						<p>{data.description}</p>
+					}
 					<div class={style.event_topic}>
 						{data.tags.map(item => (
 							<div class="item_tag">
