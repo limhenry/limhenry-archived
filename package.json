@@ -11,13 +11,7 @@
     "lint": "eslint src"
   },
   "eslintConfig": {
-    "extends": "eslint-config-synacor",
-    "rules": {
-      "no-unused-vars": "warn",
-      "react/sort-comp": "off",
-      "lines-around-comment": "off",
-      "react/prefer-stateless-function": "off"
-    }
+    "extends": "eslint-config-synacor"
   },
   "eslintIgnore": [
     "build/*"
@@ -26,7 +20,7 @@
     "eslint": "^4.5.0",
     "eslint-config-synacor": "^1.1.0",
     "if-env": "^1.0.0",
-    "preact-cli": "^2.0.0"
+    "preact-cli": "^2.2.1"
   },
   "dependencies": {
     "pimg": "^1.0.0",

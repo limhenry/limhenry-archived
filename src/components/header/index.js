@@ -32,7 +32,6 @@ export default class Header extends Component {
 	goTalks = this.linkTo('/talks');
 	goAwards = this.linkTo('/awards');
 
-
 	render() {
 		return (
 			<div>

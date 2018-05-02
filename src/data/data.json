@@ -17,43 +17,6 @@
             }
         ]
     },
-    "awards": [
-        {
-            "month": "Oct",
-            "year": "2017",
-            "header": "Google Firebase AppFest Hackathon Malaysia ",
-            "date": "Oct 2017",
-            "info": "2nd Place ",
-            "description": "Google Firebase AppFest Hackathon is a hackathon organized by Google and the Firebase Team.",
-            "link": "https://events.withgoogle.com/google-developers-firebase-hackathon-malaysia/"
-        },
-        {
-            "month": "Apr",
-            "year": "2017",
-            "header": "Nasa Space Apps Challenge 2017 Kuala Lumpur (Hackathon) ",
-            "date": "Apr 2017",
-            "info": "Top 10 Finalists ",
-            "description": "The International Space Apps Challenge is an international mass collaboration focused on space exploration that takes place over 48-hours in cities around the world."
-        },
-        {
-            "month": "May",
-            "year": "2016",
-            "header": "Google's Firebass Challenge ",
-            "date": "May 2016",
-            "info": "Winner",
-            "description": "Firebass Challenge is an Alternate Reality Game (ARG) that lives across a variety of static web pages created by Google’s Firebase team.",
-            "link": "https://developers.googleblog.com/2016/06/behind-scenes-firebass-arg-challenge.html"
-        },
-        {
-            "month": "Feb",
-            "year": "2016",
-            "header": "Google's Firebase Static Showdown 2016 Hackathon ",
-            "date": "Feb 2016",
-            "info": "Best Progressive Web App ",
-            "description": "Static Showdown Hackathon is a worldwide 48-hour hackathon that centers on static web applications organized by Google’s Firebase.",
-            "link": "https://2016.staticshowdown.com/"
-        }
-    ],
     "stories": {
         "featured_stories": [
             {
@@ -92,7 +55,7 @@
             },
             {
                 "header": "解碼通關",
-                "id": "解碼通關",
+                "id": "firebass-challenge-google-io-oriental-daily",
                 "date": "April 5, 2017",
                 "author": "Oriental Daily 東方日報",
                 "image": "https://res.cloudinary.com/limhenry/image/upload/v1524738843/limhenryxyz/od.jpg",

@@ -1,13 +1,13 @@
 import { h, Component } from 'preact';
 import Image from 'pimg';
 import style from './style';
-import data from '../../data/data.json'
+import data from '../../data/data.json';
 import '../../style';
 
 export default class Stories extends Component {
 	constructor(props) {
 		super(props);
-		if (typeof window !== "undefined") {
+		if (typeof window !== 'undefined') {
 			document.title = 'Stories - Henry Lim';
 		}
 	}
@@ -26,14 +26,14 @@ export default class Stories extends Component {
 				<div class="card_container">
 					{ data.stories.news_interview.map(item => (
 						<a class="card" href={'/stories/' + item.id}>
-							<Image fetchOnDemand alt={item.header} className="card_header" src={item.image} placeholder={item.placeholder}/>
+							<Image fetchOnDemand alt={item.header} className="card_header" src={item.image} placeholder={item.placeholder} />
 							<div class="card_content">
 								<div class="title">{item.header}</div>
 								<div class="date">{item.date} | {item.author}</div>
 							</div>
 							<div class="card_footer">
 								<span>Read More</span>
-								<iron-icon icon="henry-icons:arrow-forward"></iron-icon>
+								{/* <iron-icon icon="henry-icons:arrow-forward"></iron-icon> */}
 							</div>
 						</a>
 					))}
@@ -43,22 +43,22 @@ export default class Stories extends Component {
 				<div class="card_container">
 					{ data.stories.top_stories.map(item => (
 						<a class="card" href={'/stories/' + item.id}>
-							<Image fetchOnDemand alt={item.header} className="card_header" src={item.image} placeholder={item.placeholder}/>
+							<Image fetchOnDemand alt={item.header} className="card_header" src={item.image} placeholder={item.placeholder} />
 							<div class="card_content">
 								<div class="title">{item.header}</div>
 								<div class="date">{item.date} | {item.author}</div>
 							</div>
 							<div class="card_footer">
 								<span>Read More</span>
-								<iron-icon icon="henry-icons:arrow-forward"></iron-icon>
+								{/* <iron-icon icon="henry-icons:arrow-forward"></iron-icon> */}
 							</div>
 						</a>
 					))}
 				</div>
 
-				<a class={style.read_more} href="https://medium.com/@limhenry/" target="_blank">
+				<a class={style.read_more} href="https://medium.com/@limhenry/" target="_blank" rel="noopener noreferrer">
 					<span>Read More on Medium.com</span>
-					<iron-icon icon="henry-icons:add-circle"></iron-icon>
+					{/* <iron-icon icon="henry-icons:add-circle"></iron-icon> */}
 				</a>
 			</div>
 		);

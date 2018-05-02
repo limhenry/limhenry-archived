@@ -19,7 +19,33 @@
                 "value": "Web"
             }
         ],
-        "description": "Remote for Slides is a Chrome Extension + Progressive Web App that allows you to control Google Slides and Ludus on any device, remotely. ",
+        "description": "Remote for Slides is a Chrome Extension and a Progressive Web App that allows you to control Google Slides and Ludus on any device, remotely, without the need for any extra hardware.\n\n Remote for Slides is built using a web framework called Preact, a fast 3kb React alternative, and Firebase, a mobile and web application development platform by Google.\n\n Remote for Slides is featured on The Next Web and more.",
+        "related": [
+            {
+                "title": "Turn your phone into a Google Slides remote control with this Chrome extension",
+                "subtitle": "The Next Web",
+                "tags": [
+                    {
+                        "id": "story",
+                        "value": "Story"
+                    }
+                ],
+                "external": false,
+                "url": "/stories/turn-your-phone-into-a-google-slides-remote-control-with-this-chrome-extension"
+            },
+            {
+                "title": "Meet Remote for Slides, a new way to control your presentation slides",
+                "subtitle": "Medium.com",
+                "tags": [
+                    {
+                        "id": "story",
+                        "value": "Story"
+                    }
+                ],
+                "external": true,
+                "url": "/stories/meet-remote-for-slides-a-new-way-to-control-your-presentation-slides"
+            }
+        ],
         "link": "https://limhenry.xyz/slides/?utm=limhenryxyz"
     },
     "spotify-stations-pwa": {
@@ -57,8 +83,22 @@
                 "value": "IoT"
             }
         ],
-        "description": "A smart digital clock built using Android Things. ",
-        "link": "https://medium.com/@limhenry/diy-android-things-smart-digital-clock-e6e79d26a3bb"
+        "related": [
+            {
+                "title": "DIY Android Things Smart Digital Clock",
+                "subtitle": "Medium.com",
+                "tags": [
+                    {
+                        "id": "story",
+                        "value": "Story"
+                    }
+                ],
+                "external": true,
+                "url": "https://medium.com/@limhenry/diy-android-things-smart-digital-clock-e6e79d26a3bb"
+            }
+        ],
+        "description": "A smart digital clock (+Spotify Control Panel) built using Android Things.",
+        "link": "https://github.com/limhenry/android-things-digital-clock"
     },
     "gdgkl-pwa": {
         "title": "GDG Kuala Lumpur Progressive Web App",

@@ -1,28 +1,44 @@
 import { h, Component } from 'preact';
-import Image from 'pimg';
+import { route } from 'preact-router';
 import style from './style';
 import Dialog from '../../components/dialog';
-import data from '../../data/data.json'
+import awards from '../../data/awards.json';
 import '../../style';
 
 export default class Awards extends Component {
-	toggleDialog = (item) => {
-		this.dialog.toggle(item);
+	toggleDialog = (id, item) => e => {
+		if (typeof window !== 'undefined') {
+			document.title = item.title + ' - Awards - Henry Lim';
+		}
+		this.dialog.toggle(id, item, 'awards');
 	}
 
 	constructor(props) {
 		super(props);
-		if (typeof window !== "undefined") {
+		if (typeof window !== 'undefined') {
 			document.title = 'Awards - Henry Lim';
+		}
+		this.id = props.id;
+	}
+
+	componentDidMount() {
+		if (this.id && awards[this.id]) {
+			if (typeof window !== 'undefined') {
+				document.title = awards[this.id].title + ' - Awards - Henry Lim';
+			}
+			this.dialog.toggle(this.id, awards[this.id], 'awards');
+		}
+		else {
+			route('/awards');
 		}
 	}
 
 	render() {
 		return (
 			<div id={style.awards}>
-				<Dialog ref={dialog => { this.dialog = dialog; }}/>
+				<Dialog ref={dialog => { this.dialog = dialog; }} />
 
-				<div class="hero">
+				<div className={[style.hero, 'hero'].join(' ')}>
 					<div class="hero_title">Awards and Honors</div>
 					<div class="hero_description">
 						<p>(Drum roll) and the winner goes to ...</p>
@@ -37,32 +53,51 @@ export default class Awards extends Component {
 
 				{/* <Image className="cover" fetchOnDemand alt="em" src="https://res.cloudinary.com/limhenry/image/upload/v1524738836/limhenryxyz/firebass.jpg" placeholder="https://res.cloudinary.com/limhenry/image/upload/c_thumb,w_10/v1524738836/limhenryxyz/firebass.jpg"/> */}
 
-				{/* <div class="item_container">
-					{ data.awards.map(item => (
-						<div class="item" onClick={() => this.toggleDialog(item)}>
-							<div class="item_header">{item.header}</div>
-							<div class="item_info">{item.info} | {item.date}</div>
-							<div class="item_description">{item.description}</div>
-						</div>
-					))}
-				</div> */}
-
 				<div class="item_container">
-					{data.awards.map(item => (
-						<div class="item" onClick={() => this.toggleDialog(item)}>
+					{Object.keys(awards).map(item => (
+						<div class="item" onClick={this.toggleDialog(item, awards[item])}>
 							<div class="date">
-								<div class="month">{item.month}</div>
-								<div>{item.year}</div>
+								<div class="month">{awards[item].month}</div>
+								<div>{awards[item].year}</div>
 							</div>
 							<div class="content">
-								<div class="item_header">{item.header}</div>
+								<div class="item_header">{awards[item].title}</div>
 								<div class="item_info">
-									<div class="item_description">{item.info}</div>
+									<div class="item_description">{awards[item].info}</div>
+									{awards[item].tags.map(item => (
+										<div class="item_tag">
+											<div class="item_circle" id={item.id} />
+											<span>{item.value}</span>
+										</div>
+									))}
 								</div>
 							</div>
 						</div>
 					))}
 				</div>
+
+				{/* <div class="item_container">
+					{Object.keys(talks).map(item => (
+						<div class="item" onClick={() => this.toggleDialog(item, talks[item])}>
+							<div class="date">
+								<div class="month">{talks[item].month}</div>
+								<div>{talks[item].year}</div>
+							</div>
+							<div class="content">
+								<div class="item_header">{talks[item].title}</div>
+								<div class="item_info">
+									<div class="item_description">{talks[item].subtitle}</div>
+									{talks[item].tags.map(item => (
+										<div class="item_tag">
+											<div class="item_circle" id={item.id}></div>
+											<span>{item.value}</span>
+										</div>
+									))}
+								</div>
+							</div>
+						</div>
+					))}
+				</div> */}
 			</div>
 		);
 	}

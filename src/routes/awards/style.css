@@ -2,6 +2,10 @@
     margin-bottom: 96px;
 }
 
+.hero {
+    max-width: 1162px;
+}
+
 @media screen and (max-width: 860px) {
     #awards {
         margin-bottom: 74px;

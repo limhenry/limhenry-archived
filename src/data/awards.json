@@ -1,0 +1,131 @@
+{
+    "google-firebase-appfest-hackathon-malaysia": {
+        "subtitle": "Kuala Lumpur, Malaysia",
+        "month": "Oct",
+        "year": "2017",
+        "title": "Google Firebase AppFest Hackathon Malaysia",
+        "date": "Oct 2017",
+        "info": "2nd Place",
+        "description": "Google Firebase AppFest Hackathon is a hackathon organized by Google and the Firebase Team.",
+        "tags": [
+            {
+                "id": "hackathon",
+                "value": "Hackathon"
+            }
+        ],
+        "related": [
+            {
+                "title": "How we crashed the Firebase Console in front of Firebase Engineers",
+                "subtitle": "Medium.com",
+                "tags": [
+                    {
+                        "id": "story",
+                        "value": "Story"
+                    }
+                ],
+                "external": true,
+                "url": "https://medium.com/@limhenry/how-we-crashed-the-firebase-console-in-front-of-firebase-engineers-a04afac72095"
+            }
+        ],
+        "link": "https://events.withgoogle.com/google-developers-firebase-hackathon-malaysia/"
+    },
+    "nasa-space-app-challenge-2017-kuala-lumpur": {
+        "subtitle": "Kuala Lumpur, Malaysia",
+        "month": "Apr",
+        "year": "2017",
+        "title": "Nasa Space Apps Challenge 2017 Kuala Lumpur",
+        "date": "Apr 2017",
+        "info": "Top 10 Finalists",
+        "tags": [
+            {
+                "id": "hackathon",
+                "value": "Hackathon"
+            }
+        ],
+        "description": "The International Space Apps Challenge is an international mass collaboration focused on space exploration that takes place over 48-hours in cities around the world."
+    },
+    "google-firebass-challenge": {
+        "subtitle": "Worldwide",
+        "month": "May",
+        "year": "2016",
+        "title": "Google's Firebass Challenge",
+        "date": "May 2016",
+        "info": "Winner",
+        "tags": [
+            {
+                "id": "arg",
+                "value": "Alternate Reality Game"
+            }
+        ],
+        "description": "Firebass Challenge is an Alternate Reality Game (ARG) that lives across a variety of static web pages created by Google’s Firebase team.",
+        "link": "https://developers.googleblog.com/2016/06/behind-scenes-firebass-arg-challenge.html",
+        "related": [
+            {
+                "title": "Student nets elusive Firebass for ticket to Google’s I/O 2017",
+                "subtitle": "The Next Web",
+                "tags": [
+                    {
+                        "id": "story",
+                        "value": "Story"
+                    }
+                ],
+                "external": false,
+                "url": "/stories/student-nets-elusive-firebass-ticket-googles-io-2017"
+            },
+            {
+                "title": "解碼通關",
+                "subtitle": "Oriental Daily 東方日報",
+                "tags": [
+                    {
+                        "id": "story",
+                        "value": "Story"
+                    }
+                ],
+                "external": false,
+                "url": "/stories/student-nets-elusive-firebass-ticket-googles-io-2017"
+            },
+            {
+                "title": "Fishing Firebass: Catching a ticket to Google I/O 2017",
+                "subtitle": "Google I/O Extended '16 Kuala Lumpur",
+                "tags": [
+                    {
+                        "id": "talk",
+                        "value": "Talks"
+                    }
+                ],
+                "external": false,
+                "url": "/talks/fishing-firebass-catching-a-ticket-to-google-io-2017"
+            }
+        ]
+    },
+    "google-firebase-static-showdown-2016-hackathon": {
+        "subtitle": "Worldwide",
+        "month": "Feb",
+        "year": "2016",
+        "title": "Google's Firebase Static Showdown 2016 Hackathon ",
+        "date": "Feb 2016",
+        "info": "Best Progressive Web App ",
+        "tags": [
+            {
+                "id": "virtualHackathon",
+                "value": "Virtual Hackathon"
+            }
+        ],
+        "description": "Static Showdown Hackathon is a worldwide 48-hour hackathon that centers on static web applications organized by Google’s Firebase.",
+        "link": "https://firebase.googleblog.com/2016/02/test-your-skills-at-static-showdown_20.html",
+        "related": [
+            {
+                "title": "GitHub Issues Voter",
+                "description": "GitHub Issues Voter is a progressive web app that allow you to upvote or downvote to any GitHub issues you interested. ",
+                "tags": [
+                    {
+                        "id": "project",
+                        "value": "Project"
+                    }
+                ],
+                "external": false,
+                "url": "/projects/github-issues-voter"
+            }
+        ]
+    }
+}

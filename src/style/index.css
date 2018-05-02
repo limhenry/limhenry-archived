@@ -23,16 +23,16 @@ body {
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #app {
-	height: 100%;
+  height: 100%;
 }
 
 .mdc-theme--dark {
-	background-color: #333;
-	color: #fff;
+  background-color: #333;
+  color: #fff;
 }
 
 .mdc-dialog__body--scrollable {
@@ -178,7 +178,7 @@ body {
 
 .item_circle {
   border-radius: 50%;
-  background: #e7a9fa;
+  background: var(--app-primary-color);
   width: 10px;
   height: 10px;
   margin-right: 5px;
@@ -284,7 +284,7 @@ body {
 }
 
 #other {
-  background-color: rgb(250, 191, 169);
+  background-color: rgb(153, 153, 153);
 }
 
 #polymer {
@@ -305,6 +305,34 @@ body {
 
 #web {
   background-color: rgb(250, 191, 169);
+}
+
+#story {
+  background-color: rgb(253, 145, 39);
+}
+
+#talk {
+  background-color: rgb(255, 108, 0);
+}
+
+#award {
+  background-color: rgb(255, 158, 128);
+}
+
+#project {
+  background-color: rgb(252, 210, 48);
+}
+
+#hackathon {
+  background-color: rgb(39, 229, 253);
+}
+
+#arg {
+  background-color: rgb(148, 221, 107);
+}
+
+#virtualHackathon {
+  background-color: rgb(87, 77, 221);
 }
 
 @media screen and (max-width: 860px) {
@@ -328,7 +356,6 @@ body {
     font-size: 12px;
     width: 80%;
   }
-
   /* List */
   .item_container {
     margin-top: 16px;

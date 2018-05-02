@@ -54,6 +54,10 @@ h2 {
 
 
 @media screen and (max-width: 860px) {
+	.hero {
+		margin-bottom: 36px;
+	}
+
 	.hero_description p {
 		line-height: 30px;
 	}

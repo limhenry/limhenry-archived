@@ -14,13 +14,15 @@ import BottomNavBar from './bottom_navbar';
 // import Profile from 'async!../routes/profile';
 
 export default class App extends Component {
+
 	/** Gets fired when the route changes.
 	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
 	 *	@param {string} event.url	The newly routed URL
 	 */
+
 	handleRoute = e => {
 		this.currentUrl = e.url;
-		if (typeof window !== "undefined") {
+		if (typeof window !== 'undefined') {
 			window.scrollTo(0, 0);
 		}
 	};
@@ -38,8 +40,9 @@ export default class App extends Component {
 					<Talks path="/talks" />
 					<Talks path="/talks/:id" />
 					<Awards path="/awards" />
+					<Awards path="/awards/:id" />
 				</Router>
-				{/* <Footer /> */}
+				<Footer />
 				<BottomNavBar />
 			</div>
 		);

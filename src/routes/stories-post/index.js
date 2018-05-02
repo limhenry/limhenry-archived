@@ -1,9 +1,6 @@
 import { h, Component } from 'preact';
-import Image from 'pimg';
 import style from './style';
-import data from '../../data/data.json'
 import { route } from 'preact-router';
-// import story from '../../data/i-am-now-a-google-developer-expert-in-web-technologies.json'
 import Markdown from 'preact-markdown';
 import '../../style';
 
@@ -11,7 +8,7 @@ export default class StoriesPost extends Component {
 
 	state = {
 		story: {
-			"post": ""
+			post: ''
 		}
 	}
 
@@ -19,14 +16,14 @@ export default class StoriesPost extends Component {
 		super(props);
 		this.id = props.id;
 
-		import('../../data/' + this.id + '.json').then((e) => {
-			this.setState({ 'story': e });
-			if (typeof window !== "undefined") {
+		import('../../data/story/' + this.id + '.json').then((e) => {
+			this.setState({ story: e });
+			if (typeof window !== 'undefined') {
 				document.title = e.header + ' - Henry Lim';
 			}
 		}).catch(error => {
 			route('/stories');
-		})
+		});
 	}
 
 	render({ id }, { story }) {
@@ -41,8 +38,7 @@ export default class StoriesPost extends Component {
 					</div>
 
 					<div class={style.story_origin}>
-						<div class={style.box}></div>Originally posted on:
-                        <a href={story.link} target="_blank">{story.publisher}</a>
+						<div class={style.box} />Originally posted on: <a href={story.link} target="_blank" rel="noopener noreferrer">{story.publisher}</a>
 					</div>
 				</div>
 			</div>

@@ -29,6 +29,20 @@
                 "value": "Firebase"
             }
         ],
+        "related": [
+            {
+                "title": "Firebase Cloud Firestore Impressions: It’s finally here!",
+                "subtitle": "Medium.com",
+                "tags": [
+                    {
+                        "id": "story",
+                        "value": "Story"
+                    }
+                ],
+                "external": true,
+                "url": "https://medium.com/@limhenry/firebase-cloud-firestore-impressions-its-finally-here-aa8a676d53ea"
+            }
+        ],
         "title": "Introduction to Firebase and Firebase Cloud Firestore"
     },
     "make-the-web-great-again-with-progressive-web-apps-and-polymer": {
@@ -179,6 +193,44 @@
             {
                 "id": "other",
                 "value": "Other"
+            }
+        ],
+        "related": [
+            {
+                "title": "Student nets elusive Firebass for ticket to Google’s I/O 2017",
+                "subtitle": "The Next Web",
+                "tags": [
+                    {
+                        "id": "story",
+                        "value": "Story"
+                    }
+                ],
+                "external": false,
+                "url": "/stories/student-nets-elusive-firebass-ticket-googles-io-2017"
+            },
+            {
+                "title": "解碼通關",
+                "subtitle": "Oriental Daily 東方日報",
+                "tags": [
+                    {
+                        "id": "story",
+                        "value": "Story"
+                    }
+                ],
+                "external": false,
+                "url": "/stories/student-nets-elusive-firebass-ticket-googles-io-2017"
+            },
+            {
+                "title": "Google's Firebase Static Showdown 2016 Hackathon",
+                "subtitle": "Winner",
+                "tags": [
+                    {
+                        "id": "award",
+                        "value": "Award"
+                    }
+                ],
+                "external": false,
+                "url": "/awards/google-firebase-static-showdown-2016-hackathon"
             }
         ],
         "link": "https://drive.google.com/open?id=1gMOb3XstnqLERnoUzejvnteKVInAwmbBcyJsZttoCTk",

@@ -24,6 +24,14 @@
     max-width: 960px;
 }
 
+.item_description {
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+    margin-bottom: 8px;
+}
+
 .item iron-icon {
     position: absolute;
     top: 0;
@@ -57,5 +65,10 @@ h2 {
     }
     .item_container .item {
         padding: 20px 16px;
+    }
+
+    .item_description {
+        font-size: 14px;
+        width: 95%;
     }
 }

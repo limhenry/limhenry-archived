@@ -31,11 +31,12 @@
 
 @media screen and (max-width: 860px) {
 	.footer {
-		flex-direction: column-reverse;
-		align-items: flex-start;
-		padding: 48px 16px;
+		display: none;
+		/* flex-direction: column-reverse; */
+		/* align-items: flex-start; */
+		/* padding: 48px 16px; */
 	}
-	.footer .footer_social {
-		margin-bottom: 16px;
-	}
+	/* .footer .footer_social { */
+		/* margin-bottom: 16px; */
+	/* } */
 }

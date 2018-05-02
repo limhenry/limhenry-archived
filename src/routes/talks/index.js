@@ -6,16 +6,24 @@ import Dialog from '../../components/dialog';
 import '../../style';
 
 export default class Talks extends Component {
-	toggleDialog = (id, item) => {
-		if (typeof window !== "undefined") {
+	toggleDialog = (id, item) => e => {
+		if (typeof window !== 'undefined') {
 			document.title = item.title + ' - Talks - Henry Lim';
 		}
 		this.dialog.toggle(id, item, 'talks');
 	}
 
+	constructor(props) {
+		super(props);
+		if (typeof window !== 'undefined') {
+			document.title = 'Talks - Henry Lim';
+		}
+		this.id = props.id;
+	}
+
 	componentDidMount() {
 		if (this.id && talks[this.id]) {
-			if (typeof window !== "undefined") {
+			if (typeof window !== 'undefined') {
 				document.title = talks[this.id].title + ' - Talks - Henry Lim';
 			}
 			this.dialog.toggle(this.id, talks[this.id], 'talks');
@@ -25,19 +33,11 @@ export default class Talks extends Component {
 		}
 	}
 
-	constructor(props) {
-		super(props);
-		if (typeof window !== "undefined") {
-			document.title = 'Talks - Henry Lim';
-		}
-		this.id = props.id;
-	}
-
-	render({id}) {
+	render({ id }) {
 		return (
 			<div id={style.talks}>
 
-				<Dialog ref={dialog => { this.dialog = dialog; }}/>
+				<Dialog ref={dialog => { this.dialog = dialog; }} />
 
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<div class="hero_title">Presentations and Talks</div>
@@ -56,7 +56,7 @@ export default class Talks extends Component {
 
 				<div class="item_container">
 					{Object.keys(talks).map(item => (
-						<div class="item" onClick={() => this.toggleDialog(item, talks[item])}>
+						<div class="item" onClick={this.toggleDialog(item, talks[item])}>
 							<div class="date">
 								<div class="month">{talks[item].month}</div>
 								<div>{talks[item].year}</div>
@@ -67,7 +67,7 @@ export default class Talks extends Component {
 									<div class="item_description">{talks[item].subtitle}</div>
 									{talks[item].tags.map(item => (
 										<div class="item_tag">
-											<div class="item_circle" id={item.id}></div>
+											<div class="item_circle" id={item.id} />
 											<span>{item.value}</span>
 										</div>
 									))}
@@ -77,6 +77,6 @@ export default class Talks extends Component {
 					))}
 				</div>
 			</div>
-		)
+		);
 	}
 }
